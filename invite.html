@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src https://ofkgibuwxrbmmzmbtgmt.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Invite Friends | Sloth Jam&trade;</title>
+  <meta name="description" content="Share your family's Sloth Jam invite link with other grown-ups. When friends join or buy a founder pack, your family gets gifts in the game." />
+  <link rel="canonical" href="https://slothjam.com/invite.html" />
+  <meta name="theme-color" content="#8f7df0" />
+  <link rel="icon" href="media/icon.png" />
+  <link rel="stylesheet" href="fonts/fonts.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="invite.css" />
+  <script src="ga.js"></script>
+</head>
+<!-- Invite friends (apps/server/src/handler.ts GET /invite): a grown-up signs in with the same
+     email and code as in the game, and gets the family's invite link. The rewards it earns land in
+     the game on that account (packages/party-rules/src/redeem/invite.ts). Keep the ladder in step
+     with the game's account card (apps/client/src/ui/accountUi.ts). -->
+<body class="legal-page">
+  <header class="nav">
+    <a class="nav-logo" href="./" aria-label="Sloth Jam, home"><picture><source srcset="media/logo-nav.avif" type="image/avif" /><img src="media/logo-nav.webp" alt="" width="320" height="172" /></picture></a>
+    <nav class="nav-links" id="site-menu" aria-label="Menu">
+      <a href="./#friends">Friends</a>
+      <a href="./#games">Games</a>
+      <a href="./#founders">Founders</a>
+      <a href="./#parents">Parents</a>
+      <a href="./#maker">Maker</a>
+      <a class="nav-page" href="coloring.html">Coloring</a>
+      <a class="nav-page" href="share.html">Share</a>
+      <a class="nav-page" href="invite.html" aria-current="page">Invite</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-play nav-play" href="play/" aria-label="Play now, early access"><span class="play-icon" aria-hidden="true"></span>Play</a>
+      <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg><span class="nav-burger-label">Menu</span></button>
+    </div>
+  </header>
+
+  <main>
+    <article class="panel legal invite">
+      <h1 class="badge badge-purple">Invite friends</h1>
+      <p class="invite-lead">Share your family&rsquo;s link with other grown-ups. When they join or buy a founder pack, your family gets gifts in the game.</p>
+
+      <ul class="tiles tiles-clips invite-tiles">
+        <li data-rung="joined"><video class="clip" muted loop playsinline autoplay poster="media/shot-invite-friend-pin.jpg" aria-label="A sloth waving, with a coral heart pin on its chest"><source src="media/loop-invite-friend-pin.mp4" type="video/mp4" /></video><h3>A friend joins</h3><p>A heart Friend pin for both families, plus coins: 300 for them, 250 for you, for up to 5 friends.</p></li>
+        <li data-rung="bought1"><video class="clip" muted loop playsinline autoplay poster="media/shot-invite-ambassador.jpg" aria-label="A sloth in a coral beret and a blue jacket with a sash, waving in the boutique"><source src="media/loop-invite-ambassador.mp4" type="video/mp4" /></video><h3>1 pack bought</h3><p>The Ambassador outfit: a beret, and a jacket with a sash and a heart rosette.</p></li>
+        <li data-rung="bought3"><img class="clip" src="media/reward-founder.jpg" alt="A sloth in the founder outfit: a sprout cap, a leaf vest and a seed pack" width="800" height="533" loading="lazy" /><h3>3 packs bought</h3><p>A free upgrade to the next founder pack, added to your account by itself.</p></li>
+        <li data-rung="bought10"><img class="clip" src="media/founder-house-outside.jpg" alt="The Founder House, a round three-storey cottage by the lily pond" width="960" height="640" loading="lazy" /><h3>10 packs bought</h3><p>Island Patron: the Founder House, every outfit color and the bench plaque.</p></li>
+      </ul>
+
+      <!-- Step 1: the grown-up's email. -->
+      <form class="invite-box" data-step="email" hidden>
+        <h2>Get your invite link</h2>
+        <p>Sign in with the email you use in the game. We&rsquo;ll send a 6-digit code; there is no password. New here? This makes your free grown-up account.</p>
+        <label class="invite-field">Parent&rsquo;s email address <input type="email" name="email" autocomplete="email" placeholder="you@example.com" required /></label>
+        <button class="btn btn-play" type="submit">Send me a code</button>
+      </form>
+
+      <!-- Step 2: the code from the email. -->
+      <form class="invite-box" data-step="code" hidden>
+        <h2>Check your email</h2>
+        <p>We sent a 6-digit code to <b data-email></b>. It works for 15 minutes. Didn&rsquo;t get it? Check the spam folder.</p>
+        <label class="invite-field">Code from the email <input type="text" name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="\d{6}" required /></label>
+        <button class="btn btn-play" type="submit">Show my link</button>
+        <button class="invite-link" type="button" data-back>Use another email</button>
+      </form>
+
+      <!-- Step 3: the link. -->
+      <section class="invite-box" data-step="link" hidden>
+        <h2>Your family&rsquo;s invite link</h2>
+        <div class="invite-share">
+          <input type="text" readonly data-link aria-label="Your invite link" />
+          <button class="btn btn-play" type="button" data-copy>Copy</button>
+          <button class="btn btn-play" type="button" data-share hidden>Share</button>
+        </div>
+        <div class="invite-counts">
+          <p><b data-joined>0</b><span data-joined-label>friends joined</span></p>
+          <p><b data-bought>0</b><span data-bought-label>founder packs bought</span></p>
+        </div>
+        <p class="invite-small">Gifts show up in the game the next time it opens, on every device signed in with <b data-email></b>. Each buyer counts once, and your own purchases don&rsquo;t count. If you share your link in public, say that you get gifts for it.</p>
+        <p class="invite-small">Signed in as <b data-email></b> &middot; <button class="invite-link" type="button" data-signout>Sign out</button></p>
+      </section>
+
+      <p class="invite-say" data-say role="status"></p>
+      <p class="invite-small">Your account keeps your email and your family&rsquo;s game save, and nothing about your child. <a href="privacy.html">Privacy policy</a></p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <img src="media/logo.webp" alt="Sloth Jam&trade;" width="760" height="406" loading="lazy" />
+    <p>&copy; 2026 Strategic Sloth LLC. All rights reserved.<br />Sloth Jam&trade; is a trademark of Strategic Sloth LLC.</p>
+    <p><a href="./">Home</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="schools.html">Schools</a> &middot; <a href="#" data-cookie-choices>Cookie choices</a></p>
+  </footer>
+  <script src="nav.js" defer></script>
+  <script src="invite.js" defer></script>
+</body>
+</html>
