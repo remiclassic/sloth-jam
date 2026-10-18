@@ -429,4 +429,67 @@
   <url><loc>https://slothjam.com/share.html</loc></url>
   <url><loc>https://slothjam.com/invite.html</loc></url>
   <url><loc>https://slothjam.com/play/</loc></url>
+  <!-- Guides index -->
+  <url><loc>https://slothjam.com/guides/</loc></url>
+  <!-- Guides: EN/FR-CA pairs -->
+  <url>
+    <loc>https://slothjam.com/guides/birthday-party-games-for-kids.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/birthday-party-games-for-kids.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/jeux-danniversaire-enfants.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/fr/guides/jeux-danniversaire-enfants.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/birthday-party-games-for-kids.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/jeux-danniversaire-enfants.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/guides/family-game-night-on-tv.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/family-game-night-on-tv.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/soiree-jeux-sur-la-tv.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/fr/guides/soiree-jeux-sur-la-tv.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/family-game-night-on-tv.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/soiree-jeux-sur-la-tv.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/guides/games-for-kids-who-cant-read.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/games-for-kids-who-cant-read.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/jeux-pour-enfants-qui-ne-savent-pas-lire-5-6-ans.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/fr/guides/jeux-pour-enfants-qui-ne-savent-pas-lire-5-6-ans.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/games-for-kids-who-cant-read.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/jeux-pour-enfants-qui-ne-savent-pas-lire-5-6-ans.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/guides/free-4-player-browser-games.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/free-4-player-browser-games.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/jeux-gratuits-4-joueurs-navigateur.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/fr/guides/jeux-gratuits-4-joueurs-navigateur.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/free-4-player-browser-games.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/jeux-gratuits-4-joueurs-navigateur.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/guides/grandparents-and-kids-games.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/grandparents-and-kids-games.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/jeux-grands-parents-et-enfants.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/fr/guides/jeux-grands-parents-et-enfants.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/grandparents-and-kids-games.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/jeux-grands-parents-et-enfants.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/guides/rainy-day-indoor-games.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/rainy-day-indoor-games.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/jeux-en-interieur-jour-de-pluie.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/fr/guides/jeux-en-interieur-jour-de-pluie.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/guides/rainy-day-indoor-games.html" />
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://slothjam.com/fr/guides/jeux-en-interieur-jour-de-pluie.html" />
+  </url>
 </urlset>
