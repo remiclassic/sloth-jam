@@ -1,0 +1,1112 @@
+:root {
+  --navy: #16233f;
+  --cream: #fff8ea;
+  --pink: #ff4fa3;
+  --yellow: #ffc21a;
+  --blue: #2f9bff;
+  --green: #3fc463;
+  --purple: #8f7df0;
+  --ks: #05ce78;
+  --line: 4px solid var(--navy);
+  --drop: 0 8px 0 var(--navy);
+  --display: 'Baloo 2', 'Arial Rounded MT Bold', system-ui, sans-serif;
+  --body: 'Nunito', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+
+body {
+  margin: 0;
+  background: var(--purple);
+  color: var(--navy);
+  font: 700 18px/1.5 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; }
+
+/* The island stays put while the page scrolls over it, built from separate layers so they can
+   slide past each other. A fixed box, not background-attachment, which phones repaint badly. */
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: linear-gradient(180deg, #8f7df0 0%, #c08df2 26%, #f6a6d6 48%, #ffd3a6 62%, #ffe9b8 70%);
+}
+/* A 16:9 stage that always covers the screen, like background-size: cover. The scenery is
+   placed in percentages of it, so the picture holds together at every screen shape. */
+.scene {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100vw, 177.78vh);
+  /* 16:9 of that width, spelled out rather than aspect-ratio so older browsers (and speed
+     testers running them) don't get a stage with no height and no island. */
+  height: max(56.25vw, 100vh);
+  transform: translate(-50%, -50%);
+}
+.layer { position: absolute; max-width: none; transform-origin: 50% 100%; will-change: transform; }
+/* While the scenery downloads, a 64-pixel copy of the whole island (under 1 KB, so it arrives
+   with this file) stands in for it, softened so it reads as out of focus rather than blocky.
+   main.js holds the layers back (scene-wait) until every one has decoded, then fades them in
+   together over it (scene-ready), so the island never builds itself up piece by piece. Remade
+   with tools/site/scene-preview.mjs when the layers change. */
+.scene::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(data:image/webp;base64,UklGRgQFAABXRUJQVlA4WAoAAAAgAAAAPwAAIwAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZWUDggFgMAAPAPAJ0BKkAAJAA+tVCaSiclIiGwGqlY4BaJbACdMq9An6X5oFibIUW6Fzt3+d3057ecZ9Zzyh01Oz4Zxkrq7z25coAi+KqK+aoMw++r7bLah0oHDBdEb0jimSE2fOwBI5NKTRPzn7iengJ+9w9NYiOJdCQ7iqrRaFNXbW0d3EpkPkTxjgaWlQAA/rQg/e4Q5Lq5Gwmc0nTDJHvTalfrImVBNzcxev/h5eR7DCOhwAVbTzgk6HgHxejN/wGT2TH3UiQ0O+YbVjWTSrhBJuwZUm+iNlDaC2rx1eOPnYRzMWotPPTkyeyXI7cKfwCxNG3pmu+NmcDz9sjRT7FEecAMk858NiqCAiOpMVaJu1MvqHX8PfkBldkVWSnZgN/rwFPpa28SFRcQOojGYE1K7Kv/gz8YAW8ctrc47/tyl/iNejNqaAn3FEs7i5fAyAU0moF2RljQnAPi7mNMv3u0Ecld76wIgFzEQJYV/2YFSpEwJ1b5+SS2IoWG5XLKu6+k7fBYkA7aETKtr5Op6w+HBCvcsd7kNDMNpTPpC7afBsxc2FTVVdSf2JnNo2B2XyqgKReuAWFj8HBo3RomncAvIhTBCyf8gTUQvyscS1Xd8xVshIdKk98RVyucxjBCxiY/ywmTV2T+2eTWZZXpHkIJYgze/Qti6LmfvRusknSsD6oC6yU5elZJKnYhvPCGM2DsNM+kg+v+N35l7eh2Nsll0HLE76962n7J375e/F/8WT48E2VDCGnMgedofwNqMYlsvY1NDyhMH8QP8C3/B5aUurMJAivYeFKopFnL8uO5kJeWz3KLxKZluRk5wJ4aMvndERDvx98/3GQQfNsUFIJMx3QGSqDyhKCQNZgBASAoKTBo69uCAm5fSEptAncjT48EeRtQx05D8BzbE3IDoh3GWHX/4QDBmSwgwQpQ8FCOzNNmoWDOHDiSriv7tDyX+FWjbxMjQltQFU5oxHi716jKQfmtK/Vgav7Rs551+y350uGeUcBKtrCeZccAnl3ARL1Z/P56PXUQtml3ZKfVgIG5j26zBN+0Gq8MwAA=) center / 100% 100%;
+  filter: blur(18px);
+  transform: scale(1.06);
+}
+.scene-ready::before { animation: preview-out 0s 0.7s forwards; }
+@keyframes preview-out { to { visibility: hidden; } }
+.scene-wait .layer, .scene-wait ~ .floater { opacity: 0; }
+.scene-ready .layer, .scene-ready ~ .floater { transition: opacity 0.6s ease; }
+/* Each layer is wider than its slot and reaches below the stage, so sliding it never shows an
+   edge. Back to front: sky, lake, the hill everything stands on, the two villages tucked in
+   behind the plaza, the plaza, and the grass bank closest to the camera. */
+.layer-sky { left: -4%; top: -12%; width: 108%; height: 96%; }
+.layer-lake { left: -5%; top: 14%; width: 110%; }
+.layer-ground {
+  left: -25%;
+  top: 64%;
+  width: 150%;
+  height: 120%;
+  border-radius: 50% 50% 0 0 / 9% 9% 0 0;
+  background: linear-gradient(180deg, #b4e262, #7cc63e 14%, #5fae30 40%, #4f9a2a);
+}
+.layer-lighthouse { right: -9%; top: 27%; width: 45%; }
+.layer-village { left: -12%; top: 34%; width: 43%; }
+.layer-plaza { left: 10%; top: 45%; width: 80%; }
+.layer-grass { left: -20%; top: 55%; width: 140%; }
+.layer-grass img { width: 100%; }
+/* More of the same green under the bank, for when it has slid up the screen. */
+.layer-grass::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 2px);
+  height: 120%;
+  background: #486b1e;
+}
+
+/* The flying sloths hang off the screen corners, not the stage, so phones keep them too. */
+.floater { position: absolute; transform-origin: 50% 50%; will-change: transform; }
+.floater img { width: 100%; animation: float 6s ease-in-out infinite; }
+.float-yellow { left: 3vw; top: 1vh; width: clamp(110px, 13vw, 300px); }
+.float-pink { right: 1vw; top: 0; width: clamp(120px, 14vw, 320px); }
+.float-green { left: -2vw; top: 26vh; width: clamp(150px, 25vw, 560px); }
+.float-blue { right: -1vw; bottom: 2vh; width: clamp(140px, 19vw, 430px); }
+.float-pink img { animation-duration: 7.5s; animation-delay: -2s; }
+.float-green img { animation-duration: 8s; animation-delay: -4s; }
+.float-blue img { animation-duration: 6.5s; animation-delay: -1s; }
+@keyframes float { 50% { transform: translateY(-14px) rotate(2deg); } }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35em;
+  padding: 0.5em 1.3em;
+  border: var(--line);
+  border-radius: 999px;
+  box-shadow: 0 5px 0 var(--navy);
+  font: 800 1.15rem/1.2 var(--display);
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 var(--navy); }
+.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--navy); }
+.btn:focus-visible, .nav-links a:focus-visible { outline: 4px solid #fff; outline-offset: 3px; }
+.btn-play { background: var(--yellow); }
+.btn-ks { background: var(--ks); }
+.btn-ks b { text-transform: uppercase; letter-spacing: 0.04em; }
+.btn-big { font-size: 1.5rem; padding: 0.55em 1.6em; }
+/* The play buttons: a triangle, and an "Early access" sticker on the corner so nobody expects a
+   finished game. */
+.btn-play { position: relative; }
+.play-icon { width: 0; height: 0; border-style: solid; border-width: 0.4em 0 0.4em 0.62em; border-color: transparent transparent transparent var(--navy); }
+.ea-tag {
+  position: absolute;
+  top: -0.95em;
+  right: -0.7em;
+  padding: 0.1em 0.6em;
+  border: 3px solid var(--navy);
+  border-radius: 999px;
+  background: var(--pink);
+  color: #fff;
+  font: 800 0.62em/1.3 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transform: rotate(6deg);
+}
+
+/* Top bar */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px max(16px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left));
+}
+.nav-logo { flex: 0 0 auto; }
+.nav-logo img { width: 104px; filter: drop-shadow(0 3px 0 rgba(22, 35, 63, 0.35)); }
+.nav-links {
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  background: var(--navy);
+  border-radius: 999px;
+  box-shadow: 0 5px 0 rgba(22, 35, 63, 0.35);
+}
+.nav-links a {
+  padding: 0.2em 0.9em;
+  border-radius: 999px;
+  background: var(--cream);
+  font: 800 1rem/1.5 var(--display);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.nav-links a:nth-child(1):hover { background: var(--yellow); }
+.nav-links a:nth-child(2):hover { background: #8ad8ff; }
+.nav-links a:nth-child(3):hover { background: #c3a6ff; }
+.nav-links a:nth-child(4):hover { background: #6fe0d0; }
+.nav-links a:nth-child(5):hover { background: var(--pink); }
+.nav-links a:nth-child(6):hover { background: var(--green); }
+.nav-links a:nth-child(7):hover { background: var(--blue); }
+.nav-links a:nth-child(8):hover { background: #ffb36b; }
+.nav-links a:nth-child(9):hover { background: var(--ks); }
+.nav-links a:nth-child(10):hover { background: #ff8cc4; }
+.nav-links a:nth-child(11):hover { background: var(--yellow); }
+.nav-links a:nth-child(12):hover { background: var(--pink); }
+/* Twelve links need room: on a mid-size screen they shrink, and below that they hide. */
+@media (max-width: 1239px) {
+  .nav-links { display: none; }
+}
+@media (max-width: 1499px) {
+  .nav-links { gap: 4px; }
+  .nav-links a { padding: 0.2em 0.6em; font-size: 0.85rem; }
+}
+/* main.js measures the nav and picks one of these, whatever the screen width says. */
+.nav-roomy .nav-links { display: flex; gap: 6px; }
+.nav-roomy .nav-links a { padding: 0.2em 0.9em; font-size: 1rem; }
+.nav-compact .nav-links { display: flex; gap: 4px; }
+.nav-compact .nav-links a { padding: 0.2em 0.6em; font-size: 0.85rem; }
+.nav.nav-crowded .nav-links { display: none; }
+.nav.nav-tight .nav-ks { display: none; }
+/* The pages after the home sections (Coloring, Share) stand apart, and the section on screen lights up. */
+.nav-links a.nav-page { background: #ffd6ea; }
+.nav-links a:not(.nav-page) + .nav-page { margin-left: 6px; }
+.nav-links a[data-here], .nav-links a[aria-current] { background: var(--yellow); box-shadow: inset 0 -3px 0 rgba(22, 35, 63, 0.25); }
+/* The Menu button: only there when the links don't fit in the bar (measured in nav.js). */
+.nav-burger {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 0.35em 0.8em;
+  border: 3px solid var(--navy);
+  border-radius: 999px;
+  background: var(--cream);
+  box-shadow: 0 4px 0 var(--navy);
+  color: var(--navy);
+  font: 800 0.95rem/1.5 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+.nav-burger svg { width: 20px; height: 20px; fill: none; stroke: var(--navy); stroke-width: 2.6; stroke-linecap: round; }
+.nav-burger:hover, .nav-open .nav-burger { background: var(--yellow); }
+.nav-burger:focus-visible { outline: 4px solid #fff; outline-offset: 3px; }
+.nav-open .nav-burger svg path { d: path('M6 6l12 12M18 6L6 18'); }
+.nav.nav-crowded .nav-burger { display: flex; }
+/* Folded away, the links open as a panel of big buttons under the bar. */
+.nav.nav-crowded.nav-open .nav-links {
+  position: absolute;
+  top: calc(100% - 2px);
+  right: max(16px, env(safe-area-inset-right));
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  width: min(440px, calc(100% - 32px));
+  max-height: calc(100dvh - 110px);
+  overflow-y: auto;
+  padding: 12px;
+  border-radius: 26px;
+  box-shadow: 0 0 0 3px var(--cream), 0 8px 0 3px rgba(22, 35, 63, 0.35);
+  overscroll-behavior: contain;
+}
+.nav.nav-crowded.nav-open .nav-links a { padding: 0.55em 0.8em; font-size: 1.1rem; text-align: center; }
+.nav.nav-crowded.nav-open .nav-links a.nav-page { margin-left: 0; }
+.nav.nav-crowded.nav-open .nav-links a:not(.nav-page) + .nav-page { grid-column: 1; }
+.nav-cta { display: flex; flex: 0 0 auto; gap: 10px; }
+/* The language menu: a globe button in the nav that opens a short list. */
+.lang-menu { position: relative; align-self: center; }
+.lang-menu summary {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.35em 0.75em;
+  border: 3px solid var(--navy);
+  border-radius: 999px;
+  background: var(--cream);
+  box-shadow: 0 4px 0 var(--navy);
+  font: 800 0.9rem/1.5 var(--display);
+  list-style: none;
+  cursor: pointer;
+}
+.lang-menu summary::-webkit-details-marker { display: none; }
+.lang-menu summary svg { width: 18px; height: 18px; fill: none; stroke: var(--navy); stroke-width: 2; }
+.lang-menu[open] summary { background: var(--yellow); }
+.lang-list {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  padding: 6px;
+  border: var(--line);
+  border-radius: 18px;
+  background: var(--cream);
+  box-shadow: 0 6px 0 var(--navy);
+}
+.lang-list a { padding: 0.35em 0.8em; border-radius: 12px; font: 800 1rem/1.4 var(--display); text-decoration: none; }
+.lang-list a:hover { background: var(--yellow); }
+.lang-list a[aria-current] { background: var(--navy); color: #fff; }
+.lang-foot a[aria-current] { color: #fff; text-decoration: none; }
+@media (max-width: 480px) {
+  .lang-menu summary { padding: 0.35em 0.55em; }
+  .lang-menu .lang-code { display: none; }
+  .nav-burger { padding: 0.35em 0.55em; }
+  .nav-burger-label { display: none; }
+}
+/* Chinese, Japanese, Korean: the display fonts have none of their letters, so name good ones for each system. */
+:lang(zh) { --display: 'Baloo 2', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif; --body: 'Nunito', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif; }
+:lang(zh-Hant) { --display: 'Baloo 2', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', system-ui, sans-serif; --body: 'Nunito', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans TC', system-ui, sans-serif; }
+:lang(ja) { --display: 'Baloo 2', 'Hiragino Maru Gothic ProN', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans JP', system-ui, sans-serif; --body: 'Nunito', 'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans JP', system-ui, sans-serif; }
+:lang(ko) { --display: 'Baloo 2', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif; --body: 'Nunito', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif; }
+/* Chinese, Japanese and Korean have no capitals, and their lines may break between any two letters. */
+:lang(zh) .nav-links a, :lang(ja) .nav-links a, :lang(ko) .nav-links a { letter-spacing: 0; }
+:lang(ko) p, :lang(ko) h1, :lang(ko) h2, :lang(ko) h3 { word-break: keep-all; }
+:lang(zh), :lang(ja) { line-break: strict; }
+/* Japanese has no spaces: break headings and lines between phrases, not inside a word. */
+:lang(ja) :is(h1, h2, h3, p, summary, li) { word-break: auto-phrase; }
+.nav-ks, .nav-play { font-size: 0.95rem; padding: 0.45em 1em; }
+@media (max-width: 480px) {
+  .nav-cta { gap: 8px; }
+  .nav-ks, .nav-play { padding: 0.45em 0.8em; }
+  .nav-ks [data-ks-label] { display: none; }
+}
+
+/* Hero: the logo and the pitch sit in the open sky of the painting. */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px 40px;
+  text-align: center;
+}
+.hero-logo {
+  position: relative;
+  isolation: isolate;
+  width: min(470px, 74vw);
+  aspect-ratio: 760 / 409;
+  filter: drop-shadow(0 10px 0 rgba(22, 35, 63, 0.28));
+  animation: bob 5s ease-in-out infinite;
+  cursor: pointer;
+}
+@keyframes bob { 50% { transform: translateY(-10px) rotate(-1deg); } }
+
+/* The animated logo's parts, placed in the 760 x 409 logo art (--x, --y, --w). --d is when a
+   part's entrance starts and --i its place in the idle wave. main.js adds .hl-wait until the
+   parts have loaded, then .hl-play; without it the logo just sits assembled. */
+.hl-part {
+  position: absolute;
+  left: calc(var(--x) * 100% / 760);
+  top: calc(var(--y) * 100% / 409);
+  width: calc(var(--w) * 100% / 760);
+  z-index: var(--z, 1);
+}
+.hl-part .hl-intro, .hl-part img { display: block; width: 100%; }
+.hl-part img { -webkit-user-drag: none; user-select: none; }
+.hl-s { --x: 52; --y: 42; --w: 144; --d: .05s; --i: 0; --z: 2; }
+.hl-l { --x: 174; --y: 36; --w: 120; --d: .2s; --i: 1; --z: 3; }
+.hl-sloth { --x: 264; --y: 22; --w: 180; --d: .6s; --i: 2; --z: 6; }
+.hl-t { --x: 398; --y: 34; --w: 152; --d: .35s; --i: 3; --z: 3; }
+.hl-h { --x: 508; --y: 60; --w: 160; --d: .5s; --i: 4; --z: 2; }
+.hl-j { --x: 76; --y: 184; --w: 176; --d: 2.1s; --i: 5; --z: 7; }
+.hl-a { --x: 224; --y: 182; --w: 208; --d: 2.3s; --i: 6; --z: 8; }
+.hl-m { --x: 400; --y: 196; --w: 228; --d: 2.5s; --i: 7; --z: 7; }
+.hl-right { --x: 658; --y: 82; --w: 80; --d: 3.1s; --i: 8; }
+.hl-left { --x: 22; --y: 204; --w: 88; --d: 3.25s; --i: 9; }
+
+.hero-logo.hl-wait .hl-part, .hero-logo.hl-wait .hl-twinkle { visibility: hidden; }
+/* The trademark sign, where the flat logo art has it: beside the top of the M. It comes in after JAM. */
+.hl-tm {
+  position: absolute;
+  left: calc(652 * 100% / 760);
+  top: calc(236 * 100% / 409);
+  z-index: 9;
+  font: 900 calc(min(470px, 74vw) * 0.064) / 1 'Arial Black', 'Arial', sans-serif;
+  color: #1b2236;
+  -webkit-text-stroke: calc(min(470px, 74vw) * 0.012) #fff;
+  paint-order: stroke fill;
+}
+.hero-logo.hl-wait .hl-tm { visibility: hidden; }
+.hl-play .hl-tm { animation: hl-tm-in 0.4s ease-out both; animation-delay: 3.1s; }
+@keyframes hl-tm-in { from { opacity: 0; transform: scale(0.4); } }
+.hl-play .hl-intro { animation: var(--intro) both; animation-delay: var(--d); }
+
+/* SLTH fall from the sky and land with a squash */
+.hl-drop .hl-intro { --intro: hl-drop 0.9s cubic-bezier(.3, 0, .4, 1); transform-origin: 50% 100%; }
+@keyframes hl-drop {
+  0% { transform: translateY(-260%) scale(.9, 1.25); opacity: 0; }
+  10% { opacity: 1; }
+  50% { transform: translateY(0) scale(.95, 1.08); }
+  62% { transform: translateY(0) scale(1.22, .76); }
+  76% { transform: translateY(-14%) scale(.94, 1.07); }
+  88% { transform: translateY(0) scale(1.06, .95); }
+  100% { transform: none; }
+}
+
+/* the sloth lowers itself down a vine, swings, and the vine pulls away */
+.hl-sloth .hl-intro { --intro: hl-swing 2s cubic-bezier(.35, 0, .3, 1); transform-origin: 50% -180%; }
+@keyframes hl-swing {
+  0% { transform: translateY(-300%) rotate(0); }
+  30% { transform: translateY(0) rotate(18deg); }
+  48% { transform: rotate(-12deg); }
+  64% { transform: rotate(7deg); }
+  78% { transform: rotate(-3deg); }
+  90% { transform: rotate(1deg); }
+  100% { transform: none; }
+}
+.hl-vine {
+  position: absolute;
+  left: 46%;
+  bottom: 88%;
+  width: 8%;
+  height: 400%;
+  border: 3px solid var(--navy);
+  border-bottom: 0;
+  border-radius: 99px 99px 0 0;
+  background: linear-gradient(90deg, #5aa83e, #7cc95a 45%, #a6e07f);
+  transform: scaleY(0);
+  transform-origin: 50% 0;
+  z-index: -1;
+}
+.hl-play .hl-vine { animation: hl-vine 2.45s both; animation-delay: var(--d); }
+@keyframes hl-vine {
+  0%, 82% { transform: none; animation-timing-function: cubic-bezier(.6, 0, .9, .5); }
+  100% { transform: scaleY(0); }
+}
+
+/* JAM jelly-pop up from below */
+.hl-pop .hl-intro { --intro: hl-jelly 1s linear; transform-origin: 50% 100%; }
+@keyframes hl-jelly {
+  0% { transform: translateY(40%) scale(0); opacity: 0; }
+  15% { opacity: 1; }
+  30% { transform: translateY(-10%) scale(1.15, 1.2); }
+  45% { transform: translateY(0) scale(1.18, .82); }
+  60% { transform: scale(.9, 1.1); }
+  75% { transform: scale(1.05, .96); }
+  88% { transform: scale(.98, 1.02); }
+  100% { transform: none; }
+}
+
+/* the sparkle bursts shoot out from their narrow ends */
+.hl-burst .hl-intro { --intro: hl-burst .7s cubic-bezier(.2, 1.6, .4, 1); }
+.hl-right .hl-intro, .hl-right img { transform-origin: 10% 90%; }
+.hl-left .hl-intro, .hl-left img { transform-origin: 90% 70%; }
+@keyframes hl-burst {
+  0% { transform: scale(0) rotate(-25deg); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: none; }
+}
+
+/* once it is built: a slow wave through the letters, a nodding sloth, pulsing sparkles */
+.hl-play .hl-part img { animation: var(--idle) infinite ease-in-out; animation-delay: calc(4s + var(--i) * .14s); }
+.hl-part img { --idle: hl-bob 2.6s; }
+@keyframes hl-bob { 50% { transform: translateY(-5%) rotate(1.5deg); } }
+.hl-sloth img { --idle: hl-nod 4s; transform-origin: 50% 85%; }
+@keyframes hl-nod {
+  0%, 50%, 75%, 100% { transform: none; }
+  25% { transform: rotate(-7deg) translateY(-2%); }
+  62% { transform: rotate(5deg); }
+}
+.hl-burst img { --idle: hl-pulse 1.6s; }
+@keyframes hl-pulse { 50% { transform: scale(1.12); } }
+.hl-play .hl-sloth:hover img { animation: hl-wiggle .5s ease-in-out infinite; }
+@keyframes hl-wiggle {
+  0%, 100% { transform: rotate(0) scale(1.05); }
+  25% { transform: rotate(-8deg) scale(1.08); }
+  75% { transform: rotate(8deg) scale(1.08); }
+}
+
+.hl-twinkle {
+  position: absolute;
+  z-index: 20;
+  width: 3.2%;
+  aspect-ratio: 1;
+  background: #fff;
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  opacity: 0;
+}
+.hl-tw1 { left: 93%; top: 6%; --d: 4.2s; }
+.hl-tw2 { left: 2%; top: 38%; --d: 5.1s; }
+.hl-tw3 { left: 58%; top: 2%; --d: 5.8s; }
+.hl-tw4 { left: 84%; top: 88%; --d: 4.7s; }
+.hl-play .hl-twinkle { animation: hl-twinkle 2.4s ease-in-out infinite; animation-delay: var(--d); }
+@keyframes hl-twinkle {
+  0%, 60%, 100% { opacity: 0; transform: scale(0); }
+  75% { opacity: 1; transform: scale(1) rotate(45deg); }
+}
+
+/* The pitch: dark type lifted off the sky by a soft white glow, with sparks either side. */
+.hero-title {
+  position: relative;
+  margin-top: 10px;
+  padding: 0 0.9em;
+  color: var(--navy);
+  font: 800 clamp(2rem, 5.4vw, 4rem)/1.02 var(--display);
+  letter-spacing: -0.01em;
+  text-shadow: 0 3px 0 #fff, 0 0 3px #fff, 0 0 24px rgba(255, 255, 255, 0.95), 0 0 48px rgba(255, 255, 255, 0.7);
+}
+.spark {
+  position: absolute;
+  top: 0.05em;
+  width: 0.85em;
+  height: 0.85em;
+  fill: none;
+  stroke: var(--yellow);
+  stroke-width: 5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 2px 0 rgba(22, 35, 63, 0.35));
+}
+.spark-l { left: 0; }
+.spark-r { right: 0; }
+.hero-sub {
+  max-width: 34em;
+  margin-top: 16px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-shadow: 0 0 2px #fff, 0 0 14px rgba(255, 255, 255, 0.95), 0 0 28px rgba(255, 255, 255, 0.8);
+}
+.hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin-top: 24px; }
+.hero-cta .btn { min-width: 9.5em; padding: 0.55em 1.4em; font-size: 1.65rem; }
+.hero-cta .play-icon { margin-right: 0.15em; }
+/* Google's own badge art (its margins are part of it, per Google's badge rules). */
+.play-badge { position: relative; display: block; width: fit-content; margin: 16px auto 0; font-size: 1.5rem; }
+/* Until the app is approved: not a link, the badge a little faded, a "Coming soon" tag on it. */
+.play-badge.soon img { opacity: 0.85; }
+.play-badge.soon .ea-tag { top: -0.55em; right: -1.6em; }
+.play-badge img { display: block; width: auto; height: 72px; }
+/* The store badges in a row. Apple's and Amazon's art has no built-in margin, so they get one
+   that lines their black up with Google's (48px of black inside its 72px image). */
+.store-badges { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: 26px; margin-top: 16px; }
+.store-badges .play-badge { margin: 0; }
+.play-badge.store-badge img { height: 48px; margin: 12px 0; }
+.play-badge.store-badge.soon .ea-tag { top: -0.75em; right: -1.2em; }
+/* The console wish: a small sticker line, no Nintendo art. */
+.console-tease { display: flex; align-items: center; justify-content: center; gap: 0.5em; width: fit-content; margin: 6px auto 0; padding: 0.3em 1em; border: 3px dashed var(--navy); border-radius: 999px; background: rgba(255, 248, 234, 0.9); color: var(--navy); font: 800 1rem/1.3 var(--display); transform: rotate(-1.5deg); }
+.console-tease svg { flex: none; width: 34px; height: 22px; fill: #ff4f5e; stroke: var(--navy); stroke-width: 3; stroke-linecap: round; }
+.console-tease svg path, .console-tease svg circle { fill: #fff; }
+@media (max-width: 480px) {
+  .store-badges { column-gap: 14px; }
+  .play-badge img { height: 60px; }
+  .play-badge.store-badge img { height: 40px; margin: 10px 0; }
+  .console-tease { font-size: 0.85rem; }
+}
+.hero-cta .btn-ks { background: #13a85b; color: #fff; text-shadow: 0 2px 0 rgba(22, 35, 63, 0.45); }
+/* The play and founder buttons are painted pills (media/btn-play.webp, btn-founder.webp) with
+   their icon on the left. As a border-image the icon end and the round right end keep their shape
+   and only the middle stretches to fit the words. The lip is painted in, so no border or shadow. */
+.hero-cta .btn-play-pill, .hero-cta .btn-founder {
+  box-sizing: border-box;
+  height: 2.7em;
+  padding: 0 0.1em 0.18em 0;
+  border-style: solid;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.hero-cta .btn-play-pill {
+  border-width: 0 1.56em 0 3.2em;
+  border-image: url("media/btn-play.webp") 0 170 0 350 fill / 0 1.56em 0 3.2em stretch;
+}
+.hero-cta .btn-founder {
+  border-width: 0 1.58em 0 2.81em;
+  border-image: url("media/btn-founder.webp") 0 180 0 320 fill / 0 1.58em 0 2.81em stretch;
+}
+.hero-cta .btn-play-pill:hover, .hero-cta .btn-founder:hover { box-shadow: none; filter: brightness(1.06); }
+.hero-cta .btn-play-pill:active, .hero-cta .btn-founder:active { box-shadow: none; transform: translateY(3px); }
+/* The sticker sits on the painted right end, past the right border-image slice. */
+.btn-play-pill .ea-tag { right: -3.2em; }
+/* Quick reassurances under the buttons, the way app pages say "100% free" by the download. */
+.hero-perks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 10px;
+  margin-top: 22px;
+  padding: 12px 6px 10px;
+  border-radius: 24px;
+  background: rgba(255, 248, 234, 0.82);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+/* On phones the blur would be redone on every frame the island slides behind it, which makes
+   scrolling stutter on cheaper ones; a slightly more solid panel looks the same. */
+@media (hover: none) {
+  .hero-perks { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(255, 248, 234, 0.9); }
+}
+.hero-perks li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 clamp(10px, 2.6vw, 30px);
+  font: 800 1.05rem/1.2 var(--display);
+  text-shadow: 0 0 2px #fff, 0 0 12px rgba(255, 255, 255, 0.95);
+}
+.hero-perks li + li { border-left: 3px solid rgba(22, 35, 63, 0.35); }
+.hero-perks svg { width: 46px; height: 46px; filter: drop-shadow(0 2px 0 #fff) drop-shadow(0 0 8px rgba(255, 255, 255, 0.9)); }
+.pk-heart { fill: var(--pink); }
+.pk-nodl, .pk-smile { fill: none; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+.pk-nodl { stroke: #5b3fb8; }
+.pk-smile { stroke: var(--blue); }
+.pk-smile .pk-eye { fill: var(--blue); stroke: none; }
+.pk-gift { fill: var(--green); }
+.pk-ribbon { fill: #1e8a3e; }
+
+/* Play anywhere: the QR code on a computer, the home-screen steps on a phone, and a sloth. */
+.tip-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: min(640px, 100%);
+  margin-top: 26px;
+  padding: 16px 12px 16px 18px;
+  border: var(--line);
+  border-radius: 26px;
+  background: var(--cream);
+  box-shadow: var(--drop);
+  text-align: left;
+}
+.tip-text { flex: 1; min-width: 0; }
+.tip-badge {
+  display: inline-block;
+  padding: 0.05em 0.75em;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+  font: 800 0.85rem/1.6 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.tip-lead { margin-top: 6px; font: 800 1.25rem/1.25 var(--display); }
+.tip-sub { margin-top: 4px; color: #36508c; font-size: 0.98rem; line-height: 1.4; }
+.tip-sub b { color: var(--navy); font-weight: 900; }
+.tip-sloth { flex: none; width: 104px; height: 104px; margin: -10px 0 -10px -6px; transform: rotate(4deg); }
+/* The QR code is for a computer, to carry the site over to a phone or tablet. */
+.tip-qr, .tip-qr-line { display: none; }
+.tip-qr { flex: none; width: 112px; height: 112px; padding: 6px; border: var(--line); border-radius: 16px; background: #fff; image-rendering: pixelated; }
+@media (hover: hover) and (pointer: fine) {
+  .tip-qr { display: block; }
+  .tip-qr-line { display: inline; }
+  .tip-touch-line { display: none; }
+}
+@media (max-width: 520px) {
+  .tip-card { gap: 10px; padding: 14px 8px 14px 14px; }
+  .tip-sloth { width: 76px; height: 76px; }
+  .hero-title { padding: 0 0.75em; font-size: 1.75rem; }
+  .hero-perks { display: grid; grid-template-columns: repeat(4, 1fr); width: 100%; padding-inline: 2px; }
+  .hero-perks li { padding: 0 4px; font-size: 0.8rem; text-align: center; }
+  .hero-perks svg { width: 34px; height: 34px; }
+}
+.tip-share { display: inline-block; width: 1.2em; height: 1.2em; vertical-align: -0.2em; fill: none; stroke: var(--navy); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Panels: chunky cards floating over the island. */
+.panel {
+  position: relative;
+  width: min(1120px, calc(100% - 24px));
+  margin: 0 auto 96px;
+  padding: 64px clamp(16px, 4vw, 48px) 44px;
+  border: var(--line);
+  border-radius: 36px;
+  background: var(--cream);
+  box-shadow: var(--drop);
+  text-align: center;
+}
+.panel-sky { background: linear-gradient(180deg, #cdeaff, #eaf6ff 60%, var(--cream)); }
+.panel-snow { background: linear-gradient(180deg, #dff1ff, #f6fbff 55%, var(--cream)); }
+.panel-sea { background: linear-gradient(180deg, #c9f1ee, #eafaf8 55%, var(--cream)); }
+.panel-kart { background: linear-gradient(180deg, #ffe0d6, #fff1e8 55%, var(--cream)); }
+.panel-vale { background: linear-gradient(180deg, #d6f3c4, #effae6 55%, var(--cream)); }
+.panel-navy { background: linear-gradient(180deg, #7fd3ff, #4f9ff5); }
+
+.trailer {
+  width: min(900px, 100%);
+  margin: 4px 0 22px;
+  overflow: hidden;
+  border: var(--line);
+  border-radius: 28px;
+  background: var(--navy);
+  box-shadow: var(--drop);
+}
+.trailer video { width: 100%; aspect-ratio: 16 / 9; }
+
+.badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -55%) rotate(-1.5deg);
+  padding: 0.12em 1em 0.05em;
+  border: var(--line);
+  border-radius: 18px;
+  box-shadow: 0 6px 0 var(--navy);
+  color: #fff;
+  font: 800 clamp(1.5rem, 4vw, 2.3rem)/1.25 var(--display);
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 2px 0 var(--navy), -2px 0 var(--navy), 0 2px var(--navy), 0 -2px var(--navy), 0 4px 0 var(--navy);
+}
+.badge-yellow { background: linear-gradient(180deg, #ffd95e, #ff9f1a); }
+.badge-pink { background: linear-gradient(180deg, #ff8cc4, #ff4fa3); }
+.badge-green { background: linear-gradient(180deg, #8be28f, #2fb457); }
+.badge-blue { background: linear-gradient(180deg, #ffd95e, #ff9f1a); }
+.badge-ice { background: linear-gradient(180deg, #8ad8ff, #2f9bff); }
+.badge-purple { background: linear-gradient(180deg, #c3a6ff, #8f5cf0); }
+.badge-sea { background: linear-gradient(180deg, #6fe0d0, #16a99a); }
+.badge-orange { background: linear-gradient(180deg, #ffb36b, #ff7a2f); }
+.badge-red { background: linear-gradient(180deg, #ff8a78, #ee4136); }
+.badge-ks { background: linear-gradient(180deg, #4ee6a3, #05b86b); }
+
+.strap {
+  display: inline-block;
+  padding: 0.1em 1.1em;
+  border-radius: 999px;
+  background: var(--navy);
+  color: #fff;
+  font: 800 clamp(1.2rem, 3vw, 1.7rem)/1.4 var(--display);
+}
+.strap em { color: var(--yellow); font-style: normal; }
+.lead { max-width: 46em; margin: 20px auto 0; }
+
+h3 { font: 800 1.45rem/1.2 var(--display); }
+
+/* Games */
+.games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 28px 24px;
+  margin-top: 32px;
+  text-align: left;
+}
+.game .clip {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: var(--line);
+  border-radius: 20px;
+  background: #bfe6a8;
+  box-shadow: 0 5px 0 var(--navy);
+  object-fit: cover;
+}
+/* Sloth Kart's five tracks: the first one wide, so three columns make two full rows. */
+@media (min-width: 900px) {
+  .games-kart { grid-template-columns: repeat(3, 1fr); }
+  .games-kart > :first-child { grid-column: span 2; }
+}
+.game h3 { margin-top: 16px; }
+.game p { margin-top: 4px; font-size: 1rem; }
+.more {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 0.2em 1.2em;
+  border: var(--line);
+  border-radius: 999px;
+  background: var(--yellow);
+  font: 800 1.2rem/1.5 var(--display);
+}
+
+/* New places: a picture with its name and a line under it. */
+.places {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 28px 24px;
+  margin-top: 28px;
+  text-align: left;
+}
+.place img { width: 100%; border: var(--line); border-radius: 20px; box-shadow: 0 5px 0 var(--navy); }
+.place h3 { margin-top: 14px; }
+.place p { margin-top: 4px; font-size: 1rem; }
+.places + .tiles { margin-top: 32px; }
+@media (min-width: 700px) {
+  .places { grid-template-columns: repeat(2, 1fr); }
+  .places:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, 1fr); }
+}
+/* Tiles and promises with a short clip from the game on top of each. */
+.tiles.tiles-clips { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+.tiles.tiles-clips li, .promises.promises-clips li { padding: 0 0 16px; overflow: hidden; }
+.tiles-clips .clip, .promises-clips .clip { display: block; width: 100%; aspect-ratio: 16 / 9; margin-bottom: 12px; border-bottom: var(--line); object-fit: cover; background: #bfe6a8; }
+.tiles-clips h3, .tiles-clips p { padding: 0 16px; }
+.invite-cta { margin-top: 28px; text-align: center; }
+.promises-clips h3, .promises-clips p { padding: 0 20px; }
+
+/* Island friends: the key art, then three photos from the game. */
+.panel-friends { background: linear-gradient(180deg, #ffe4f1, #fff3e0 55%, var(--cream)); }
+.art { margin: 28px auto 0; max-width: 980px; }
+.art img { width: 100%; border: var(--line); border-radius: 26px; box-shadow: var(--drop); }
+.art figcaption { margin-top: 10px; font-size: 0.9rem; color: #5a6a8c; }
+.split-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.place .clip { width: 100%; aspect-ratio: 16 / 9; border: var(--line); border-radius: 20px; box-shadow: 0 5px 0 var(--navy); object-fit: cover; background: #bfe6a8; }
+.games + .more, .more + .sub-head { margin-top: 32px; }
+.sub-head + .games { margin-top: 18px; }
+
+/* Sloths */
+.lineup {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+}
+.lineup img { filter: drop-shadow(0 12px 8px rgba(22, 35, 63, 0.22)); transition: transform 0.2s ease; }
+.lineup img:hover { transform: translateY(-8px) rotate(-3deg); }
+.lineup img:nth-child(even):hover { transform: translateY(-8px) rotate(3deg); }
+
+/* Cozy */
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 28px; }
+.split img { width: 100%; border: var(--line); border-radius: 20px; box-shadow: 0 5px 0 var(--navy); }
+.split .clip { width: 100%; aspect-ratio: 16 / 9; border: var(--line); border-radius: 20px; box-shadow: 0 5px 0 var(--navy); object-fit: cover; background: #bfe6a8; }
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+  text-align: left;
+}
+.tiles li {
+  padding: 16px 18px;
+  border: var(--line);
+  border-radius: 20px;
+  background: #fff;
+}
+.tiles li:nth-child(4n + 1) { background: #d9f0ff; }
+.tiles li:nth-child(4n + 2) { background: #dff6d8; }
+.tiles li:nth-child(4n + 3) { background: #ffe9c2; }
+.tiles li:nth-child(4n + 4) { background: #ffdcec; }
+.tiles p, .promises p { margin-top: 4px; font-size: 1rem; }
+.sub-head {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 0.1em 1.1em;
+  border-radius: 999px;
+  background: var(--navy);
+  color: #fff;
+}
+.sub-head + .tiles, .sub-head + .lead { margin-top: 16px; }
+.more + .tiles { margin-top: 24px; }
+
+/* Parents */
+.promises {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+  text-align: left;
+}
+.promises li {
+  padding: 18px 20px;
+  border: var(--line);
+  border-radius: 22px;
+  background: var(--cream);
+  box-shadow: 0 6px 0 var(--navy);
+}
+.promises p { color: #36508c; }
+
+/* Maker */
+.panel-maker { background: linear-gradient(180deg, #ffe6cc, #fff3e0 55%, var(--cream)); }
+.maker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 28px;
+  text-align: left;
+}
+.maker-photo {
+  flex: 0 1 300px;
+  width: 300px;
+  border: var(--line);
+  border-radius: 28px;
+  box-shadow: var(--drop);
+  transform: rotate(-2deg);
+}
+.maker-text { flex: 1 1 320px; max-width: 34em; }
+.maker-text p + p { margin-top: 14px; }
+.maker-links { margin-top: 28px; }
+.maker-links a, .tiles a { color: #1f6fd1; }
+.maker-note { max-width: 46em; margin: 14px auto 0; font-size: 0.9rem; opacity: 0.75; }
+
+/* Founders */
+.rewards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+  text-align: left;
+}
+.reward {
+  position: relative;
+  flex: 1 1 290px;
+  max-width: 330px;
+  padding-bottom: 18px;
+  overflow: hidden;
+  border: var(--line);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 6px 0 var(--navy);
+}
+.reward img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-bottom: var(--line); }
+.reward h3, .reward p { padding: 0 18px; }
+.reward h3 { margin-top: 14px; }
+.reward p { margin-top: 4px; font-size: 1rem; }
+.price {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 0 0.7em;
+  border: var(--line);
+  border-radius: 999px;
+  background: var(--yellow);
+  font: 800 1.4rem/1.5 var(--display);
+}
+.btn[hidden], .buy-note[hidden] { display: none; }
+.btn-buy { display: flex; margin: 14px 18px 0; }
+.buy-note { max-width: 46em; margin: 28px auto 0; text-align: center; font-size: 1rem; }
+.price-note { max-width: 46em; margin: 22px auto 0; text-align: center; font-size: 0.95rem; opacity: 0.8; }
+.price-note[hidden], .legal-note[hidden] { display: none; }
+.closing { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 28px; }
+/* Buy buttons line up along the bottom of every card. */
+.reward { display: flex; flex-direction: column; }
+.reward .btn-buy { margin-top: auto; }
+.reward p { margin-bottom: 14px; }
+/* The Founder House: a bonus of the Founder tier and up, shown under the packs. */
+.founder-house {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  max-width: 1080px;
+  margin: 36px auto 0;
+  padding: 20px;
+  border: var(--line);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 6px 0 var(--navy);
+  text-align: left;
+}
+.fh-pics { flex: 1 1 420px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fh-pics img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border: var(--line); border-radius: 16px; }
+.fh-text { flex: 1 1 280px; }
+.fh-text p { margin-top: 6px; font-size: 1rem; }
+.fh-tag { display: inline-block; padding: 0 0.7em; border: var(--line); border-radius: 999px; background: var(--yellow); font: 800 1rem/1.6 var(--display); }
+.fh-text h3 { margin-top: 10px; }
+@media (max-width: 520px) {
+  .fh-pics { grid-template-columns: 1fr; }
+}
+/* The pack we point people to, singled out the way pricing pages mark one plan. */
+.reward-pick { border-color: var(--ks); box-shadow: 0 6px 0 var(--navy), 0 0 0 4px var(--navy); }
+.pick-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  padding: 0 0.7em;
+  border: var(--line);
+  border-radius: 999px;
+  background: var(--pink);
+  color: #fff;
+  font: 800 1rem/1.6 var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* FAQ */
+.faq { max-width: 46em; margin: 28px auto 0; text-align: left; }
+.faq details {
+  border: var(--line);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 5px 0 var(--navy);
+}
+.faq details + details { margin-top: 14px; }
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  cursor: pointer;
+  list-style: none;
+  font: 800 1.2rem/1.3 var(--display);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; flex: none; font-size: 1.6rem; line-height: 1; }
+.faq details[open] summary::after { content: '\2212'; }
+.faq summary:focus-visible { outline: 4px solid var(--blue); outline-offset: 2px; border-radius: 16px; }
+.faq details p { padding: 0 20px 16px; color: #36508c; }
+.faq a { color: #1f6fd1; }
+
+/* The last word: one more chance to play or back the game. */
+.final-cta { padding-top: 44px; }
+.final-cta .strap { margin-top: 0; }
+.final-sub { margin-top: 12px; font-size: 1.15rem; }
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 36px 16px 40px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.95rem;
+  text-align: center;
+}
+.footer img { width: 170px; }
+.footer a { color: var(--yellow); }
+
+/* The cookie question for visitors from Europe, pinned to the bottom of the screen. */
+.consent {
+  position: fixed;
+  left: 50%;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px 20px;
+  width: min(760px, calc(100% - 32px));
+  padding: 16px 20px;
+  transform: translateX(-50%);
+  border: var(--line);
+  border-radius: 24px;
+  background: var(--cream);
+  box-shadow: var(--drop);
+  font-size: 0.95rem;
+}
+.consent p { flex: 1 1 320px; }
+.consent a { color: #1f6fd1; }
+.consent-buttons { display: flex; flex: 0 0 auto; gap: 10px; }
+.consent .btn { font: 800 1rem/1.4 var(--display); padding: 0.4em 1.1em; cursor: pointer; }
+.consent-no { background: #fff; }
+
+/* The privacy page: one long panel of reading, left-aligned, over a plain sky. */
+.legal-page { background: linear-gradient(180deg, #8f7df0, #c08df2 40%, #f6a6d6); }
+.legal-page main { padding-top: 48px; }
+.legal { max-width: 860px; text-align: left; }
+.legal-date { margin-bottom: 20px; text-align: center; font-size: 0.95rem; opacity: 0.75; }
+.legal-note { margin: -8px auto 20px; max-width: 40em; padding: 10px 16px; border-radius: 14px; background: #fff1c2; text-align: center; font-size: 0.95rem; }
+.legal h2 { margin: 36px 0 10px; font: 800 1.7rem/1.2 var(--display); }
+.legal h3 { margin: 22px 0 6px; font-size: 1.25rem; }
+.legal p + p, .legal ul + p { margin-top: 12px; }
+.legal ul { margin: 10px 0 0; padding-left: 1.3em; list-style: disc; }
+.schools-pdfs { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 4px 0 8px; }
+.schools-pdfs .btn { font-size: 1.05rem; padding: 0.5em 1.1em; }
+.legal li + li { margin-top: 6px; }
+.legal a { color: #1f6fd1; }
+
+/* The page-not-found page (404.html): one short panel with the logo's sloth swinging on top. */
+.lost-page main { padding-top: 72px; }
+.lost { max-width: 640px; }
+.lost-sloth img { display: block; width: min(200px, 50vw); height: auto; margin: 0 auto 12px; transform-origin: 50% 0; animation: lost-swing 3.2s ease-in-out infinite alternate; }
+@keyframes lost-swing { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
+@media (prefers-reduced-motion: reduce) { .lost-sloth img { animation: none; } }
+.lost-lead { margin-bottom: 8px; font: 800 clamp(1.4rem, 4.5vw, 1.9rem)/1.2 var(--display); }
+.lost-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 26px; }
+.btn-home { background: #fff; }
+
+/* Guides for parents (no-reading-games, safe-games-for-kids, family-game-night): the legal layout
+   with a screenshot and a play button. */
+.guide .badge { position: static; display: block; width: fit-content; max-width: 100%; margin: -12px auto 14px; transform: rotate(-1.5deg); white-space: normal; text-align: center; font-size: clamp(1.3rem, 4vw, 2.1rem); }
+.guide figure { margin: 8px 0 4px; }
+.guide figure img { display: block; width: 100%; height: auto; border-radius: 18px; }
+.guide-cta { margin-top: 22px; text-align: center; }
+
+/* Coloring pages: a grid of printable sheets. Printing shows only .print-sheet (coloring.js). */
+.parents-extra { margin-top: 30px; text-align: center; }
+.coloring-intro { max-width: 640px; margin: 14px auto 0; text-align: center; }
+.coloring-all { margin: 22px 0 34px; text-align: center; }
+.coloring-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 22px; }
+.coloring-grid button {
+  display: block;
+  width: 100%;
+  padding: 10px 10px 12px;
+  border: var(--line);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 6px 0 var(--navy);
+  color: var(--navy);
+  font: 800 1.1rem/1.2 var(--display);
+  cursor: pointer;
+  transition: transform .12s, box-shadow .12s;
+}
+.coloring-grid button:hover { transform: translateY(-3px) rotate(-1deg); box-shadow: 0 9px 0 var(--navy); }
+.coloring-grid button:disabled { cursor: progress; opacity: .7; }
+.coloring-grid img { display: block; width: 100%; height: auto; border-radius: 10px; }
+.coloring-grid span { display: block; margin-top: 10px; }
+.coloring-grid span::after { content: ' \2399'; font-family: system-ui, sans-serif; }
+.print-sheet { display: none; }
+@page { margin: 0.25in; }
+@media print {
+  .coloring-page > :not(.print-sheet) { display: none !important; }
+  .coloring-page { background: #fff; }
+  .coloring-page .print-sheet { display: flex; align-items: center; justify-content: center; height: 10.4in; }
+  .print-sheet img { max-width: 100%; max-height: 100%; }
+}
+
+@media (max-width: 760px) {
+  body { font-size: 17px; }
+  html { scroll-padding-top: 76px; }
+  .nav-links { display: none; }
+  .nav-logo img { width: 84px; }
+  .panel { margin-bottom: 76px; padding-top: 52px; border-radius: 28px; }
+  .lineup { grid-template-columns: repeat(2, 1fr); }
+  .hero-cta .btn, .btn-big { font-size: 1.25rem; }
+  .float-yellow { left: -8vw; top: 7vh; }
+  .float-pink { right: -8vw; top: 5vh; }
+  .float-green { left: -14vw; top: auto; bottom: 3vh; width: 44vw; }
+  .float-blue { right: -10vw; width: 38vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-logo, .floater img { animation: none; }
+  .hero-logo *, .hero-logo :hover img { animation: none !important; }
+  .hl-vine, .hl-twinkle { display: none; }
+  .btn, .lineup img { transition: none; }
+}

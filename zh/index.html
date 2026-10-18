@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sloth Jam&trade;：全家一起玩的温馨派对游戏</title>
+  <meta name="description" content="温馨树懒小岛上的 64 款一分钟派对游戏。一根摇杆，一个按键，不用识字。安全聊天，没有开箱抽奖，不能花钱取胜。" />
+  <link rel="canonical" href="https://slothjam.com/zh/" />
+  <meta name="theme-color" content="#8f7df0" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sloth Jam&trade;：全家一起玩的温馨派对游戏" />
+  <meta property="og:description" content="温馨树懒小岛上的 64 款一分钟派对游戏。在浏览器里抢先体验。" />
+  <meta property="og:url" content="https://slothjam.com/zh/" />
+  <meta property="og:image" content="https://slothjam.com/media/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://slothjam.com/media/og.jpg" />
+  <link rel="icon" href="../media/icon.png" />
+  <link rel="apple-touch-icon" href="../media/icon.png" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=91d0a12" />
+  <link rel="stylesheet" href="../styles.css?v=91d0a12" />
+  <!-- The hero buttons are painted pictures named only in styles.css: fetched now, with the page. -->
+  <link rel="preload" href="../media/btn-play.webp" as="image" />
+  <link rel="preload" href="../media/btn-founder.webp" as="image" />
+  <link rel="alternate" hreflang="en" href="https://slothjam.com/" />
+  <link rel="alternate" hreflang="es" href="https://slothjam.com/es/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://slothjam.com/pt/" />
+  <link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/" />
+  <link rel="alternate" hreflang="de" href="https://slothjam.com/de/" />
+  <link rel="alternate" hreflang="it" href="https://slothjam.com/it/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://slothjam.com/zh/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://slothjam.com/zh-hant/" />
+  <link rel="alternate" hreflang="ja" href="https://slothjam.com/ja/" />
+  <link rel="alternate" hreflang="ko" href="https://slothjam.com/ko/" />
+  <link rel="alternate" hreflang="x-default" href="https://slothjam.com/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Sloth Jam",
+    "url": "https://slothjam.com/",
+    "image": "https://slothjam.com/media/og.jpg",
+    "description": "A cozy party game for the whole family: 64 one-minute party games on a sloth island. One stick, one button, no reading needed.",
+    "genre": ["Party", "Family", "Casual"],
+    "gamePlatform": ["Web browser", "Android"],
+    "applicationCategory": "Game",
+    "operatingSystem": "Any",
+    "playMode": "SinglePlayer",
+    "audience": { "@type": "PeopleAudience", "suggestedMinAge": 6 },
+    "isFamilyFriendly": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
+    "author": { "@type": "Person", "name": "Remi Couture" },
+    "publisher": { "@type": "Organization", "name": "Strategic Sloth LLC", "url": "https://slothjam.com/" }
+  }
+  </script>
+  <script src="../lang.js?v=91d0a12"></script>
+  <script src="../ga.js?v=91d0a12" defer></script>
+</head>
+<body>
+  <!-- The island, in layers. data-depth is how near the camera a layer is (0 is the far sky):
+       it sets how far the layer leans from the pointer and how much it grows on scroll.
+       data-rise is how far it climbs as the page scrolls; the far layers sink instead, so
+       the near ones pull ahead without sliding off their own bottom edge. -->
+  <div class="backdrop" aria-hidden="true">
+    <div class="scene scene-wait">
+      <picture><source srcset="../media/layer-sky.avif" type="image/avif" /><img class="layer layer-sky" data-depth="0.05" data-rise="-0.25" src="../media/layer-sky.webp" fetchpriority="high" alt="" /></picture>
+      <picture><source srcset="../media/layer-lake.avif" type="image/avif" /><img class="layer layer-lake" data-depth="0.16" data-rise="-0.2" src="../media/layer-lake.webp" alt="" /></picture>
+      <div class="layer layer-ground" data-depth="0.28" data-rise="-0.05"></div>
+      <picture><source srcset="../media/layer-lighthouse.avif" type="image/avif" /><img class="layer layer-lighthouse" data-depth="0.36" data-rise="0" src="../media/layer-lighthouse.webp" alt="" /></picture>
+      <picture><source srcset="../media/layer-village.avif" type="image/avif" /><img class="layer layer-village" data-depth="0.46" data-rise="0.05" src="../media/layer-village.webp" alt="" /></picture>
+      <picture><source srcset="../media/layer-plaza.avif" type="image/avif" /><img class="layer layer-plaza" data-depth="0.66" data-rise="0.2" src="../media/layer-plaza.webp" fetchpriority="high" alt="" /></picture>
+      <div class="layer layer-grass" data-depth="1" data-rise="0.42"><picture><source srcset="../media/layer-grass.avif" type="image/avif" /><img src="../media/layer-grass.webp" alt="" /></picture></div>
+    </div>
+    <div class="floater float-yellow" data-depth="1.15" data-drift="-0.7" data-rise="0.3"><picture><source srcset="../media/float-yellow.avif" type="image/avif" /><img src="../media/float-yellow.webp" alt="" /></picture></div>
+    <div class="floater float-pink" data-depth="1.3" data-drift="0.8" data-rise="0.35"><picture><source srcset="../media/float-pink.avif" type="image/avif" /><img src="../media/float-pink.webp" alt="" /></picture></div>
+    <div class="floater float-green" data-depth="1.6" data-drift="-1" data-rise="0.6"><picture><source srcset="../media/float-green.avif" type="image/avif" /><img src="../media/float-green.webp" alt="" /></picture></div>
+    <div class="floater float-blue" data-depth="1.8" data-drift="1" data-rise="0.75"><picture><source srcset="../media/float-blue.avif" type="image/avif" /><img src="../media/float-blue.webp" alt="" /></picture></div>
+  </div>
+
+  <header class="nav">
+    <a class="nav-logo" href="#top" aria-label="Sloth Jam，回到顶部"><picture><source srcset="../media/logo-nav.avif" type="image/avif" /><img src="../media/logo-nav.webp" alt="" width="320" height="172" /></picture></a>
+    <nav class="nav-links" id="site-menu" aria-label="菜单">
+      <a href="#friends">朋友</a>
+      <a href="#games">游戏</a>
+      <a href="#kart">卡丁车</a>
+      <a href="#founders">创始人</a>
+      <a href="#peak">雪峰</a>
+      <a href="#story">故事</a>
+      <a href="#explore">探索</a>
+      <a href="#sloths">树懒</a>
+      <a href="#cozy">悠闲</a>
+      <a href="#parents">家长</a>
+      <a href="#maker">制作者</a>
+      <a class="nav-page" href="coloring.html">涂色</a>
+      <a class="nav-page" href="../share.html">分享</a>
+      <a class="nav-page" href="../invite.html">Invite</a>
+    </nav>
+    <div class="nav-cta">
+      <details class="lang-menu">
+        <summary aria-label="语言"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z" /></svg><span class="lang-code">简中</span></summary>
+        <div class="lang-list">
+          <a href="../" data-lang="en" hreflang="en" lang="en">English</a>
+          <a href="../es/" data-lang="es" hreflang="es" lang="es">Español</a>
+          <a href="../pt/" data-lang="pt" hreflang="pt-BR" lang="pt-BR">Português</a>
+          <a href="../fr/" data-lang="fr" hreflang="fr" lang="fr">Français</a>
+          <a href="../de/" data-lang="de" hreflang="de" lang="de">Deutsch</a>
+          <a href="../it/" data-lang="it" hreflang="it" lang="it">Italiano</a>
+          <a href="./" data-lang="zh" hreflang="zh-Hans" lang="zh-Hans" aria-current="page">简体中文</a>
+          <a href="../zh-hant/" data-lang="zh-hant" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="../ja/" data-lang="ja" hreflang="ja" lang="ja">日本語</a>
+          <a href="../ko/" data-lang="ko" hreflang="ko" lang="ko">한국어</a>
+        </div>
+      </details>
+      <a class="btn btn-play nav-play" href="../play/" aria-label="立即开玩，抢先体验"><span class="play-icon" aria-hidden="true"></span>开玩</a>
+      <a class="btn btn-ks nav-ks" href="#founders">成为<b>创始人</b></a>
+      <button class="nav-burger" type="button" aria-label="菜单" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg><span class="nav-burger-label">菜单</span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <!-- The logo builds itself from its letters: SLTH drop in, the sloth swings down a vine,
+           JAM pops up, then the sparkles. Each part is placed in styles.css. -->
+      <div class="hero-logo hl-wait" role="img" aria-label="Sloth Jam&trade;">
+        <div class="hl-part hl-drop hl-s"><div class="hl-intro"><picture><source srcset="../media/logo/s.avif" type="image/avif" /><img src="../media/logo/s.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-drop hl-l"><div class="hl-intro"><picture><source srcset="../media/logo/l.avif" type="image/avif" /><img src="../media/logo/l.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-drop hl-t"><div class="hl-intro"><picture><source srcset="../media/logo/t.avif" type="image/avif" /><img src="../media/logo/t.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-drop hl-h"><div class="hl-intro"><picture><source srcset="../media/logo/h.avif" type="image/avif" /><img src="../media/logo/h.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-sloth"><div class="hl-intro"><div class="hl-vine"></div><picture><source srcset="../media/logo/sloth.avif" type="image/avif" /><img src="../media/logo/sloth.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-pop hl-j"><div class="hl-intro"><picture><source srcset="../media/logo/j.avif" type="image/avif" /><img src="../media/logo/j.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-pop hl-a"><div class="hl-intro"><picture><source srcset="../media/logo/a.avif" type="image/avif" /><img src="../media/logo/a.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-pop hl-m"><div class="hl-intro"><picture><source srcset="../media/logo/m.avif" type="image/avif" /><img src="../media/logo/m.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-burst hl-right"><div class="hl-intro"><picture><source srcset="../media/logo/burst.avif" type="image/avif" /><img src="../media/logo/burst.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-burst hl-left"><div class="hl-intro"><picture><source srcset="../media/logo/burst-star.avif" type="image/avif" /><img src="../media/logo/burst-star.webp" alt="" /></picture></div></div>
+        <i class="hl-twinkle hl-tw1"></i>
+        <i class="hl-twinkle hl-tw2"></i>
+        <i class="hl-twinkle hl-tw3"></i>
+        <i class="hl-twinkle hl-tw4"></i>
+        <span class="hl-tm" aria-hidden="true">&trade;</span>
+      </div>
+      <div class="trailer">
+        <video controls playsinline preload="none" data-poster="../media/trailer-2026-10-14-poster.jpg">
+          <source src="../media/trailer-2026-10-14.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h1 class="hero-title">
+        <svg class="spark spark-l" viewBox="0 0 40 40" aria-hidden="true"><path d="M26 6 32 16M10 16 22 22M8 32 20 30" /></svg>温馨的派对游戏，<br />全家都能一起玩。<svg class="spark spark-r" viewBox="0 0 40 40" aria-hidden="true"><path d="M14 6 8 16M30 16 18 22M32 32 20 30" /></svg>
+      </h1>
+      <p class="hero-sub">64 款一分钟派对小游戏。一根摇杆，一个按键，不用识字。</p>
+      <div class="hero-cta">
+        <a class="btn btn-play btn-play-pill" href="../play/">立即开玩<span class="ea-tag">抢先体验</span></a>
+        <a class="btn btn-ks btn-founder" href="#founders">成为<b>创始人</b></a>
+      </div>
+      <!-- The Google Play app (apps/android), in review. Once Google approves it, this becomes
+           <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.slothjam.app">
+           with the image only (no "soon" class, no tag). -->
+      <!-- The App Store (apps/ios) and Amazon Appstore (amazon flavor of apps/android) badges work
+           the same way: swap the div for a link to the listing once it is live. The Nintendo line
+           is only a wish, so it uses no Nintendo logo or art. -->
+      <div class="store-badges">
+        <div class="play-badge soon" role="img" aria-label="即将登陆 Google Play"><img src="../media/google-play-badge.png" alt="" width="646" height="250" /><span class="ea-tag">即将推出</span></div>
+        <div class="play-badge store-badge soon" role="img" aria-label="即将登陆 App Store"><img src="../media/app-store-badge.svg" alt="" width="120" height="40" /><span class="ea-tag">即将推出</span></div>
+        <div class="play-badge store-badge soon" role="img" aria-label="即将登陆亚马逊应用商店"><img src="../media/amazon-appstore-badge.png" alt="" width="572" height="168" /><span class="ea-tag">即将推出</span></div>
+      </div>
+      <p class="console-tease"><svg viewBox="0 0 48 30" aria-hidden="true"><rect x="2" y="2" width="44" height="26" rx="9" /><path d="M11 11v8M7 15h8" /><circle cx="35" cy="12" r="2.4" /><circle cx="39" cy="18" r="2.4" /></svg>嘘&hellip;我们正梦想着下一步登陆 Nintendo Switch&trade;。</p>
+      <ul class="hero-perks">
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path class="pk-heart" d="M24 41 8.6 26.4C3.8 21.8 4.2 13.8 9.8 10.4c4.4-2.6 9.8-1.2 14.2 4 4.4-5.2 9.8-6.6 14.2-4 5.6 3.4 6 11.4 1.2 16z" /></svg>免费游玩</li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><g class="pk-nodl"><circle cx="24" cy="24" r="19" /><path d="M24 13v15M18 23l6 6 6-6M15 33h18M11 11l26 26" /></g></svg>无需下载</li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><g class="pk-smile"><circle cx="24" cy="24" r="19" /><path d="M16 27c2 4.4 5 6.4 8 6.4s6-2 8-6.4" /><circle class="pk-eye" cx="18" cy="19" r="2.6" /><circle class="pk-eye" cx="30" cy="19" r="2.6" /></g></svg>适合 6 岁以上</li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><g class="pk-gift"><rect x="7" y="17" width="34" height="9" rx="2" /><rect x="10" y="26" width="28" height="16" rx="2" /><path class="pk-ribbon" d="M22 17h4v25h-4zM24 17c-3-7-11-8-11-3 0 3 6 3 11 3zM24 17c3-7 11-8 11-3 0 3-6 3-11 3z" /></g></svg>没有开箱抽奖</li>
+      </ul>
+      <!-- Shown to everyone; main.js swaps in the steps for an iPhone/iPad or an Android phone. -->
+      <div class="tip-card" data-home-tip>
+        <img class="tip-qr" src="../media/qr-slothjam.png" alt="slothjam.com 的二维码" width="1160" height="1160" loading="lazy" />
+        <div class="tip-text">
+          <span class="tip-badge">随处可玩</span>
+          <div data-tip="any">
+            <p class="tip-lead"><span class="tip-qr-line">扫码在手机或平板上玩。</span><span class="tip-touch-line">像应用一样全屏游玩。</span></p>
+            <p class="tip-sub">打开游戏，然后选择<b>添加到主屏幕</b>，即可全屏游玩。</p>
+          </div>
+          <div data-tip="ios" hidden>
+            <p class="tip-lead">像应用一样全屏游玩。</p>
+            <p class="tip-sub">点按<b>立即开玩</b>，然后点分享 <svg class="tip-share" viewBox="0 0 24 24" aria-label="分享"><path d="M8.5 9H6.5v12h11V9h-2M12 15V2.5M8.5 6 12 2.5 15.5 6" /></svg>，再选<b>添加到主屏幕</b>。</p>
+          </div>
+          <div data-tip="android" hidden>
+            <p class="tip-lead">像应用一样全屏游玩。</p>
+            <p class="tip-sub">点按<b>立即开玩</b>，然后点 <b>&#8942;</b>，再选<b>添加到主屏幕</b>或<b>安装应用</b>。</p>
+          </div>
+        </div>
+        <img class="tip-sloth" src="../media/sloth-yay.webp" alt="" width="400" height="400" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="panel panel-friends" id="friends">
+      <h2 class="badge badge-pink">岛上的朋友</h2>
+      <p class="strap">同一座小岛，<em>更多朋友</em>。</p>
+      <figure class="art">
+        <picture><source data-srcset="../media/art-island-friends.avif" type="image/avif" /><img data-src="../media/art-island-friends.webp" alt="插画：戴墨镜的树懒和围在它身边的岛民：巨嘴鸟、青蛙、浣熊、大猩猩、雪人、蝙蝠、水獭、猫和小熊猫" width="1400" height="933" loading="lazy" /></picture>
+        <figcaption>这是宣传插画，不是游戏截图。游戏里的岛民是游戏自己的玩具风格，就像下面的照片那样。</figcaption>
+      </figure>
+      <p class="lead">小镇边上还住着另外十种动物，从水獭到雪人都有。走过去，它们会挥手，回应你的表情，和你聊天；到了晚上，它们会蜷起来睡觉。</p>
+      <div class="split split-3">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-islander-redpanda.jpg" aria-label="树懒向小熊猫岛民挥手"><source src="../media/loop-scene-islander-redpanda.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-islander-raccoon.jpg" aria-label="树懒在松树下遇见浣熊岛民"><source src="../media/loop-scene-islander-raccoon.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-islander-bat.jpg" aria-label="树懒向蝙蝠岛民挥手问好"><source src="../media/loop-scene-islander-bat.mp4" type="video/mp4" /></video>
+      </div>
+    </section>
+
+    <section class="panel" id="games">
+      <h2 class="badge badge-yellow">派对小游戏</h2>
+      <p class="strap">每局游戏只有<em>一分钟</em>。</p>
+      <p class="lead">一场比赛有三轮，最后一轮分数翻倍。最后一名来挑选决赛玩哪个游戏，还有 49 种派对花样，比如“水果风暴”和“双倍金币”，会让某个游戏在一轮里变个玩法。电脑玩家像一个友善的哥哥姐姐，我们在测试中把它调到新玩家大约每四轮能赢一轮。</p>
+
+      <div class="games">
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="接水果游戏画面"><source src="../media/game-fruitFall.mp4" type="video/mp4" /></video>
+          <h3>接水果</h3>
+          <p>拿起篮子，接住掉下来的好水果。那些坑坑洼洼、皱着眉头的是烂水果，别接。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="树懒捉人游戏画面"><source src="../media/game-slothTag.mp4" type="video/mp4" /></video>
+          <h3>树懒捉人</h3>
+          <p>谁是“鬼”，谁就戴王冠。冲刺、躲闪，在不断缩小的圆圈里坚持住。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="打地鼠游戏画面"><source src="../media/game-popTheMoles.mp4" type="video/mp4" /></video>
+          <h3>打地鼠</h3>
+          <p>九个洞，一把泡沫锤。打出连击，留意金色地鼠，小心刺猬。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="灯笼游行游戏画面"><source src="../media/game-lanternParade.mp4" type="video/mp4" /></video>
+          <h3>灯笼游行</h3>
+          <p>这个游戏没有人会输。在时间用完前一起点亮所有灯笼，大家共享星星。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="吊床跳跳游戏画面"><source src="../media/game-hammockHop.mp4" type="video/mp4" /></video>
+          <h3>吊床跳跳</h3>
+          <p>一圈摇摇晃晃的吊床，下面可是很深很深。最后站着的树懒获胜。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="水晶矿车游戏画面"><source src="../media/game-crystalCart.mp4" type="video/mp4" /></video>
+          <h3>水晶矿车</h3>
+          <p>坐着矿车穿过水晶洞。转弯时压身子，跳过缺口，转圈拿花式分。</p>
+        </article>
+      </div>
+      <p class="more">还有藏零食、赶兔子、打水漂、敲帽子、躲椰子、藤蔓拔河、冰塘曲棍球等另外 51 款。</p>
+      <h3 class="sub-head">游戏架上的新游戏</h3>
+      <div class="games">
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="冰塘曲棍球游戏画面"><source src="../media/loop-pond-hockey.mp4" type="video/mp4" /></video>
+          <h3>冰塘曲棍球</h3>
+          <p>两支队伍在雪顶峰的冰塘上比赛，每个球门都有守门员。点一下射门，按住来一记大力抽射。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-coconut-dodge.jpg" aria-label="躲椰子游戏画面"><source src="../media/loop-coconut-dodge.mp4" type="video/mp4" /></video>
+          <h3>躲椰子</h3>
+          <p>椰子沿着沙道滚下来。大的往旁边躲，小的跳过去。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-hat-whack.jpg" aria-label="敲帽子游戏画面"><source src="../media/loop-hat-whack.mp4" type="video/mp4" /></video>
+          <h3>敲帽子</h3>
+          <p>去敲别的树懒的帽子，保住自己头上的那顶。帽子掉了，很快就会回来。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-star-skate.jpg" aria-label="星星滑冰游戏画面"><source src="../media/loop-star-skate.mp4" type="video/mp4" /></video>
+          <h3>星星滑冰</h3>
+          <p>按顺序滑过冰上的星星，画出各种形状。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="雪球啪啪游戏画面"><source src="../media/loop-snowball-splat.mp4" type="video/mp4" /></video>
+          <h3>雪球啪啪</h3>
+          <p>在雪地圆场中间，朝雪人扔雪球。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="翻牌配对游戏画面"><source src="../media/loop-pair-up.mp4" type="video/mp4" /></video>
+          <h3>翻牌配对</h3>
+          <p>一个安静的点按小谜题：十二张背面朝上的牌，找出六对。</p>
+        </article>
+      </div>
+      <ul class="tiles tiles-3">
+        <li><h3>组队回合</h3><p>有些回合会把大家分成两队，同队共享分数。</p></li>
+        <li><h3>派对花样</h3><p>大多数游戏都有一种花样，会让游戏在一轮里变个玩法，比如水果风暴，或者金色地鼠出现得多一倍。</p></li>
+        <li><h3>走过去就能玩</h3><p>每个游戏在小镇里都有一块路牌，想单独玩哪个就玩哪个。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-kart" id="kart">
+      <h2 class="badge badge-red">树懒卡丁车</h2>
+      <p class="strap">五条赛道。<em>人人都来比赛。</em></p>
+      <p class="lead">一场大家一起上的卡丁车赛。想往哪边开，就把摇杆推向哪边；过弯时按住按钮就能漂移；开过道具箱，就能拿到辣椒、香蕉、龟壳、追踪弹或星星。通过关卡门、跑完每一圈、拿到金币和冲过终点都能得分，所以每位车手都能带着分数回家。</p>
+      <div class="games games-kart">
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartPlaza.jpg" aria-label="卡丁车在广场环道上飞驰"><source src="../media/loop-game-kartPlaza.mp4" type="video/mp4" /></video>
+          <h3>广场环道</h3>
+          <p>路面宽阔又平缓，绕着小镇跑。一共三圈，最适合新手练习。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartCoast.jpg" aria-label="卡丁车沿着椰子海岸的海滩飞驰"><source src="../media/loop-game-kartCoast.mp4" type="video/mp4" /></video>
+          <h3>椰子海岸</h3>
+          <p>沿着海滩的 S 形弯道，路上还有棕榈树和礁石水洼。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartFrost.jpg" aria-label="卡丁车在白雪覆盖的冰霜峰赛道上飞驰"><source src="../media/loop-game-kartFrost.mp4" type="video/mp4" /></video>
+          <h3>冰霜峰</h3>
+          <p>有一个发夹弯，一路都是滑溜溜的冰。小心雪人。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartLava.jpg" aria-label="卡丁车在熔岩上方的窄路上飞驰"><source src="../media/loop-game-kartLava.mp4" type="video/mp4" /></video>
+          <h3>熔岩赛道</h3>
+          <p>熔岩上方的一条窄路，弯道很急，也没有护栏。掉下去的卡丁车会被放回路上。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartRainbow.jpg" aria-label="卡丁车在云朵上方的彩虹路上飞驰"><source src="../media/loop-game-kartRainbow.mp4" type="video/mp4" /></video>
+          <h3>彩虹天空</h3>
+          <p>云朵上方的大弯道，一路都是加速板。最适合漂移的赛道。</p>
+        </article>
+      </div>
+      <ul class="tiles tiles-3">
+        <li><h3>漂移加速</h3><p>过弯时一直按住按钮，火花会先变蓝，再变橙，最后变粉。松开就能冲到前面。</p></li>
+        <li><h3>落后也有帮助</h3><p>排在后面的卡丁车会拿到更好的道具，所以没有人会被孤零零地落在最后。</p></li>
+        <li><h3>五面旗子</h3><p>每条赛道在小镇卡丁车站后面都有自己的旗子，想单独跑哪条就跑哪条。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel" id="founders">
+      <h2 class="badge badge-ks">成为创始人</h2>
+      <p class="strap">小岛已经建好，还在不断长大。<em>帮我们把它完成吧。</em></p>
+      <p class="lead">今天购买创始人礼包，你的钱将用于和真实家庭一起试玩测试、制作 Android 应用、大狂欢的新神殿和支线任务，以及美术和音效的打磨。所有奖励都是数字化的装扮物品，图鉴里的任何东西都不需要创始人礼包。抢先体验期间，游戏一直免费游玩。</p>
+      <div class="rewards">
+        <article class="reward">
+          <img src="../media/reward-pal.jpg" alt="" width="800" height="531" loading="lazy" />
+          <span class="price" data-price="pal">$5</span>
+          <h3>海岛好友</h3>
+          <p>树懒身上的创始人徽章、岛上的<a href="#founder-house">创始人小屋</a>，以及制作名单里的一句感谢。</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="pal" hidden><span data-price="pal">$5</span> 购买</a>
+        </article>
+        <article class="reward reward-pick">
+          <span class="pick-tag">我们推荐</span>
+          <img src="../media/reward-founder.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="founder">$15</span>
+          <h3>创始人</h3>
+          <p>包含海岛好友的全部内容，外加创始人服装（帽子、上衣、背包），以及 Android 应用推出时的抢先使用资格。</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="founder" hidden><span data-price="founder">$15</span> 购买</a>
+        </article>
+        <article class="reward">
+          <img src="../media/reward-family.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="family">$30</span>
+          <h3>家庭创始人</h3>
+          <p>包含创始人的全部内容，外加四种创始人配色（每个家庭档案一种），以及为下一款派对游戏投票的机会。</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="family" hidden><span data-price="family">$30</span> 购买</a>
+        </article>
+        <article class="reward">
+          <img src="../media/reward-patron.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="patron">$75</span>
+          <h3>海岛赞助人</h3>
+          <p>包含家庭创始人的全部内容，外加岛上长椅的一块铭牌，图标从八个里任你挑选。</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="patron" hidden><span data-price="patron">$75</span> 购买</a>
+        </article>
+        <article class="reward">
+          <img src="../media/reward-portrait.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="portrait">$250</span>
+          <h3>家族画像</h3>
+          <p>我们和你一起设计一位树懒一家的亲戚，并把它加入每位玩家的图鉴，你还会获得海岛赞助人的全部奖励。限 20 份。</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="portrait" hidden><span data-price="portrait">$250</span> 购买</a>
+        </article>
+      </div>
+      <p class="price-note" data-price-note="usd">价格以美元计。结账时，Stripe 会用你所在地的货币显示金额。</p>
+      <p class="price-note" data-price-note="local" hidden>价格以你所在地的货币显示，也就是结账时支付的金额。</p>
+      <div class="founder-house" id="founder-house">
+        <div class="fh-pics">
+          <img src="../media/founder-house-outside.jpg" alt="创始人小屋：一座圆圆的三层小屋，屋檐长满叶子，屋顶像种子壳，顶上冒出一棵嫩芽，旁边是睡莲池" width="960" height="640" loading="lazy" />
+          <img src="../media/founder-house-inside.jpg" alt="创始人小屋内部：有炉火的客厅，楼梯通往种子图书馆，还有圆窗下的阁楼" width="960" height="640" loading="lazy" />
+        </div>
+        <div class="fh-text">
+          <span class="fh-tag">每个创始人礼包都有</span>
+          <h3>创始人小屋</h3>
+          <p>一座从种子里长出来的房子，就在港口边，专为创始人准备。屋里有三层：一楼是有噼啪炉火的客厅，楼上是种子图书馆，最顶上是舒适的阁楼，圆窗下放着一架望远镜。每个创始人礼包都包含它，只要兑换你的创始人代码，它就会立刻出现在你的游戏里。</p>
+        </div>
+      </div>
+      <p class="buy-note" data-buy-note hidden>付款由 Stripe 处理。购买后一两分钟，你的创始人代码就会通过电子邮件送达。在游戏里打开大人菜单，选择 <b>Redeem a backer code</b>（兑换支持者代码），然后粘贴进去。改变主意了？在 30 天内回复你的收据邮件，即可全额退款。</p>
+      <p class="buy-note" data-buy-soon>创始人礼包很快就会在这里开售。</p>
+      <p class="buy-note">Already playing? <a href="#invite">Invite friends</a>: when they join or buy a pack through your link, your family gets gifts in the game, up to a free founder upgrade.</p>
+    </section>
+
+    <section class="panel" id="invite">
+      <h2 class="badge badge-purple">Invite friends</h2>
+      <p class="strap">Share the island, <em>earn gifts</em>.</p>
+      <p class="lead">Every grown-up account has a family invite link. When friends join or buy a founder pack through it, your family gets gifts in the game, on every device.</p>
+      <ul class="tiles tiles-clips invite-tiles">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-invite-friend-pin.jpg" aria-label="A sloth waving, with a coral heart pin on its chest"><source src="../media/loop-invite-friend-pin.mp4" type="video/mp4" /></video><h3>A friend joins</h3><p>A heart Friend pin for both families, plus coins: 300 for them, 250 for you, for up to 5 friends.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-invite-ambassador.jpg" aria-label="A sloth in a coral beret and a blue jacket with a sash, waving in the boutique"><source src="../media/loop-invite-ambassador.mp4" type="video/mp4" /></video><h3>1 pack bought</h3><p>The Ambassador outfit: a beret, and a jacket with a sash and a heart rosette.</p></li>
+        <li><img class="clip" src="../media/reward-founder.jpg" alt="A sloth in the founder outfit: a sprout cap, a leaf vest and a seed pack" width="800" height="533" loading="lazy" /><h3>3 packs bought</h3><p>A free upgrade to the next founder pack, added to your account by itself.</p></li>
+        <li><img class="clip" src="../media/founder-house-outside.jpg" alt="The Founder House, a round three-storey cottage by the lily pond" width="960" height="640" loading="lazy" /><h3>10 packs bought</h3><p>Island Patron: the Founder House, every outfit color and the bench plaque.</p></li>
+      </ul>
+      <p class="invite-cta"><a class="btn btn-play btn-big" href="../invite.html">Get your invite link</a></p>
+    </section>
+
+    <section class="panel panel-snow" id="peak">
+      <h2 class="badge badge-ice">雪顶峰</h2>
+      <p class="strap"><em>海对面</em>的一座雪山。</p>
+      <p class="lead">在北边海岸找到望远镜，透过它看过去就能到那里。坐缆椅上山，再踩着滑雪板、双板或者雪橇滑下来。</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-peak.jpg" aria-label="树懒在雪顶峰的雪坡上，旁边是缆椅"><source src="../media/loop-scene-peak.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-game-powderRun.jpg" aria-label="树懒们坐着雪橇沿雪道冲下来"><source src="../media/loop-scene-game-powderRun.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-game-snowballSplat.jpg" aria-label="树懒们在两个雪人之间扔雪球"><source src="../media/loop-scene-game-snowballSplat.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-game-starSkate.jpg" aria-label="树懒们在结冰的池塘上滑出星星形状"><source src="../media/loop-scene-game-starSkate.mp4" type="video/mp4" /></video>
+      </div>
+      <p class="more">这里有七个冬季游戏：粉雪滑道、滑雪回转、跳台滑雪、雪球啪啪、滑溜石头、星星滑冰和冰塘曲棍球。</p>
+    </section>
+
+    <section class="panel panel-vale" id="vale">
+      <h2 class="badge badge-green">三叶草谷</h2>
+      <p class="strap"><em>望远镜那头</em>的小马山谷。</p>
+      <p class="lead">把望远镜转向三叶草谷，走进一片有河流、小桥和山洞的绿色山谷。在拴马栏边骑上小马出发：轻轻一推是慢走，推到底就飞奔，按跳跃键能跳过木头和栅栏。山谷各处藏着十二个金马蹄铁。</p>
+      <div class="places">
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-vale-ride.jpg" aria-label="一只树懒骑着小马，从拴马栏边小跑向马场"><source src="../media/loop-vale-ride.mp4" type="video/mp4" /></video>
+          <h3>骑小马</h3>
+          <p>沿着小路慢走、小跑或飞奔。什么都伤不到小马：遇到树、悬崖或深水，它会轻轻停下。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-ponyJoust.jpg" aria-label="骑着小马的树懒们在比武场上朝对方骑过去"><source src="../media/loop-game-ponyJoust.mp4" type="video/mp4" /></video>
+          <h3>小马长枪赛</h3>
+          <p>在比武场上朝对方骑过去，在刚刚好的时候放低长枪。谁都不会摔下马。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-hoofHurdles.jpg" aria-label="骑着小马的树懒们并排跳过一排栅栏"><source src="../media/loop-game-hoofHurdles.mp4" type="video/mp4" /></video>
+          <h3>马蹄跨栏</h3>
+          <p>并排在障碍赛道上飞奔，栅栏一来就跳过去。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-ringTilt.jpg" aria-label="骑着小马的树懒们用长枪套住圆环"><source src="../media/loop-game-ringTilt.mp4" type="video/mp4" /></video>
+          <h3>长枪套环</h3>
+          <p>用长枪尖穿过你赛道上方的圆环。每个人拿到的圆环都一模一样。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="story">
+      <h2 class="badge badge-purple">大狂欢</h2>
+      <p class="strap">一个<em>没有文字</em>的故事。</p>
+      <p class="lead">一阵大风把节日庆典吹跑了。彩旗掉了，喷泉干了，一座桥也少了木板。帮树懒一家把小镇重新拼好，看着小镇一路变样。</p>
+      <div class="split">
+        <img src="../media/story-storm.jpg" alt="一张故事图画卡：暴风雨中的灯塔" width="960" height="540" loading="lazy" />
+        <img src="../media/story-calm.jpg" alt="一张故事图画卡：晴空下的灯塔" width="960" height="540" loading="lazy" />
+      </div>
+      <ul class="tiles tiles-3">
+        <li><h3>用图画讲故事</h3><p>图画卡片和思考泡泡讲完了整个故事。谁都不用识字。</p></li>
+        <li><h3>没有要打破的分数</h3><p>没有任务要求分数。玩完一轮就够了。</p></li>
+        <li><h3>九章全上线</h3><p>全部九章都已经在游戏里：认识咕噜云，获得玩具剑和灯笼等工具，把三只风铃带回家。还有一本故事书，可以重玩任何部分。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-sea" id="explore">
+      <h2 class="badge badge-sea">新地点</h2>
+      <p class="strap">小岛<em>一直在长大</em>。</p>
+      <p class="lead">按自己的节奏去探索这些地方。那里没有任何东西会伤害你的树懒。</p>
+      <div class="places">
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-coral-cove.jpg" aria-label="在珊瑚湾游泳"><source src="../media/loop-coral-cove-swim.mp4" type="video/mp4" /></video>
+          <h3>珊瑚湾</h3>
+          <p>从栈桥跳下水，潜到海底的珊瑚礁。认识八位海洋朋友，在大砗磲里找到六颗珍珠，再打开沉船里的宝箱。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-moon.jpg" aria-label="戴着太空头盔的树懒站在月球上的火箭旁边，地球挂在天上"><source src="../media/loop-scene-moon.mp4" type="video/mp4" /></video>
+          <h3>月球</h3>
+          <p>爬进海滩上的玩具火箭，发射升空。戴着玻璃头盔在环形山之间蹦蹦跳跳，地球就挂在天上。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-skate-isle.jpg" aria-label="在滑板岛玩滑板"><source src="../media/loop-skate-isle-ride.mp4" type="video/mp4" /></video>
+          <h3>滑板岛</h3>
+          <p>一整座岛就是一个大滑板公园。挑一块滑板、一辆滑板车、自行车或者一双旱冰鞋，然后在 U 型池和碗池里跳起来做花式动作。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-pinecone-ridge.jpg" aria-label="骑自行车冲下松果岭"><source src="../media/loop-pinecone-ridge-bike.mp4" type="video/mp4" /></video>
+          <h3>松果岭</h3>
+          <p>一座绿油油的夏日山峰，有四条自行车道，从慢悠悠的草地小路到跳跃线路都有。想计时的话，每条路线都有计时器。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-sky-spout.jpg" aria-label="一只树懒在天空岛上张开叶子，被风柱托着往上飞，四周飘着小岛"><source src="../media/loop-sky-spout.mp4" type="video/mp4" /></video>
+          <h3>天空岛</h3>
+          <p>踩上西边草坪的空中升降台，升到云端的一座小岛。乘着风柱往上飞，撑着叶子滑翔穿过十个圆环，再找到十根金羽毛。从边上掉下去也会飘回来。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-workshop.jpg" aria-label="一只树懒在发条工坊里挥手，墙上有一座齿轮钟，齿轮博士站在柜台后"><source src="../media/loop-workshop.mp4" type="video/mp4" /></video>
+          <h3>发条工坊</h3>
+          <p>一家蒸汽朋克风格的店，屋顶上有一顶巨大的高礼帽，还有一艘飞艇绕着它转。小岛的发明家齿轮博士守着柜台，有些派对游戏就在这个房间里玩。</p>
+        </article>
+      </div>
+      <ul class="tiles">
+        <li><h3>瞌睡沙堡</h3><p>海滩上一座温和的地下城：火把、钥匙、箱子，还有一只要叫醒的巨大海龟。</p></li>
+        <li><h3>小神殿</h3><p>小镇周围有四个小谜题房间，只用摇杆就能解开。每一个都不会失败。</p></li>
+        <li><h3>藤蔓圆环</h3><p>发光的圆环，抓着藤蔓荡上去，不用瞄准，就能到达悬崖顶和树冠。</p></li>
+        <li><h3>传送石和猫头鹰</h3><p>唤醒八块立石，在岛上到处跳转；跟着一只友好的猫头鹰，去还没发现的地方。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel" id="home">
+      <h2 class="badge badge-orange">家和玩乐</h2>
+      <p class="strap">一座房子，一个小摊，<em>还有好多玩具</em>。</p>
+      <div class="places">
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-my-house.jpg" aria-label="树懒在自己的房子里挥手，屋里有床、台灯、书架和玩具箱"><source src="../media/loop-scene-my-house.mp4" type="video/mp4" /></video>
+          <h3>我的房子</h3>
+          <p>草坪上属于你自己的房子，有 26 件家具可以摆放，还有涂墙的油漆。升级、攒金币，就能换一个更大的房间。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-stall.jpg" aria-label="打扮成厨师的树懒站在自己的小吃摊前，一位顾客拿着订单在等"><source src="../media/loop-scene-stall.mp4" type="video/mp4" /></video>
+          <h3>你的小摊</h3>
+          <p>在工作台上做东西，再拿到你的小摊上卖。价签由你来定，谁也不能乱要价。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" aria-label="开卡丁车"><source src="../media/loop-go-kart.mp4" type="video/mp4" /></video>
+          <h3>卡丁车</h3>
+          <p>跳上车，沿着环岛路开。拿到挂在路上的全部八颗星星，就算跑完一圈。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" aria-label="热气球在小镇上空升起"><source src="../media/loop-balloon-ride.mp4" type="video/mp4" /></video>
+          <h3>热气球</h3>
+          <p>飘到整座小岛的上空，家里的树懒们会跑过来一起坐。</p>
+        </article>
+      </div>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-cooking.jpg" aria-label="一只树懒在面包店烤炉旁吃刚出炉的派，身体变大了"><source src="../media/loop-cozy-cooking.mp4" type="video/mp4" /></video><h3>做饭</h3><p>把自己种的东西做成沙拉、饼干、派和炖菜。每一样都会给你一点小活力：跳得更高，跑得更快，或者变成一只更大的树懒。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-sailing.jpg" aria-label="驾着小船从码头出海"><source src="../media/loop-cozy-sailing.mp4" type="video/mp4" /></video><h3>航海</h3><p>码头的小船现在有帆了。打破木桶拿嫩芽，还能捞起沉在水底的宝箱。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-camera.jpg" aria-label="给喷泉拍照，并把照片加进图画册"><source src="../media/loop-cozy-camera.mp4" type="video/mp4" /></video><h3>小镇相机</h3><p>拍下小动物、亲戚和地标，填满一本图画册，每填满一页都有奖励。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-music-lawn.jpg" aria-label="在音乐草坪上敲康加鼓，音符飞了起来"><source src="../media/loop-cozy-music-lawn.mp4" type="video/mp4" /></video><h3>音乐草坪</h3><p>贝斯、康加鼓、尤克里里和小号，都可以弹奏。乐队会教你四首小曲子，能招来雨、让白天变成黑夜、让花朵绽放，或者把兔子叫过来。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-bottle.jpg" aria-label="在池塘边找到一个瓶子，把它举起来"><source src="../media/loop-cozy-bottle.mp4" type="video/mp4" /></video><h3>一个瓶子</h3><p>抓一只萤火虫或蝴蝶，舀一点池塘水，或者把零食留着以后吃。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-heart-pieces.jpg" aria-label="捡起一块粉色爱心碎片，把它举起来"><source src="../media/loop-cozy-heart-pieces.mp4" type="video/mp4" /></video><h3>爱心碎片</h3><p>十二块粉色爱心碎片藏在小镇各处，也有的是朋友送的。每集齐四块就能拼成一颗爱心，带来一个小加成，比如跳得更高。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-tall-grass.jpg" aria-label="穿过高草跑向浆果丛"><source src="../media/loop-cozy-tall-grass.mp4" type="video/mp4" /></video><h3>高草和浆果</h3><p>跑过高高的草丛，或者摇一摇浆果丛，就会蹦出小惊喜：一枚金币、一棵嫩芽、一只蝴蝶。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-dj-ana.jpg" aria-label="在舞蹈俱乐部和 DJ Ana 一起跳舞"><source src="../media/loop-cozy-dj-ana.mp4" type="video/mp4" /></video><h3>DJ Ana</h3><p>小岛的 DJ，白天在音乐台旁边闲逛，晚上在舞蹈俱乐部打碟。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-name-tags.jpg" aria-label="从两张图片里挑一个名字"><source src="../media/loop-cozy-name-tags.mp4" type="video/mp4" /></video><h3>名牌</h3><p>每只树懒都会得到一个由两张图片组成的名字。什么都不用打字。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-goals.jpg" aria-label="在目标手册里收集一颗星星，并翻动书页"><source src="../media/loop-cozy-goals.mp4" type="video/mp4" /></video><h3>目标手册</h3><p>四页上共有 27 件事可以做，每件都能赢三颗星。完成一页，就能得到一件只有那里才有的服装。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-sky" id="sloths">
+      <h2 class="badge badge-pink">树懒们</h2>
+      <p class="strap">换装打扮。角色扮演。<em>玩着玩着就能赢得服装。</em></p>
+      <div class="lineup">
+        <img src="../media/sloth-pirate.webp" alt="打扮成海盗的树懒" width="560" height="560" loading="lazy" />
+        <img src="../media/sloth-viking.webp" alt="打扮成维京人的树懒" width="560" height="560" loading="lazy" />
+        <img src="../media/sloth-crown.webp" alt="戴着王冠和护目镜的树懒" width="560" height="560" loading="lazy" />
+        <img src="../media/sloth-tophat.webp" alt="戴着高礼帽的树懒" width="560" height="560" loading="lazy" />
+      </div>
+      <p class="lead">衣柜里有 16 套主题服装，还有帽子、上衣、背包和配饰。家庭档案共用一个衣柜，所以每套服装每个人都能穿。</p>
+      <h3 class="sub-head">换装扮演</h3>
+      <p class="lead">穿上整套厨师、海盗或巫师服装，小镇就会陪你一起演。16 种角色，不计分，也不会输。</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-stall.jpg" aria-label="穿着厨师服的树懒在小吃摊前招呼一位顾客"><source src="../media/loop-scene-stall.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-role-pirate.jpg" aria-label="穿着海盗服的树懒站在港口码头上，旁边是一条划艇"><source src="../media/loop-scene-role-pirate.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-role-wizard.jpg" aria-label="穿着巫师服的树懒站在喷泉旁"><source src="../media/loop-scene-role-wizard.mp4" type="video/mp4" /></video>
+      </div>
+      <h3 class="sub-head">裁缝角</h3>
+      <p class="lead">服装店里的一个缝纫角。挑选款式、袖子、花纹、两种颜色和一个蝴蝶结，看着裙子在你的树懒身上慢慢成形。按下对勾，它就是你的了，在衣柜里也能穿。</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-dress-maker.jpg" aria-label="在裁缝角做一条粉色蓬蓬裙，再把颜色换成橙色"><source src="../media/loop-dress-maker.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-dress-maker-2.jpg" aria-label="在裁缝角做一条有泡泡袖的条纹舞会礼服，再把它变成白色"><source src="../media/loop-dress-maker-2.mp4" type="video/mp4" /></video>
+      </div>
+    </section>
+
+    <section class="panel" id="cozy">
+      <h2 class="badge badge-green">悠闲时光</h2>
+      <p class="strap">在游戏之间，<em>慢慢来</em>。</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-story-friends.jpg" aria-label="树懒们在小岛广场上闲逛"><source src="../media/loop-scene-story-friends.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-story-garden.jpg" aria-label="一块花园地，有向日葵、池塘和一座小屋"><source src="../media/loop-scene-story-garden.mp4" type="video/mp4" /></video>
+      </div>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-fish.jpg" aria-label="在池塘边甩出鱼线，钓上来一只湿袜子"><source src="../media/loop-tile-fish.mp4" type="video/mp4" /></video><h3>钓鱼</h3><p>甩出鱼线，钓鱼，也钓些搞笑的破烂放进图鉴。湿袜子可是好消息：两只就能换一张吊床。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-garden.jpg" aria-label="在广场边的花坛里种下一颗种子"><source src="../media/loop-tile-garden.mp4" type="video/mp4" /></video><h3>花园</h3><p>种下去，浇浇水，关掉游戏。你不在的时候，它也会继续长。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-build.jpg" aria-label="一块建好的地，有庄稼、池塘、篱笆和一座小屋"><source src="../media/loop-tile-build.mp4" type="video/mp4" /></video><h3>建造</h3><p>岛上属于你自己的一块地，用你钓到和种出的东西来建造。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-album.jpg" aria-label="翻动贴纸图鉴的书页"><source src="../media/loop-tile-album.mp4" type="video/mp4" /></video><h3>收集</h3><p>一本有十二页要填满的贴纸图鉴。</p></li>
+      </ul>
+      <h3 class="sub-head">从清晨到灯笼亮起</h3>
+      <div class="split split-3">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-town-day.jpg" aria-label="白天的小镇广场，有喷泉和彩旗"><source src="../media/loop-scene-town-day.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-town-evening.jpg" aria-label="黄昏时的同一个广场，天空粉粉的，灯笼亮着"><source src="../media/loop-scene-town-evening.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-town-night.jpg" aria-label="夜里的同一个广场，灯笼和串灯照亮了四周"><source src="../media/loop-scene-town-night.mp4" type="video/mp4" /></video>
+      </div>
+      <h3 class="sub-head">冒险和要寻找的东西</h3>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-courses.jpg" aria-label="在沙堡要塞关卡里奔跑、跳跃"><source src="../media/loop-tile-courses.mp4" type="video/mp4" /></video><h3>关卡</h3><p>七个冒险关卡，每个有五个任务，从水晶洞窟到沙堡要塞。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-fireflies.jpg" aria-label="抓住一只藏起来的萤火虫放进瓶子"><source src="../media/loop-tile-fireflies.mp4" type="video/mp4" /></video><h3>萤火虫</h3><p>四十只萤火虫等你抓进瓶子里。萤火虫越多，开放的关卡越多。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-town-toys.jpg" aria-label="在大蹦床上弹来弹去"><source src="../media/loop-tile-town-toys.mp4" type="video/mp4" /></video><h3>小镇玩具</h3><p>蹦床、跷跷板、热气球，音乐台上还有一台混音器，另外还有找图游戏和神秘小路。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-tables.jpg" aria-label="在桌边和一位亲戚玩纸牌游戏"><source src="../media/loop-tile-tables.mp4" type="video/mp4" /></video><h3>桌游和街机</h3><p>七款桌游，可以和亲戚对战，还有六台街机。其中一台是修理工作台，有 80 个谜题关卡。</p></li>
+      </ul>
+      <h3 class="sub-head">一起玩</h3>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-family-cup.jpg" aria-label="显示轮到谁的家庭杯卡片"><source src="../media/loop-tile-family-cup.mp4" type="video/mp4" /></video><h3>家庭杯</h3><p>在沙发上把一台设备传来传去，一起争夺奖杯。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-ghost.jpg" aria-label="在躲椰子里和最佳一轮的幽灵比赛"><source src="../media/loop-tile-ghost.mp4" type="video/mp4" /></video><h3>幽灵赛</h3><p>和你设备上玩得最好的一轮录像比赛。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-closet.jpg" aria-label="在家里的树懒之间切换，试穿服装"><source src="../media/loop-tile-closet.mp4" type="video/mp4" /></video><h3>一个衣柜</h3><p>每个人都有自己的树懒，共享所有服装。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-navy" id="parents">
+      <h2 class="badge badge-blue">给大人看</h2>
+      <p class="strap"><em>从设计上</em>就很安全。</p>
+      <ul class="promises promises-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-safe-chat.jpg" aria-label="发送一句友善的话，然后聊天检查拦下了一个打出来的名字"><source src="../media/loop-tile-safe-chat.mp4" type="video/mp4" /></video><h3>安全聊天</h3><p>只能从一小串友善的话里挑来发送，所以名字、年龄或数字都发不出去。在线游戏是计划中的扩展目标：朋友要通过图片代码加入，绝不能靠搜索，而且必须由大人打开后才能用。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-account.jpg" aria-label="大人用邮件收到的验证码登录"><source src="../media/loop-tile-account.mp4" type="video/mp4" /></video><h3>大人的账户</h3><p>家庭账户由大人通过邮件里的验证码创建，从来不用密码。孩子从不注册，也不输入电子邮件。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-fixed-price.jpg" aria-label="按标出的金币价格买一顶帽子"><source src="../media/loop-tile-fixed-price.mp4" type="video/mp4" /></video><h3>没有开箱抽奖</h3><p>没有随机的付费奖励。绝不花钱就能赢。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-no-pressure.jpg" aria-label="黄金时刻，一只树懒在草地上打盹"><source src="../media/loop-tile-no-pressure.mp4" type="video/mp4" /></video><h3>没有压力</h3><p>没有会中断的连续打卡，没有限时优惠。什么都不会被收走。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-grownup-gate.jpg" aria-label="点按三个数字，打开大人页面"><source src="../media/loop-tile-grownup-gate.mp4" type="video/mp4" /></video><h3>家长关卡</h3><p>任何兑换码或真钱页面前面，都有一道家长关卡。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-map.jpg" aria-label="小岛地图，全是图画"><source src="../media/loop-tile-map.mp4" type="video/mp4" /></video><h3>不用识字</h3><p>游戏里只有图画和数字。只有给大人的页面才用文字。适合 6 岁及以上。</p></li>
+      </ul>
+      <p class="parents-extra"><a class="btn btn-play" href="coloring.html">免费涂色页，打印就能用</a></p>
+    </section>
+
+    <section class="panel panel-maker" id="maker">
+      <h2 class="badge badge-orange">谁在做这个游戏</h2>
+      <p class="strap">只有一个人。<em>看看作品吧。</em></p>
+      <div class="maker">
+        <img class="maker-photo" src="../media/creator-remi.webp" alt="卡通画的 Remi Couture 坐在书桌前，旁边有一个树懒公仔，还有一个写着 Slow progress, still progress（慢慢来，也是进步）的马克杯" width="640" height="640" loading="lazy" />
+        <div class="maker-text">
+          <p>Sloth Jam&trade; 由 Remi Couture 以 Strategic Sloth 的名义设计和制作。在这个页面上做出承诺的人，就是写代码、回复你的邮件、给你发送创始人代码的那个人。</p>
+          <p>所以目标不大：没有团队工资要发。最难的部分已经完成，小岛、64 款派对游戏和悠闲玩法都已经能玩了。万一有什么延误，你会直接从负责人那里听到，同时知道新的日期和原因。</p>
+        </div>
+      </div>
+      <h3 class="sub-head">做游戏二十年，很多是给孩子做的</h3>
+      <ul class="tiles">
+        <li><h3>Club Penguin</h3><p>起点：2006 年到 2009 年，在 Disney 担任 Club Penguin 的插画师。</p></li>
+        <li><h3>儿童应用</h3><p>在 Cupcake Digital 为 DreamWorks、BBC Kids 和 Nickelodeon 制作了 13 款以上的 iOS 和 Android 儿童应用。</p></li>
+        <li><h3>4 年 27 款游戏</h3><p>在 Gogii Games 担任界面设计师和角色插画师。</p></li>
+        <li><h3>带领设计</h3><p>曾在 DeNA、Hothead Games、Piranha Games、Frima Studio、AppLovin 和 Offworld 担任设计主管和总监，并为 Hasbro、Sony、Riot Games 和 Universal Studios 做过客户项目。</p></li>
+        <li><h3>教学</h3><p>曾在 Vancouver Film School 教授游戏界面设计。</p></li>
+        <li><h3>Tropic Tumble</h3><p>我们的第一款游戏，由 Remi 从头到尾一手完成：规则、关卡、界面、音乐和代码。已在 Google Play 上线。<a href="https://remiclassic.github.io/remiresume/tropictumble/">在浏览器里玩</a>。</p></li>
+      </ul>
+      <p class="maker-links"><a href="https://www.linkedin.com/in/remicouture/details/recommendations/">LinkedIn 上的工作经历和推荐信</a> &middot; <a href="https://www.strategicsloth.com/">strategicsloth.com</a></p>
+      <p class="maker-note">Sloth Jam 是一个独立项目，与 Disney 或这里提到的任何其他公司都没有关联，也未获得其认可。</p>
+    </section>
+
+    <section class="panel" id="faq">
+      <h2 class="badge badge-blue">常见问题</h2>
+      <p class="strap"><em>快速解答</em>。</p>
+      <div class="faq">
+        <details>
+          <summary>Sloth Jam 免费吗？</summary>
+          <p>免费。抢先体验期间，你可以在网页浏览器里免费玩。抢先体验的意思是游戏还在制作中，还有些粗糙的地方。创始人礼包是可选的，图鉴里的任何东西都不需要它。</p>
+        </details>
+        <details>
+          <summary>玩游戏需要什么？</summary>
+          <p>一台带网页浏览器的电脑、手机或平板。不用下载，也不用安装。第一次玩之前，由大人用电子邮件登录。</p>
+        </details>
+        <details>
+          <summary>对我的孩子安全吗？</summary>
+          <p>安全。聊天只是一小串友善的话，账户由大人创建，没有开箱抽奖，每个涉及钱的页面都有家长关卡把守。<a href="#parents">查看全部承诺</a>。</p>
+        </details>
+        <details>
+          <summary>创始人礼包能给我什么？</summary>
+          <p>数字化的装扮奖励，比如创始人徽章、服装、岛上的创始人小屋，还有制作名单里你的名字。你的钱将用于试玩测试、Android 应用，以及故事的新神殿和支线任务。</p>
+        </details>
+        <details>
+          <summary>我怎么拿到创始人代码？</summary>
+          <p>购买后一两分钟，它就会通过电子邮件送达。在游戏里打开大人菜单，选择 <b>Redeem a backer code</b>（兑换支持者代码），然后粘贴进去。</p>
+        </details>
+        <details>
+          <summary>可以退款吗？</summary>
+          <p>可以。在 30 天内回复你的收据邮件，即可全额退款。</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="panel panel-navy final-cta">
+      <p class="strap">准备好<em>第一场派对了吗？</em></p>
+      <p class="final-sub">在浏览器里免费玩。每局一分钟。</p>
+      <div class="closing">
+        <a class="btn btn-play btn-big" href="../play/"><span class="play-icon" aria-hidden="true"></span>立即开玩<span class="ea-tag">抢先体验</span></a>
+        <a class="btn btn-ks btn-big" href="#founders">成为<b>创始人</b></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="../media/logo.webp" alt="Sloth Jam&trade;" width="760" height="406" loading="lazy" />
+    <p>&copy; 2026 Strategic Sloth LLC。保留所有权利。<br />Sloth Jam&trade; 是 Strategic Sloth LLC 的商标。</p>
+    <p><a href="coloring.html">涂色页</a> &middot; <a href="../share.html">创作者和媒体</a> &middot; <a href="../invite.html">Invite friends</a> &middot; <a href="../schools.html">学校</a> &middot; <a href="privacy.html">隐私政策</a> &middot; <a href="#" data-cookie-choices>Cookie 选项</a></p>
+    <p>For parents: <a href="../no-reading-games.html">No-reading games for 6 year olds</a> &middot; <a href="../safe-games-for-kids.html">Safe online games for children</a> &middot; <a href="../family-game-night.html">Family party games</a></p>
+    <p class="lang-foot"><a href="../" data-lang="en" hreflang="en" lang="en">English</a> &middot; <a href="../es/" data-lang="es" hreflang="es" lang="es">Español</a> &middot; <a href="../pt/" data-lang="pt" hreflang="pt-BR" lang="pt-BR">Português</a> &middot; <a href="../fr/" data-lang="fr" hreflang="fr" lang="fr">Français</a> &middot; <a href="../de/" data-lang="de" hreflang="de" lang="de">Deutsch</a> &middot; <a href="../it/" data-lang="it" hreflang="it" lang="it">Italiano</a> &middot; <a href="./" data-lang="zh" hreflang="zh-Hans" lang="zh-Hans" aria-current="page">简体中文</a> &middot; <a href="../zh-hant/" data-lang="zh-hant" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a> &middot; <a href="../ja/" data-lang="ja" hreflang="ja" lang="ja">日本語</a> &middot; <a href="../ko/" data-lang="ko" hreflang="ko" lang="ko">한국어</a></p>
+  </footer>
+  <script src="../nav.js?v=91d0a12" defer></script>
+
+  <script src="../main.js?v=91d0a12" defer></script>
+</body>
+</html>
