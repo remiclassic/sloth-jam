@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#E4EBD9" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- Added to an iPhone's home screen, the game opens full screen under its own name. -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Sloth Jam" />
+    <title>Play Sloth Jam free in your browser</title>
+    <meta name="description" content="Play Sloth Jam free in your browser. 59 one-minute party games on a cozy sloth island, ages 6 and up, no download. A grown-up unlocks the game first." />
+    <link rel="canonical" href="https://slothjam.com/play/" />
+    <link rel="icon" href="ui/icon.png" />
+    <link rel="apple-touch-icon" href="ui/icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <style>html,body{overscroll-behavior:none;background:#e4ebd9;width:100%;height:100%;margin:0;overflow:hidden}#app{position:fixed;inset:0;overflow:hidden}#splash{z-index:100;background:#e4ebd9;flex-direction:column;justify-content:center;align-items:center;gap:4vh;transition:opacity .35s ease-out;display:flex;position:fixed;inset:0}#splash.gone{opacity:0;pointer-events:none}#splash img{width:min(62vw,92vh);height:auto;animation:1.4s ease-in-out infinite alternate splash-bob}#splash .dots{gap:14px;display:flex}#splash .dots i{background:#252922;border-radius:50%;width:16px;height:16px;animation:.9s ease-in-out infinite splash-dot}#splash .dots i:nth-child(2){animation-delay:.15s}#splash .dots i:nth-child(3){animation-delay:.3s}#splash small{left:16px;right:16px;bottom:max(14px, env(safe-area-inset-bottom));color:#252922;opacity:.6;text-align:center;font:12px/1.4 system-ui,sans-serif;position:absolute}@keyframes splash-bob{0%{transform:translateY(-4px)rotate(-1deg)}to{transform:translateY(4px)rotate(1deg)}}@keyframes splash-dot{0%,60%,to{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-10px)}}</style>
+    <script type="module" crossorigin src="./assets/index-DGd3fDN-.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/palette-CsyR-iA9.js">
+    <link rel="modulepreload" crossorigin href="./assets/createSloth-KfZVRtAE.js">
+    <link rel="modulepreload" crossorigin href="./assets/post-BrpNYVrk.js">
+    <link rel="modulepreload" crossorigin href="./assets/sprites2d-CyZlJZh3.js">
+    <link rel="modulepreload" crossorigin href="./assets/netProps-D93miQbU.js">
+    <link rel="modulepreload" crossorigin href="./assets/trees-CUsf1Qha.js">
+    <link rel="modulepreload" crossorigin href="./assets/build-DtIE1I88.js">
+  </head>
+  <body>
+    <div id="app"></div>
+    <noscript>
+      <h1>Sloth Jam: free cozy party game</h1>
+      <p>Sloth Jam is a free cozy party game for the whole family: 59 one-minute party games on a sloth island, one stick and one button, no reading needed, ages 6 and up. It needs JavaScript to run. Learn more at <a href="https://slothjam.com/">slothjam.com</a>.</p>
+    </noscript>
+    <div id="splash"><img src="ui/logo.webp" alt="" /><div class="dots"><i></i><i></i><i></i></div><small>© 2026 Strategic Sloth LLC. Sloth Jam™ is a trademark of Strategic Sloth LLC.</small></div>
+    <!-- STUDIO-SPLASH -->
+    <script>
+// ---- Studio splash ----
+// The Strategic Sloth splash, shown first thing, over the loading screen, while the game's pictures load behind it.
+// Tap or press a key to skip; add ?nosplash to the address to leave it out. The same code is in Tropic Tumble
+// (Merge Games/index.html) and Runefjord: change them together. Left out of the Poki build (vite.config.ts).
+(function () {
+  const CSS = `
+.ss-root { position:fixed; inset:0; z-index:99999; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background:#f6f5ef; color:#252b23; overflow:hidden; user-select:none; -webkit-user-select:none; touch-action:none;
+  --s:min(62vw,36vh,340px); transition:opacity .35s ease; }
+.ss-root.ss-out { opacity:0; }
+.ss-root::before { content:''; position:absolute; left:50%; top:46%; width:calc(var(--s)*2.6); height:calc(var(--s)*2.6); margin:calc(var(--s)*-1.3);
+  border-radius:50%; background:radial-gradient(circle,rgba(198,242,122,.4),rgba(198,242,122,0) 62%); opacity:0; }
+.ss-peek { position:relative; width:var(--s); height:calc(var(--s)*.675); overflow:hidden; }
+.ss-sloth { position:absolute; left:0; top:calc(var(--s)*-.12); width:var(--s); height:var(--s); transform:translateY(82%); }
+.ss-sloth img { display:block; width:100%; height:100%; }
+.ss-lens { position:absolute; top:33.5%; width:20.5%; height:14.5%; border-radius:46% 46% 50% 50%; overflow:hidden; }
+.ss-lens.l { left:26.5%; } .ss-lens.r { left:54%; }
+.ss-lens i { position:absolute; top:-20%; left:0; width:38%; height:140%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);
+  transform:translateX(-160%) skewX(-24deg); }
+.ss-ledge { width:calc(var(--s)*1.25); height:4px; margin-top:-2px; border-radius:4px; background:#252b23; transform:scaleX(0); }
+.ss-name { margin-top:calc(var(--s)*.11); font-size:calc(var(--s)*.135); font-weight:700; letter-spacing:-.03em; line-height:1; white-space:nowrap; }
+.ss-name span { display:inline-block; white-space:pre; opacity:0; transform:translateY(.7em); }
+.ss-name .ss-star { color:#45633e; margin-left:.22em; transform:scale(0) rotate(-180deg); }
+.ss-sub { margin-top:calc(var(--s)*.05); font:500 calc(var(--s)*.042)/1 ui-monospace,Menlo,Consolas,monospace; letter-spacing:.32em; text-indent:.32em;
+  text-transform:uppercase; color:#62685d; opacity:0; }
+
+.ss-go::before { animation:ss-fade .9s .5s ease-out forwards; }
+.ss-go .ss-ledge { animation:ss-line .45s cubic-bezier(.2,.8,.2,1) forwards; }
+.ss-go .ss-sloth { animation:ss-rise .95s .25s cubic-bezier(.25,1.25,.4,1) forwards; }
+.ss-go .ss-lens i { animation:ss-glint .55s 1.25s ease-in-out forwards; }
+.ss-go .ss-lens.r i { animation-delay:1.33s; }
+.ss-go .ss-name span { animation:ss-up .45s calc(1.05s + var(--i)*.028s) cubic-bezier(.2,.9,.3,1) forwards; }
+.ss-go .ss-name .ss-star { animation:ss-star .55s 1.6s cubic-bezier(.3,1.5,.5,1) forwards; }
+.ss-go .ss-sub { animation:ss-fade .4s 1.8s ease-out forwards; }
+
+@keyframes ss-line { to { transform:scaleX(1); } }
+@keyframes ss-rise { to { transform:translateY(0); } }
+@keyframes ss-glint { to { transform:translateX(420%) skewX(-24deg); } }
+@keyframes ss-up { to { opacity:1; transform:none; } }
+@keyframes ss-star { to { opacity:1; transform:none; } }
+@keyframes ss-fade { to { opacity:1; } }
+
+@media (prefers-reduced-motion:reduce) {
+  .ss-go::before, .ss-go .ss-ledge, .ss-go .ss-sloth, .ss-go .ss-name span, .ss-go .ss-name .ss-star, .ss-go .ss-sub { animation-duration:.01s; animation-delay:0s; }
+  .ss-go .ss-lens i { animation:none; }
+}`;
+
+  const LANDED = 2.2; // seconds until the last piece has settled
+
+  function play(opts) {
+    const o = Object.assign({ logo: 'sloth-logo.png', font: "'Manrope','Fredoka',system-ui,'Segoe UI',Roboto,sans-serif", hold: .7, parent: document.body }, opts);
+    return new Promise(resolve => {
+      if (!document.getElementById('ss-style')) {
+        const st = document.createElement('style'); st.id = 'ss-style'; st.textContent = CSS; document.head.append(st);
+      }
+      const letters = [...'strategic sloth'].map((c, i) => `<span style="--i:${i}">${c}</span>`).join('');
+      const root = document.createElement('div');
+      root.className = 'ss-root';
+      root.setAttribute('role', 'img');
+      root.setAttribute('aria-label', 'Strategic Sloth presents');
+      root.innerHTML = `<div class="ss-peek"><div class="ss-sloth"><img alt="" draggable="false"><b class="ss-lens l"><i></i></b><b class="ss-lens r"><i></i></b></div></div>
+<div class="ss-ledge"></div><div class="ss-name" style="font-family:${o.font}">${letters}<span class="ss-star">✳</span></div><div class="ss-sub">presents</div>`;
+      o.parent.append(root);
+
+      let timer, done = false;
+      const finish = () => {
+        if (done) return; done = true;
+        clearTimeout(timer); removeEventListener('keydown', finish);
+        root.classList.add('ss-out');
+        setTimeout(() => { root.remove(); resolve(); }, 360);
+      };
+      const start = () => {
+        if (done || root.classList.contains('ss-go')) return;
+        root.classList.add('ss-go');
+        timer = setTimeout(finish, (LANDED + o.hold) * 1000);
+      };
+      root.addEventListener('pointerdown', finish);
+      addEventListener('keydown', finish);
+
+      // hold the animation until the logo has loaded so the sloth never rises in blank
+      const img = root.querySelector('img');
+      img.onload = img.onerror = start;
+      img.src = o.logo;
+      setTimeout(start, 1200);
+    });
+  }
+
+  window.StrategicSlothSplash = { play };
+})();
+if (!/[?&]nosplash\b/.test(location.search))
+  StrategicSlothSplash.play({ logo: 'ui/sloth-logo.webp', font: "'Baloo 2',Fredoka,Nunito,ui-rounded,system-ui,sans-serif", hold: .4 });
+    </script>
+    <!-- /STUDIO-SPLASH -->
+  </body>
+</html>

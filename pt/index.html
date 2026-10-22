@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sloth Jam: Free Cozy Family Party Game in Your Browser</title>
+  <meta name="description" content="Free to play in your browser: 59 one-minute party games on a cozy sloth island. One stick, one button, no reading needed. Ages 6+, no loot boxes, no download." />
+  <link rel="canonical" href="https://slothjam.com/pt/" />
+  <meta name="theme-color" content="#8f7df0" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sloth Jam: free cozy family party game in your browser" />
+  <meta property="og:description" content="59 one-minute party games on a cozy sloth island. Free in your browser, no download, ages 6 and up. Early access." />
+  <meta property="og:url" content="https://slothjam.com/pt/" />
+  <meta property="og:image" content="https://slothjam.com/media/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://slothjam.com/media/og.jpg" />
+  <link rel="icon" href="../media/icon.png" />
+  <link rel="apple-touch-icon" href="../media/icon.png" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=60e7fcf" />
+  <link rel="stylesheet" href="../styles.css?v=60e7fcf" />
+  <!-- The hero buttons are painted pictures named only in styles.css: fetched now, with the page. -->
+  <link rel="preload" href="../media/btn-play.webp" as="image" />
+  <link rel="preload" href="../media/btn-founder.webp" as="image" />
+  <link rel="alternate" hreflang="en" href="https://slothjam.com/" />
+  <link rel="alternate" hreflang="es" href="https://slothjam.com/es/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://slothjam.com/pt/" />
+  <link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/" />
+  <link rel="alternate" hreflang="de" href="https://slothjam.com/de/" />
+  <link rel="alternate" hreflang="it" href="https://slothjam.com/it/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://slothjam.com/zh/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://slothjam.com/zh-hant/" />
+  <link rel="alternate" hreflang="ja" href="https://slothjam.com/ja/" />
+  <link rel="alternate" hreflang="ko" href="https://slothjam.com/ko/" />
+  <link rel="alternate" hreflang="x-default" href="https://slothjam.com/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://slothjam.com/#org",
+        "name": "Strategic Sloth LLC",
+        "alternateName": "Strategic Sloth",
+        "url": "https://www.strategicsloth.com/",
+        "logo": "https://slothjam.com/media/icon.png",
+        "founder": { "@id": "https://slothjam.com/#remi" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://slothjam.com/#remi",
+        "name": "Remi Couture",
+        "jobTitle": "Game designer and developer",
+        "worksFor": { "@id": "https://slothjam.com/#org" },
+        "sameAs": ["https://www.linkedin.com/in/remicouture/"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://slothjam.com/#website",
+        "name": "Sloth Jam",
+        "url": "https://slothjam.com/",
+        "inLanguage": ["en","es","pt-BR","fr","de","it","zh-Hans","zh-Hant","ja","ko"],
+        "publisher": { "@id": "https://slothjam.com/#org" }
+      },
+      {
+        "@type": "VideoGame",
+        "@id": "https://slothjam.com/#game",
+        "name": "Sloth Jam",
+        "url": "https://slothjam.com/",
+        "image": "https://slothjam.com/media/og.jpg",
+        "description": "A free cozy party game for the whole family, played in a web browser: 59 one-minute party games on a sloth island, a kart race with five tracks, a story told in pictures and cozy activities like fishing and gardening. One stick, one button, no reading needed. Ages 6 and up, safe chat, no loot boxes, no pay to win. In early access.",
+        "genre": ["Party","Family","Casual","Cozy"],
+        "gamePlatform": ["Web browser"],
+        "operatingSystem": "Any (web browser on computer, phone or tablet)",
+        "applicationCategory": "GameApplication",
+        "playMode": ["SinglePlayer","MultiPlayer"],
+        "inLanguage": ["en","es","pt-BR","fr","de","it","zh-Hans","zh-Hant","ja","ko"],
+        "isAccessibleForFree": true,
+        "isFamilyFriendly": true,
+        "audience": { "@type": "PeopleAudience", "suggestedMinAge": 6 },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://slothjam.com/play/" },
+        "author": { "@id": "https://slothjam.com/#remi" },
+        "publisher": { "@id": "https://slothjam.com/#org" },
+        "potentialAction": { "@type": "PlayAction", "target": "https://slothjam.com/play/" },
+        "keywords": "free browser game, cozy game, family party game, kids game, no reading, no download, sloth"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://slothjam.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Sloth Jam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sloth Jam is a free cozy party game for the whole family that you play in a web browser. It has 59 one-minute party games on a sloth island, a kart race with five tracks, a story told in pictures, and slow, cozy things to do like fishing, gardening, cooking and dress-up. It is made by Strategic Sloth LLC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Sloth Jam free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Sloth Jam is free to play in your web browser while it is in early access, which means it is still being built and has rough edges. Founder packs are optional and only give digital, cosmetic rewards. Nothing in the album needs one, and there is no pay to win."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What ages is Sloth Jam for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sloth Jam is made for ages 6 and up. No reading is needed: play is pictures and numbers, with one stick and one button. Only the grown-up screens use words, so parents and kids can play the same game."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What do I need to play Sloth Jam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A computer, phone or tablet with a web browser. There is nothing to download or install. Open https://slothjam.com/play/ and a grown-up signs in with their email before the first game. On a phone or tablet you can add it to your home screen to play full screen, like an app."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the whole family play Sloth Jam together?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. In the Family Cup you pass one device around the sofa and play for the cup. Everyone gets their own sloth, and family profiles share one closet of outfits. Online play with other families is in early testing and stays off until a grown-up turns it on behind the grown-ups lock. Friends then join by a picture code, never by searching."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Sloth Jam safe for my child?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Chat is a short list of kind words, so no names, ages or numbers get through. A grown-up makes the family account with a code sent by email, and a child never signs up. There are no loot boxes, no streaks that break, no limited-time offers, and a parent gate guards every money screen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Sloth Jam like Club Penguin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sloth Jam is a cozy island game for families, made by Remi Couture, who was an illustrator at Disney on Club Penguin from 2006 to 2009. You can play party games, dress up your sloth, decorate your own house and explore the island. Unlike Club Penguin, online play is off until a grown-up turns it on, and even then chat is only kind words from a short list. Sloth Jam is an independent game and is not affiliated with or endorsed by Disney."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who makes Sloth Jam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sloth Jam is designed and built by Remi Couture, working as Strategic Sloth LLC. Remi has about twenty years of making games, many for children, including children's apps for DreamWorks, BBC Kids and Nickelodeon at Cupcake Digital."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does a founder pack get me?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Digital, cosmetic rewards like a founder badge, outfits, the Founder House on the island and your name in the credits. Your money pays for playtesting, the Android app and new temples and side quests for the story."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get my founder code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It arrives by email a minute or two after you buy. In the game, open the grown-up menu, choose Redeem a backer code and paste it in."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I get a refund?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Reply to your receipt email within 30 days for a full refund."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script src="../lang.js?v=60e7fcf"></script>
+  <script src="../ga.js?v=60e7fcf" defer></script>
+</head>
+<body>
+  <!-- The island, in layers. data-depth is how near the camera a layer is (0 is the far sky):
+       it sets how far the layer leans from the pointer and how much it grows on scroll.
+       data-rise is how far it climbs as the page scrolls; the far layers sink instead, so
+       the near ones pull ahead without sliding off their own bottom edge. -->
+  <div class="backdrop" aria-hidden="true">
+    <div class="scene scene-wait">
+      <picture><source srcset="../media/layer-sky.avif" type="image/avif" /><img class="layer layer-sky" data-depth="0.05" data-rise="-0.25" src="../media/layer-sky.webp" fetchpriority="high" alt="" /></picture>
+      <picture><source srcset="../media/layer-lake.avif" type="image/avif" /><img class="layer layer-lake" data-depth="0.16" data-rise="-0.2" src="../media/layer-lake.webp" alt="" /></picture>
+      <div class="layer layer-ground" data-depth="0.28" data-rise="-0.05"></div>
+      <picture><source srcset="../media/layer-lighthouse.avif" type="image/avif" /><img class="layer layer-lighthouse" data-depth="0.36" data-rise="0" src="../media/layer-lighthouse.webp" alt="" /></picture>
+      <picture><source srcset="../media/layer-village.avif" type="image/avif" /><img class="layer layer-village" data-depth="0.46" data-rise="0.05" src="../media/layer-village.webp" alt="" /></picture>
+      <picture><source srcset="../media/layer-plaza.avif" type="image/avif" /><img class="layer layer-plaza" data-depth="0.66" data-rise="0.2" src="../media/layer-plaza.webp" fetchpriority="high" alt="" /></picture>
+      <div class="layer layer-grass" data-depth="1" data-rise="0.42"><picture><source srcset="../media/layer-grass.avif" type="image/avif" /><img src="../media/layer-grass.webp" alt="" /></picture></div>
+    </div>
+    <div class="floater float-yellow" data-depth="1.15" data-drift="-0.7" data-rise="0.3"><picture><source srcset="../media/float-yellow.avif" type="image/avif" /><img src="../media/float-yellow.webp" alt="" /></picture></div>
+    <div class="floater float-pink" data-depth="1.3" data-drift="0.8" data-rise="0.35"><picture><source srcset="../media/float-pink.avif" type="image/avif" /><img src="../media/float-pink.webp" alt="" /></picture></div>
+    <div class="floater float-green" data-depth="1.6" data-drift="-1" data-rise="0.6"><picture><source srcset="../media/float-green.avif" type="image/avif" /><img src="../media/float-green.webp" alt="" /></picture></div>
+    <div class="floater float-blue" data-depth="1.8" data-drift="1" data-rise="0.75"><picture><source srcset="../media/float-blue.avif" type="image/avif" /><img src="../media/float-blue.webp" alt="" /></picture></div>
+  </div>
+
+  <header class="nav">
+    <a class="nav-logo" href="#top" aria-label="Sloth Jam, voltar ao topo"><picture><source srcset="../media/logo-nav.avif" type="image/avif" /><img src="../media/logo-nav.webp" alt="" width="320" height="172" /></picture></a>
+    <nav class="nav-links" id="site-menu" aria-label="Menu">
+      <a href="#friends">Amigos</a>
+      <a href="#games">Jogos</a>
+      <a href="#kart">Kart</a>
+      <a href="#founders">Fundadores</a>
+      <a href="#peak">Pico</a>
+      <a href="#story">História</a>
+      <a href="#explore">Explorar</a>
+      <a href="#sloths">Preguiças</a>
+      <a href="#cozy">Sossego</a>
+      <a href="#parents">Pais</a>
+      <a href="#maker">Criador</a>
+      <a class="nav-page" href="coloring.html">Colorir</a>
+      <a class="nav-page" href="../share.html">Compartilhar</a>
+      <a class="nav-page" href="../invite.html">Invite</a>
+    </nav>
+    <div class="nav-cta">
+      <details class="lang-menu">
+        <summary aria-label="Idioma"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z" /></svg><span class="lang-code">PT</span></summary>
+        <div class="lang-list">
+          <a href="../" data-lang="en" hreflang="en" lang="en">English</a>
+          <a href="../es/" data-lang="es" hreflang="es" lang="es">Español</a>
+          <a href="./" data-lang="pt" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português</a>
+          <a href="../fr/" data-lang="fr" hreflang="fr" lang="fr">Français</a>
+          <a href="../de/" data-lang="de" hreflang="de" lang="de">Deutsch</a>
+          <a href="../it/" data-lang="it" hreflang="it" lang="it">Italiano</a>
+          <a href="../zh/" data-lang="zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="../zh-hant/" data-lang="zh-hant" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="../ja/" data-lang="ja" hreflang="ja" lang="ja">日本語</a>
+          <a href="../ko/" data-lang="ko" hreflang="ko" lang="ko">한국어</a>
+        </div>
+      </details>
+      <a class="btn btn-play nav-play" href="../play/" aria-label="Jogar agora, acesso antecipado"><span class="play-icon" aria-hidden="true"></span>Jogar</a>
+      <a class="btn btn-ks nav-ks" href="#founders">Seja um <b>Fundador</b></a>
+      <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg><span class="nav-burger-label">Menu</span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <!-- The logo builds itself from its letters: SLTH drop in, the sloth swings down a vine,
+           JAM pops up, then the sparkles. Each part is placed in styles.css. -->
+      <div class="hero-logo hl-wait" role="img" aria-label="Sloth Jam&trade;">
+        <div class="hl-part hl-drop hl-s"><div class="hl-intro"><picture><source srcset="../media/logo/s.avif" type="image/avif" /><img src="../media/logo/s.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-drop hl-l"><div class="hl-intro"><picture><source srcset="../media/logo/l.avif" type="image/avif" /><img src="../media/logo/l.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-drop hl-t"><div class="hl-intro"><picture><source srcset="../media/logo/t.avif" type="image/avif" /><img src="../media/logo/t.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-drop hl-h"><div class="hl-intro"><picture><source srcset="../media/logo/h.avif" type="image/avif" /><img src="../media/logo/h.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-sloth"><div class="hl-intro"><div class="hl-vine"></div><picture><source srcset="../media/logo/sloth.avif" type="image/avif" /><img src="../media/logo/sloth.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-pop hl-j"><div class="hl-intro"><picture><source srcset="../media/logo/j.avif" type="image/avif" /><img src="../media/logo/j.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-pop hl-a"><div class="hl-intro"><picture><source srcset="../media/logo/a.avif" type="image/avif" /><img src="../media/logo/a.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-pop hl-m"><div class="hl-intro"><picture><source srcset="../media/logo/m.avif" type="image/avif" /><img src="../media/logo/m.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-burst hl-right"><div class="hl-intro"><picture><source srcset="../media/logo/burst.avif" type="image/avif" /><img src="../media/logo/burst.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-burst hl-left"><div class="hl-intro"><picture><source srcset="../media/logo/burst-star.avif" type="image/avif" /><img src="../media/logo/burst-star.webp" alt="" /></picture></div></div>
+        <i class="hl-twinkle hl-tw1"></i>
+        <i class="hl-twinkle hl-tw2"></i>
+        <i class="hl-twinkle hl-tw3"></i>
+        <i class="hl-twinkle hl-tw4"></i>
+        <span class="hl-tm" aria-hidden="true">&trade;</span>
+      </div>
+      <div class="trailer">
+        <video controls playsinline preload="none" data-poster="../media/trailer-2026-10-14-poster.jpg">
+          <source src="../media/trailer-2026-10-14.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h1 class="hero-title">
+        <svg class="spark spark-l" viewBox="0 0 40 40" aria-hidden="true"><path d="M26 6 32 16M10 16 22 22M8 32 20 30" /></svg>
+        The free cozy party game<br />the whole family can play.
+        <svg class="spark spark-r" viewBox="0 0 40 40" aria-hidden="true"><path d="M14 6 8 16M30 16 18 22M32 32 20 30" /></svg>
+      </h1>
+      <p class="hero-sub">59 one-minute party games. One stick, one button, no reading. Free in your browser.</p>
+      <div class="hero-cta">
+        <a class="btn btn-play btn-play-pill" href="../play/">Jogar agora<span class="ea-tag">Acesso antecipado</span></a>
+        <a class="btn btn-ks btn-founder" href="#founders">Seja um <b>Fundador</b></a>
+      </div>
+      <p class="press-mention"><small>Como ouvido na <a href="https://www.cbc.ca/listen/live-radio/1-110-daybreak-south/clip/16244668-former-kelowna-game-designer-back-free-game-kids" target="_blank" rel="noopener">CBC Radio, Daybreak South</a></small></p>
+      <!-- The Google Play app (apps/android), in review. Once Google approves it, this becomes
+           <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.slothjam.app">
+           with the image only (no "soon" class, no tag). -->
+      <!-- The App Store (apps/ios) badge works the same way: swap the div for a link to the listing
+           once it is live. The Amazon Appstore one is live: main.js points it at the visitor's own
+           Amazon store (amazon.ca, .co.uk...), amazon.com otherwise. The Nintendo line
+           is only a wish, so it uses no Nintendo logo or art. -->
+      <div class="store-badges">
+        <div class="play-badge soon" role="img" aria-label="Em breve no Google Play"><img src="../media/google-play-badge.png" alt="" width="646" height="250" /><span class="ea-tag">Em breve</span></div>
+        <div class="play-badge store-badge soon" role="img" aria-label="Em breve na App Store"><img src="../media/app-store-badge.svg" alt="" width="120" height="40" /><span class="ea-tag">Em breve</span></div>
+        <a class="play-badge store-badge" data-amazon-app="B0HNDWTBGH" href="https://www.amazon.com/dp/B0HNDWTBGH" target="_blank" rel="noopener" aria-label="Disponível na Amazon Appstore"><img src="../media/amazon-appstore-badge.png" alt="" width="572" height="168" /><span class="ea-tag ea-live">Já disponível</span></a>
+      </div>
+      <p class="console-tease"><svg viewBox="0 0 48 30" aria-hidden="true"><rect x="2" y="2" width="44" height="26" rx="9" /><path d="M11 11v8M7 15h8" /><circle cx="35" cy="12" r="2.4" /><circle cx="39" cy="18" r="2.4" /></svg>Psiu&hellip; estamos sonhando com o Nintendo Switch&trade; depois.</p>
+      <ul class="hero-perks">
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path class="pk-heart" d="M24 41 8.6 26.4C3.8 21.8 4.2 13.8 9.8 10.4c4.4-2.6 9.8-1.2 14.2 4 4.4-5.2 9.8-6.6 14.2-4 5.6 3.4 6 11.4 1.2 16z" /></svg>Grátis para jogar</li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><g class="pk-nodl"><circle cx="24" cy="24" r="19" /><path d="M24 13v15M18 23l6 6 6-6M15 33h18M11 11l26 26" /></g></svg>Sem download</li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><g class="pk-smile"><circle cx="24" cy="24" r="19" /><path d="M16 27c2 4.4 5 6.4 8 6.4s6-2 8-6.4" /><circle class="pk-eye" cx="18" cy="19" r="2.6" /><circle class="pk-eye" cx="30" cy="19" r="2.6" /></g></svg>A partir de 6 anos</li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><g class="pk-gift"><rect x="7" y="17" width="34" height="9" rx="2" /><rect x="10" y="26" width="28" height="16" rx="2" /><path class="pk-ribbon" d="M22 17h4v25h-4zM24 17c-3-7-11-8-11-3 0 3 6 3 11 3zM24 17c3-7 11-8 11-3 0 3-6 3-11 3z" /></g></svg>Sem caixas de recompensa</li>
+      </ul>
+      <!-- Shown to everyone; main.js swaps in the steps for an iPhone/iPad or an Android phone. -->
+      <div class="tip-card" data-home-tip>
+        <img class="tip-qr" src="../media/qr-slothjam.png" alt="Código QR de slothjam.com" width="1160" height="1160" loading="lazy" />
+        <div class="tip-text">
+          <span class="tip-badge">Jogue onde quiser</span>
+          <div data-tip="any">
+            <p class="tip-lead"><span class="tip-qr-line">Escaneie para jogar no celular ou tablet.</span><span class="tip-touch-line">Jogue em tela cheia, como um app.</span></p>
+            <p class="tip-sub">Abra o jogo e toque em <b>Adicionar à Tela de Início</b> para jogar em tela cheia.</p>
+          </div>
+          <div data-tip="ios" hidden>
+            <p class="tip-lead">Jogue em tela cheia, como um app.</p>
+            <p class="tip-sub">Toque em <b>Jogar agora</b>, depois em Compartilhar <svg class="tip-share" viewBox="0 0 24 24" aria-label="Compartilhar"><path d="M8.5 9H6.5v12h11V9h-2M12 15V2.5M8.5 6 12 2.5 15.5 6" /></svg> e em <b>Adicionar à Tela de Início</b>.</p>
+          </div>
+          <div data-tip="android" hidden>
+            <p class="tip-lead">Jogue em tela cheia, como um app.</p>
+            <p class="tip-sub">Toque em <b>Jogar agora</b>, depois em <b>&#8942;</b> e em <b>Adicionar à tela inicial</b> ou <b>Instalar app</b>.</p>
+          </div>
+        </div>
+        <img class="tip-sloth" src="../media/sloth-yay.webp" alt="" width="400" height="400" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="panel panel-friends" id="friends">
+      <h2 class="badge badge-pink">Amigos da ilha</h2>
+      <p class="strap">A mesma ilha, <em>mais amigos</em>.</p>
+      <figure class="art">
+        <picture><source data-srcset="../media/art-island-friends.avif" type="image/avif" /><img data-src="../media/art-island-friends.webp" alt="Ilustração: a preguiça de óculos escuros com os moradores da ilha em volta, um tucano, um sapo, um guaxinim, um gorila, um yeti, um morcego, uma lontra, um gato e um panda-vermelho" width="1400" height="933" loading="lazy" /></picture>
+        <figcaption>Isto é uma ilustração, não uma captura de tela. No jogo, os moradores da ilha têm seu próprio estilo de brinquedo, como nas fotos abaixo.</figcaption>
+      </figure>
+      <p class="lead">Outros dez animais vivem nos arredores da cidade, de uma lontra a um yeti. Chegue perto e eles acenam, respondem aos seus gestos e conversam, e à noite se enrolam para dormir.</p>
+      <div class="split split-3">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-islander-redpanda.jpg" aria-label="A preguiça acenando para o panda-vermelho da ilha"><source src="../media/loop-scene-islander-redpanda.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-islander-raccoon.jpg" aria-label="A preguiça conhecendo o guaxinim da ilha embaixo dos pinheiros"><source src="../media/loop-scene-islander-raccoon.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-islander-bat.jpg" aria-label="A preguiça dando oi para o morcego da ilha"><source src="../media/loop-scene-islander-bat.mp4" type="video/mp4" /></video>
+      </div>
+    </section>
+
+    <section class="panel" id="games">
+      <h2 class="badge badge-yellow">Os jogos de festa</h2>
+      <p class="strap">Cada jogo dura <em>um minuto</em>.</p>
+      <p class="lead">Uma partida tem três rodadas, e a última vale em dobro. Quem está em último escolhe o jogo da final, e 49 surpresas de festa como Tempestade de Frutas e Ouro em Dobro mudam um jogo por uma rodada. Os jogadores do computador jogam como um irmão gentil: nos nossos testes, nós os ajustamos para que um jogador novo ganhe mais ou menos uma rodada a cada quatro.</p>
+
+      <div class="games">
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="Como se joga Chuva de Frutas"><source src="../media/game-fruitFall.mp4" type="video/mp4" /></video>
+          <h3>Chuva de Frutas</h3>
+          <p>Pegue uma cesta e apanhe as frutas boas enquanto caem. As encaroçadas e de cara feia estão podres. Deixe essas para lá.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="Como se joga Pega-Preguiça"><source src="../media/game-slothTag.mp4" type="video/mp4" /></video>
+          <h3>Pega-Preguiça</h3>
+          <p>Quem está com a vez usa a coroa. Corra, desvie e fique dentro do círculo enquanto ele encolhe.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="Como se joga Acerte a Toupeira"><source src="../media/game-popTheMoles.mp4" type="video/mp4" /></video>
+          <h3>Acerte a Toupeira</h3>
+          <p>Nove buracos, um martelo de espuma. Faça combos, fique de olho na toupeira dourada e cuidado com o ouriço.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="Como se joga Desfile das Lanternas"><source src="../media/game-lanternParade.mp4" type="video/mp4" /></video>
+          <h3>Desfile das Lanternas</h3>
+          <p>Neste ninguém perde. Acendam juntos todas as lanternas antes que o tempo acabe e dividam as estrelas.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="Como se joga Pula-Rede"><source src="../media/game-hammockHop.mp4" type="video/mp4" /></video>
+          <h3>Pula-Rede</h3>
+          <p>Um círculo de redes balançando, bem longe do chão. Ganha a última preguiça que continuar de pé.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="Como se joga Vagonete de Cristal"><source src="../media/game-crystalCart.mp4" type="video/mp4" /></video>
+          <h3>Vagonete de Cristal</h3>
+          <p>Ande de vagonete pela caverna de cristal. Incline nas curvas, pule os buracos e gire para ganhar pontos de manobra.</p>
+        </article>
+      </div>
+      <p class="more">E também Esconde-Lanche, Junta-Coelhos, Quica-Pedra, Derruba-Chapéu, Desvia-Coco, Cabo de Cipó, Hóquei no Lago e mais 51.</p>
+      <h3 class="sub-head">Novidades na estante de jogos</h3>
+      <div class="games">
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="Como se joga Hóquei no Lago"><source src="../media/loop-pond-hockey.mp4" type="video/mp4" /></video>
+          <h3>Hóquei no Lago</h3>
+          <p>Dois times no lago congelado do Pico Nevado, com um goleiro em cada gol. Toque para chutar, segure para uma tacada forte.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-coconut-dodge.jpg" aria-label="Como se joga Desvia-Coco"><source src="../media/loop-coconut-dodge.mp4" type="video/mp4" /></video>
+          <h3>Desvia-Coco</h3>
+          <p>Cocos rolam por um caminho de areia. Desvie dos grandes e pule os pequenos.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-hat-whack.jpg" aria-label="Como se joga Derruba-Chapéu"><source src="../media/loop-hat-whack.mp4" type="video/mp4" /></video>
+          <h3>Derruba-Chapéu</h3>
+          <p>Tente derrubar os chapéus das outras preguiças e mantenha o seu na cabeça. Um chapéu perdido logo volta.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-star-skate.jpg" aria-label="Como se joga Patina-Estrela"><source src="../media/loop-star-skate.mp4" type="video/mp4" /></video>
+          <h3>Patina-Estrela</h3>
+          <p>Deslize pelas estrelas em ordem para desenhar formas no gelo.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="Como se joga Guerra de Neve"><source src="../media/loop-snowball-splat.mp4" type="video/mp4" /></video>
+          <h3>Guerra de Neve</h3>
+          <p>Jogue bolas de neve nos bonecos de neve no meio de um círculo nevado.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="Como se joga Ache o Par"><source src="../media/loop-pair-up.mp4" type="video/mp4" /></video>
+          <h3>Ache o Par</h3>
+          <p>Um quebra-cabeça tranquilo de tocar: doze cartas viradas para baixo, seis pares para encontrar.</p>
+        </article>
+      </div>
+      <ul class="tiles tiles-3">
+        <li><h3>Rodadas em equipe</h3><p>Algumas rodadas dividem a festa em dois times que dividem os pontos.</p></li>
+        <li><h3>Surpresas de festa</h3><p>A maioria dos jogos tem uma surpresa que os muda por uma rodada, como uma tempestade de frutas ou uma toupeira dourada que aparece duas vezes mais.</p></li>
+        <li><h3>Chegue e jogue</h3><p>Cada jogo tem uma placa na cidade, então você pode jogar só aquele.</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-kart" id="kart">
+      <h2 class="badge badge-red">Kart Preguiça</h2>
+      <p class="strap">Cinco pistas. <em>Todo mundo corre.</em></p>
+      <p class="lead">Uma corrida de kart todos contra todos. Empurre o direcional para onde quer ir, segure o botão numa curva para derrapar e passe por uma caixa de itens para pegar uma pimenta, uma banana, um casco, um perseguidor ou uma estrela. Portais, voltas, moedas e a sua chegada valem pontos, então todo piloto leva pontos para casa.</p>
+      <div class="games games-kart">
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartPlaza.jpg" aria-label="Karts correndo na Volta da Praça"><source src="../media/loop-game-kartPlaza.mp4" type="video/mp4" /></video>
+          <h3>Volta da Praça</h3>
+          <p>Larga e tranquila, em volta da cidade. Três voltas, e a melhor para aprender.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartCoast.jpg" aria-label="Karts correndo pela praia na Costa dos Cocos"><source src="../media/loop-game-kartCoast.mp4" type="video/mp4" /></video>
+          <h3>Costa dos Cocos</h3>
+          <p>Curvas em S pela praia, com palmeiras e poças entre as pedras no caminho.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartFrost.jpg" aria-label="Karts correndo na pista nevada do Pico Gelado"><source src="../media/loop-game-kartFrost.mp4" type="video/mp4" /></video>
+          <h3>Pico Gelado</h3>
+          <p>Uma curva fechada e gelo escorregadio na volta toda. Cuidado com os bonecos de neve.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartLava.jpg" aria-label="Karts correndo numa estrada estreita sobre a lava"><source src="../media/loop-game-kartLava.mp4" type="video/mp4" /></video>
+          <h3>Corrida da Lava</h3>
+          <p>Uma estrada estreita sobre a lava, com curvas fechadas e sem grades. Um kart que cai é colocado de volta na pista.</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartRainbow.jpg" aria-label="Karts correndo numa estrada de arco-íris sobre as nuvens"><source src="../media/loop-game-kartRainbow.mp4" type="video/mp4" /></video>
+          <h3>Céu Arco-Íris</h3>
+          <p>Curvas longas sobre as nuvens e turbos pelo caminho todo. A melhor para derrapar.</p>
+        </article>
+      </div>
+      <ul class="tiles tiles-3">
+        <li><h3>Derrape para acelerar</h3><p>Segure o botão numa curva até as faíscas ficarem azuis, depois laranja, depois rosa. Solte para disparar na frente.</p></li>
+        <li><h3>Ajuda para quem está atrás</h3><p>Os karts lá atrás ganham itens melhores, então ninguém fica sozinho no fim do pelotão.</p></li>
+        <li><h3>Cinco bandeiras</h3><p>Cada pista tem sua própria bandeira atrás da pista de kart na cidade, para você correr só nela.</p></li>
+      </ul>
+    </section>
+
+    <section class="panel" id="founders">
+      <h2 class="badge badge-ks">Seja um fundador</h2>
+      <p class="strap">A ilha está pronta e crescendo. <em>Ajude a gente a terminá-la.</em></p>
+      <p class="lead">Compre hoje um pacote de fundador e o seu dinheiro paga testes com famílias de verdade, o app para Android, novos templos e missões secundárias para a Grande Festa e um capricho na arte e no som. Todas as recompensas são digitais e cosméticas, e nada no álbum exige um pacote de fundador. O jogo continua grátis para jogar enquanto estiver em acesso antecipado.</p>
+      <div class="rewards">
+        <article class="reward">
+          <img src="../media/reward-pal.jpg" alt="" width="800" height="531" loading="lazy" />
+          <span class="price" data-price="pal">$5</span>
+          <h3>Amigo da Ilha</h3>
+          <p>Um distintivo de fundador para a sua preguiça, a <a href="#founder-house">Casa dos Fundadores</a> na ilha e um agradecimento nos créditos.</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="pal" hidden>Comprar por <span data-price="pal">$5</span></a>
+        </article>
+        <article class="reward reward-pick">
+          <span class="pick-tag">Nossa escolha</span>
+          <img src="../media/reward-founder.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="founder">$15</span>
+          <h3>Fundador</h3>
+          <p>Tudo do Amigo da Ilha, mais a roupa de fundador (chapéu, camiseta, mochila) e acesso antecipado ao app para Android quando ele estiver pronto.</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="founder" hidden>Comprar por <span data-price="founder">$15</span></a>
+        </article>
+        <article class="reward">
+          <img src="../media/reward-family.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="family">$30</span>
+          <h3>Fundador Família</h3>
+          <p>Tudo do Fundador, mais quatro combinações de cores de fundador, uma por perfil da família, e um voto no próximo jogo de festa.</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="family" hidden>Comprar por <span data-price="family">$30</span></a>
+        </article>
+        <article class="reward">
+          <img src="../media/reward-patron.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="patron">$75</span>
+          <h3>Padrinho da Ilha</h3>
+          <p>Tudo do Fundador Família, mais uma placa num banco da ilha com um ícone que você escolhe entre oito.</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="patron" hidden>Comprar por <span data-price="patron">$75</span></a>
+        </article>
+        <article class="reward">
+          <img src="../media/reward-portrait.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="portrait">$250</span>
+          <h3>Retrato de Família</h3>
+          <p>Criamos com você um parente da Família Preguiça e o adicionamos ao álbum de todos os jogadores, e você ainda ganha todas as recompensas de Padrinho da Ilha. Limitado a 20.</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="portrait" hidden>Comprar por <span data-price="portrait">$250</span></a>
+        </article>
+      </div>
+      <p class="price-note" data-price-note="usd">Os preços estão em dólares americanos. No pagamento, a Stripe mostra o valor na sua moeda.</p>
+      <p class="price-note" data-price-note="local" hidden>Os preços aparecem na sua moeda. É esse o valor que você paga no pagamento.</p>
+      <div class="founder-house" id="founder-house">
+        <div class="fh-pics">
+          <img src="../media/founder-house-outside.jpg" alt="A Casa dos Fundadores: uma casinha redonda de três andares com beirais de folhas, um telhado em forma de casca de semente e um broto no alto, ao lado do lago de vitórias-régias" width="960" height="640" loading="lazy" />
+          <img src="../media/founder-house-inside.jpg" alt="Dentro da Casa dos Fundadores: uma sala com lareira, uma escada que sobe para uma biblioteca de sementes e um sótão embaixo de uma janela redonda" width="960" height="640" loading="lazy" />
+        </div>
+        <div class="fh-text">
+          <span class="fh-tag">Em todos os pacotes de fundador</span>
+          <h3>A Casa dos Fundadores</h3>
+          <p>Uma casa que nasceu de uma semente, lá perto do porto, só para fundadores. Suba três andares: uma sala com uma lareira estalando, uma biblioteca de sementes no andar de cima e um sótão aconchegante com um telescópio embaixo da janela redonda. Ela vem com todos os pacotes de fundador e abre no seu jogo assim que você resgata o seu código de fundador.</p>
+        </div>
+      </div>
+      <p class="buy-note" data-buy-note hidden>O pagamento é feito pela Stripe. Seu código de fundador chega por e-mail um ou dois minutos depois da compra. No jogo, abra o menu dos adultos, escolha <b>Redeem a backer code</b> (resgatar um código de apoiador) e cole o código. Mudou de ideia? Responda ao e-mail do seu recibo em até 30 dias para receber o reembolso total.</p>
+      <p class="buy-note" data-buy-soon>Os pacotes de fundador vão estar à venda aqui muito em breve.</p>
+      <p class="buy-note">Already playing? <a href="#invite">Invite friends</a>: when they join or buy a pack through your link, your family gets gifts in the game, up to a free founder upgrade.</p>
+    </section>
+
+    <section class="panel" id="invite">
+      <h2 class="badge badge-purple">Invite friends</h2>
+      <p class="strap">Share the island, <em>earn gifts</em>.</p>
+      <p class="lead">Every grown-up account has a family invite link. When friends join or buy a founder pack through it, your family gets gifts in the game, on every device.</p>
+      <ul class="tiles tiles-clips invite-tiles">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-invite-friend-pin.jpg" aria-label="A sloth waving, with a coral heart pin on its chest"><source src="../media/loop-invite-friend-pin.mp4" type="video/mp4" /></video><h3>A friend joins</h3><p>A heart Friend pin for both families, plus coins: 300 for them, 250 for you, for up to 5 friends.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-invite-ambassador.jpg" aria-label="A sloth in a coral beret and a blue jacket with a sash, waving in the boutique"><source src="../media/loop-invite-ambassador.mp4" type="video/mp4" /></video><h3>1 pack bought</h3><p>The Ambassador outfit: a beret, and a jacket with a sash and a heart rosette.</p></li>
+        <li><img class="clip" src="../media/reward-founder.jpg" alt="A sloth in the founder outfit: a sprout cap, a leaf vest and a seed pack" width="800" height="533" loading="lazy" /><h3>3 packs bought</h3><p>A free upgrade to the next founder pack, added to your account by itself.</p></li>
+        <li><img class="clip" src="../media/founder-house-outside.jpg" alt="The Founder House, a round three-storey cottage by the lily pond" width="960" height="640" loading="lazy" /><h3>10 packs bought</h3><p>Island Patron: the Founder House, every outfit color and the bench plaque.</p></li>
+      </ul>
+      <p class="invite-cta"><a class="btn btn-play btn-big" href="../invite.html">Get your invite link</a></p>
+    </section>
+
+    <section class="panel panel-snow" id="peak">
+      <h2 class="badge badge-ice">Pico Nevado</h2>
+      <p class="strap">Uma montanha nevada <em>do outro lado da água</em>.</p>
+      <p class="lead">Ache o telescópio na praia do norte e olhe por ele para ir até lá. Suba no teleférico e depois desça de snowboard, de esqui ou de trenó.</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-peak.jpg" aria-label="A preguiça na encosta nevada do Pico Nevado, perto do teleférico"><source src="../media/loop-scene-peak.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-game-powderRun.jpg" aria-label="Preguiças descendo de trenó a toda velocidade por uma pista nevada"><source src="../media/loop-scene-game-powderRun.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-game-snowballSplat.jpg" aria-label="Preguiças jogando bolas de neve entre dois bonecos de neve"><source src="../media/loop-scene-game-snowballSplat.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-game-starSkate.jpg" aria-label="Preguiças patinando formas de estrela num lago congelado"><source src="../media/loop-scene-game-starSkate.mp4" type="video/mp4" /></video>
+      </div>
+      <p class="more">Sete jogos de inverno moram aqui em cima: Descida na Neve Fofa, Slalom, Salto de Esqui, Guerra de Neve, Pedras Escorregadias, Patina-Estrela e Hóquei no Lago.</p>
+    </section>
+
+    <section class="panel panel-vale" id="vale">
+      <h2 class="badge badge-green">Vale do Trevo</h2>
+      <p class="strap">Um vale de pôneis <em>pelo telescópio</em>.</p>
+      <p class="lead">Vire o telescópio para o Vale do Trevo e entre num vale verde de rios, pontes e cavernas. Suba no pônei no poste de amarrar e cavalgue: um empurrãozinho anda, até o fim galopa, e o botão de pulo passa por troncos e cercas. Doze ferraduras douradas estão escondidas pelo vale.</p>
+      <div class="places">
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-vale-ride.jpg" aria-label="Uma preguiça num pônei trotando do poste de amarrar em direção ao cercado"><source src="../media/loop-vale-ride.mp4" type="video/mp4" /></video>
+          <h3>Passeios de pônei</h3>
+          <p>Ande, trote ou galope pelas trilhas. Nada pode machucar o pônei: ele para de leve numa árvore, num penhasco ou em água funda.</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-ponyJoust.jpg" aria-label="Preguiças em pôneis cavalgando uma contra a outra pela raia"><source src="../media/loop-game-ponyJoust.mp4" type="video/mp4" /></video>
+          <h3>Justa de Pôneis</h3>
+          <p>Cavalguem um contra o outro pela raia e abaixem a lança na hora certinha. Ninguém cai.</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-hoofHurdles.jpg" aria-label="Preguiças em pôneis pulando uma fileira de obstáculos lado a lado"><source src="../media/loop-game-hoofHurdles.mp4" type="video/mp4" /></video>
+          <h3>Saltos de Ferradura</h3>
+          <p>Galopem lado a lado num percurso de saltos e pulem cada obstáculo quando ele chegar.</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-ringTilt.jpg" aria-label="Preguiças em pôneis pegando argolas com suas lanças"><source src="../media/loop-game-ringTilt.mp4" type="video/mp4" /></video>
+          <h3>Pega-Argola</h3>
+          <p>Guie a ponta da sua lança pelas argolas acima da sua raia. Todo mundo recebe exatamente as mesmas argolas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="story">
+      <h2 class="badge badge-purple">A Grande Festa</h2>
+      <p class="strap">Uma história <em>sem palavras</em>.</p>
+      <p class="lead">Um vento forte levou o festival embora. As bandeirinhas caíram, a fonte secou e uma ponte perdeu as tábuas. Ajude a Família Preguiça a arrumar a cidade de novo e veja a cidade mudar enquanto você avança.</p>
+      <div class="split">
+        <img src="../media/story-storm.jpg" alt="Um cartão da história: o farol numa tempestade" width="960" height="540" loading="lazy" />
+        <img src="../media/story-calm.jpg" alt="Um cartão da história: o farol sob um céu limpo" width="960" height="540" loading="lazy" />
+      </div>
+      <ul class="tiles tiles-3">
+        <li><h3>Contada com imagens</h3><p>Cartões com imagens e balões de pensamento contam a história toda. Ninguém precisa ler.</p></li>
+        <li><h3>Sem pontos para bater</h3><p>Nenhuma missão pede pontos. Terminar uma rodada já basta.</p></li>
+        <li><h3>Nove capítulos prontos</h3><p>Os nove capítulos estão no jogo: conheça os Resmungões, ganhe ferramentas como uma espada de brinquedo e uma lanterna, e traga para casa três Sinos do Vento. Um livro de histórias deixa você jogar de novo qualquer parte.</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-sea" id="explore">
+      <h2 class="badge badge-sea">Lugares novos</h2>
+      <p class="strap">A ilha <em>não para de crescer</em>.</p>
+      <p class="lead">Lugares para explorar no seu ritmo. Nada lá fora pode machucar a sua preguiça.</p>
+      <div class="places">
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-coral-cove.jpg" aria-label="Nadando na Enseada do Coral"><source src="../media/loop-coral-cove-swim.mp4" type="video/mp4" /></video>
+          <h3>Enseada do Coral</h3>
+          <p>Pule do píer até um recife no fundo do mar. Conheça oito amigos do mar, ache seis pérolas em mariscos gigantes e abra o baú do navio naufragado.</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-moon.jpg" aria-label="A preguiça com um capacete espacial ao lado do foguete na Lua, com a Terra no céu"><source src="../media/loop-scene-moon.mp4" type="video/mp4" /></video>
+          <h3>A Lua</h3>
+          <p>Entre no foguete de brinquedo da praia e decole. Quique pelas crateras com um capacete de vidro, com a Terra pendurada no céu.</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-skate-isle.jpg" aria-label="Andando de skate na Ilha do Skate"><source src="../media/loop-skate-isle-ride.mp4" type="video/mp4" /></video>
+          <h3>Ilha do Skate</h3>
+          <p>Uma ilha inteira que é uma grande pista de skate. Escolha skate, patinete, bicicleta ou patins e pule para fazer manobras no half-pipe e no bowl.</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-pinecone-ridge.jpg" aria-label="Descendo de bicicleta pela Serra das Pinhas"><source src="../media/loop-pinecone-ridge-bike.mp4" type="video/mp4" /></video>
+          <h3>Serra das Pinhas</h3>
+          <p>Uma montanha verde de verão com quatro trilhas de bicicleta, de um passeio sossegado pelo campo a uma linha de saltos. Cada trilha tem um cronômetro, se você quiser.</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-sky-spout.jpg" aria-label="Uma preguiça levada para cima por um jato de vento na Ilha do Céu, com a folha aberta e ilhotas flutuando em volta"><source src="../media/loop-sky-spout.mp4" type="video/mp4" /></video>
+          <h3>Ilha do Céu</h3>
+          <p>Pise na plataforma do elevador do céu no gramado oeste e suba até uma ilha nas nuvens. Suba nos jatos de vento, plane por dez argolas embaixo de uma folha e encontre dez penas douradas. Se cair da beirada, você volta flutuando.</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-workshop.jpg" aria-label="Uma preguiça acenando na Oficina das Engrenagens, com um relógio de engrenagens na parede e o Professor Engrenagem no balcão"><source src="../media/loop-workshop.mp4" type="video/mp4" /></video>
+          <h3>Oficina das Engrenagens</h3>
+          <p>Uma loja steampunk com uma cartola gigante no telhado e um dirigível voando em volta. O Professor Engrenagem, o inventor da ilha, cuida do balcão, e alguns jogos de festa são jogados ali mesmo na sala.</p>
+        </article>
+      </div>
+      <ul class="tiles">
+        <li><h3>O Castelo de Areia Sonolento</h3><p>Uma masmorra tranquila na praia: tochas, chaves e caixotes, e uma tartaruga gigante para acordar.</p></li>
+        <li><h3>Santuários</h3><p>Quatro salinhas de enigmas pela cidade, cada uma resolvida só com o direcional. Em nenhuma dá para falhar.</p></li>
+        <li><h3>Argolas de cipó</h3><p>Argolas brilhantes que você alcança balançando num cipó, sem precisar mirar, para chegar ao alto dos penhascos e das copas das árvores.</p></li>
+        <li><h3>Pedras mágicas e uma coruja</h3><p>Desperte oito pedras em pé para pular de um canto a outro da ilha e siga uma coruja amiga até lugares ainda não descobertos.</p></li>
+      </ul>
+    </section>
+
+    <section class="panel" id="home">
+      <h2 class="badge badge-orange">Casa e diversão</h2>
+      <p class="strap">Uma casa, uma barraca <em>e muitos brinquedos</em>.</p>
+      <div class="places">
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-my-house.jpg" aria-label="A preguiça acenando dentro da sua própria casa, com uma cama, um abajur, uma estante e um baú de brinquedos"><source src="../media/loop-scene-my-house.mp4" type="video/mp4" /></video>
+          <h3>Minha casa</h3>
+          <p>Sua própria casa no gramado, com 26 móveis para arrumar e tintas para as paredes. Ganhe um cômodo maior com níveis e moedas.</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-stall.jpg" aria-label="A preguiça vestida de chef na sua barraca de comida, com um cliente esperando o pedido"><source src="../media/loop-scene-stall.mp4" type="video/mp4" /></video>
+          <h3>Sua barraca</h3>
+          <p>Faça coisas na bancada e venda na sua barraca. Você escolhe o preço, e ninguém pode cobrar demais.</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" aria-label="Dirigindo o kart"><source src="../media/loop-go-kart.mp4" type="video/mp4" /></video>
+          <h3>Kart</h3>
+          <p>Entre e dirija pela estrada que contorna a cidade. Pegue as oito estrelas penduradas sobre ela para completar uma volta.</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" aria-label="O balão de ar quente subindo sobre a cidade"><source src="../media/loop-balloon-ride.mp4" type="video/mp4" /></video>
+          <h3>Balão de ar quente</h3>
+          <p>Flutue por cima da ilha inteira, com preguiças da família correndo para vir junto.</p>
+        </article>
+      </div>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-cooking.jpg" aria-label="Uma preguiça comendo uma torta fresquinha perto do forno da padaria e ficando maior"><source src="../media/loop-cozy-cooking.mp4" type="video/mp4" /></video><h3>Culinária</h3><p>Cozinhe o que você planta: saladas, biscoitos, tortas e ensopado. Cada um dá um pouco de energia: um pulo mais alto, pés mais rápidos ou uma preguiça maior.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-sailing.jpg" aria-label="Saindo do píer no barco a vela"><source src="../media/loop-cozy-sailing.mp4" type="video/mp4" /></video><h3>Velejar</h3><p>O barco do píer agora tem vela. Estoure barris para ganhar brotos e puxe baús afundados.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-camera.jpg" aria-label="Tirando uma foto da fonte e colocando no álbum de fotos"><source src="../media/loop-cozy-camera.mp4" type="video/mp4" /></video><h3>Uma câmera da cidade</h3><p>Fotografe bichinhos, parentes e pontos famosos para encher um álbum de fotos, com um prêmio para cada página.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-music-lawn.jpg" aria-label="Tocando congas no gramado da música, com notas voando para cima"><source src="../media/loop-cozy-music-lawn.mp4" type="video/mp4" /></video><h3>Gramado da música</h3><p>Um baixo, congas, um ukulele e um trompete para tocar. A banda ensina quatro musiquinhas que trazem chuva, transformam o dia em noite, abrem flores ou chamam os coelhos.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-bottle.jpg" aria-label="Achando uma garrafa na beira do lago e erguendo ela no alto"><source src="../media/loop-cozy-bottle.mp4" type="video/mp4" /></video><h3>Uma garrafa</h3><p>Pegue um vaga-lume ou uma borboleta, recolha água do lago ou guarde um lanche para depois.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-heart-pieces.jpg" aria-label="Pegando um pedaço de coração cor-de-rosa e erguendo ele no alto"><source src="../media/loop-cozy-heart-pieces.mp4" type="video/mp4" /></video><h3>Pedaços de coração</h3><p>Doze pedaços de coração cor-de-rosa estão escondidos pela cidade ou são dados por amigos. Cada quatro formam um coração com uma pequena vantagem, como um pulo mais alto.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-tall-grass.jpg" aria-label="Correndo pelo mato alto até um arbusto de frutinhas"><source src="../media/loop-cozy-tall-grass.mp4" type="video/mp4" /></video><h3>Mato alto e frutinhas</h3><p>Corra pelo mato alto ou sacuda um arbusto de frutinhas e pequenas surpresas aparecem: uma moeda, um broto, uma borboleta.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-dj-ana.jpg" aria-label="Dançando com DJ Ana no Clube de Dança"><source src="../media/loop-cozy-dj-ana.mp4" type="video/mp4" /></video><h3>DJ Ana</h3><p>A DJ da ilha fica perto do coreto durante o dia e toca nas pick-ups do Clube de Dança à noite.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-name-tags.jpg" aria-label="Escolhendo um nome a partir de duas imagens"><source src="../media/loop-cozy-name-tags.mp4" type="video/mp4" /></video><h3>Crachás com nome</h3><p>Cada preguiça ganha um nome feito de duas imagens. Nada é digitado.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-goals.jpg" aria-label="Ganhando uma estrela no livro de metas e virando as páginas"><source src="../media/loop-cozy-goals.mp4" type="video/mp4" /></video><h3>Um livro de metas</h3><p>27 coisas para fazer em quatro páginas, cada uma com três estrelas para ganhar. Complete uma página para ganhar uma peça de roupa que só existe ali.</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-sky" id="sloths">
+      <h2 class="badge badge-pink">As preguiças</h2>
+      <p class="strap">Vista fantasias. Faça de conta. <em>Ganhe roupas jogando.</em></p>
+      <div class="lineup">
+        <img src="../media/sloth-pirate.webp" alt="Uma preguiça vestida de pirata" width="560" height="560" loading="lazy" />
+        <img src="../media/sloth-viking.webp" alt="Uma preguiça vestida de viking" width="560" height="560" loading="lazy" />
+        <img src="../media/sloth-crown.webp" alt="Uma preguiça de coroa e óculos de proteção" width="560" height="560" loading="lazy" />
+        <img src="../media/sloth-tophat.webp" alt="Uma preguiça de cartola" width="560" height="560" loading="lazy" />
+      </div>
+      <p class="lead">Um guarda-roupa com 16 roupas temáticas, além de chapéus, camisetas, mochilas e acessórios. Os perfis da família dividem um só armário, então cada roupa chega a todo mundo.</p>
+      <h3 class="sub-head">Brincar de fantasia</h3>
+      <p class="lead">Vista a roupa completa de chef, pirata ou mago e a cidade entra na brincadeira. 16 papéis, sem pontos e sem jeito de perder.</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-stall.jpg" aria-label="Uma preguiça com roupa de chef na barraca de comida, com um cliente"><source src="../media/loop-scene-stall.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-role-pirate.jpg" aria-label="Uma preguiça com roupa de pirata no cais do porto, ao lado de um barquinho a remo"><source src="../media/loop-scene-role-pirate.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-role-wizard.jpg" aria-label="Uma preguiça com roupa de mago perto da fonte"><source src="../media/loop-scene-role-wizard.mp4" type="video/mp4" /></video>
+      </div>
+      <h3 class="sub-head">A Costureira</h3>
+      <p class="lead">Um cantinho de costura na butique. Escolha um corte, as mangas, uma estampa, duas cores e um laço, e veja o vestido tomar forma na sua preguiça. Aperte o sinal de confirmação e ele é seu para usar, no guarda-roupa também.</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-dress-maker.jpg" aria-label="Fazendo um vestido de tutu rosa na Costureira e depois mudando a cor para laranja"><source src="../media/loop-dress-maker.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-dress-maker-2.jpg" aria-label="Fazendo um vestido de baile listrado com mangas bufantes na Costureira e depois deixando-o branco"><source src="../media/loop-dress-maker-2.mp4" type="video/mp4" /></video>
+      </div>
+    </section>
+
+    <section class="panel" id="cozy">
+      <h2 class="badge badge-green">O lado sossegado</h2>
+      <p class="strap">Entre um jogo e outro, <em>vá com calma</em>.</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-story-friends.jpg" aria-label="Preguiças passeando pela praça da ilha"><source src="../media/loop-scene-story-friends.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-story-garden.jpg" aria-label="Um terreno de horta com girassóis, laguinhos e uma casinha"><source src="../media/loop-scene-story-garden.mp4" type="video/mp4" /></video>
+      </div>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-fish.jpg" aria-label="Jogando a linha no lago e puxando uma meia encharcada"><source src="../media/loop-tile-fish.mp4" type="video/mp4" /></video><h3>Pescar</h3><p>Jogue a linha para pescar peixes e coisas bobas para o álbum. Uma meia encharcada é uma boa notícia: com duas você compra uma rede.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-garden.jpg" aria-label="Plantando uma semente num canteiro perto da praça"><source src="../media/loop-tile-garden.mp4" type="video/mp4" /></video><h3>Horta</h3><p>Plante, regue e feche o jogo. Ela continua crescendo enquanto você está longe.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-build.jpg" aria-label="Um terreno pronto com plantações, um lago, cercas e uma casinha"><source src="../media/loop-tile-build.mp4" type="video/mp4" /></video><h3>Construir</h3><p>Seu próprio terreno na ilha, feito com o que você pesca e planta.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-album.jpg" aria-label="Virando as páginas do álbum de figurinhas"><source src="../media/loop-tile-album.mp4" type="video/mp4" /></video><h3>Colecionar</h3><p>Um álbum de figurinhas com doze páginas para completar.</p></li>
+      </ul>
+      <h3 class="sub-head">Da manhã à luz das lanternas</h3>
+      <div class="split split-3">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-town-day.jpg" aria-label="A praça da cidade de dia, com a fonte e as bandeirinhas"><source src="../media/loop-scene-town-day.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-town-evening.jpg" aria-label="A mesma praça ao entardecer sob um céu cor-de-rosa, com as lanternas acesas"><source src="../media/loop-scene-town-evening.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-town-night.jpg" aria-label="A mesma praça à noite, iluminada por lanternas e cordões de luzes"><source src="../media/loop-scene-town-night.mp4" type="video/mp4" /></video>
+      </div>
+      <h3 class="sub-head">Aventuras e coisas para achar</h3>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-courses.jpg" aria-label="Correndo e pulando pelo percurso da Fortaleza de Areia"><source src="../media/loop-tile-courses.mp4" type="video/mp4" /></video><h3>Percursos</h3><p>Sete percursos de aventura com cinco missões cada, de uma caverna de cristal a uma fortaleza de areia.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-fireflies.jpg" aria-label="Pegando um vaga-lume escondido para o pote"><source src="../media/loop-tile-fireflies.mp4" type="video/mp4" /></video><h3>Vaga-lumes</h3><p>Quarenta vaga-lumes para pegar e pôr no pote. Mais vaga-lumes abrem mais percursos.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-town-toys.jpg" aria-label="Pulando na cama elástica grande"><source src="../media/loop-tile-town-toys.mp4" type="video/mp4" /></video><h3>Brinquedos da cidade</h3><p>Uma cama elástica, uma gangorra, um passeio de balão e uma mesa de som no coreto, além de caças a imagens e trilhas misteriosas.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-tables.jpg" aria-label="Jogando cartas na mesa contra um parente"><source src="../media/loop-tile-tables.mp4" type="video/mp4" /></video><h3>Mesas e fliperama</h3><p>Sete jogos de mesa para jogar contra um parente e seis máquinas de fliperama. Uma delas é uma bancada de consertos com 80 níveis de quebra-cabeça.</p></li>
+      </ul>
+      <h3 class="sub-head">Jogar juntos</h3>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-family-cup.jpg" aria-label="O cartão da Copa da Família que mostra de quem é a vez"><source src="../media/loop-tile-family-cup.mp4" type="video/mp4" /></video><h3>Copa da Família</h3><p>Passe um único aparelho de mão em mão no sofá e joguem pela copa.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-ghost.jpg" aria-label="Correndo contra o fantasma da melhor rodada no Desvia-Coco"><source src="../media/loop-tile-ghost.mp4" type="video/mp4" /></video><h3>Corridas fantasma</h3><p>Corra contra uma gravação da melhor rodada jogada no seu aparelho.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-closet.jpg" aria-label="Trocando entre as preguiças da família e experimentando roupas"><source src="../media/loop-tile-closet.mp4" type="video/mp4" /></video><h3>Um só armário</h3><p>Cada um tem a sua preguiça e todos dividem todas as roupas.</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-navy" id="parents">
+      <h2 class="badge badge-blue">Para os adultos</h2>
+      <p class="strap">Seguro <em>desde a criação</em>.</p>
+      <ul class="promises promises-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-safe-chat.jpg" aria-label="Enviando uma frase gentil e depois um nome digitado que o filtro do chat bloqueia"><source src="../media/loop-tile-safe-chat.mp4" type="video/mp4" /></video><h3>Chat seguro</h3><p>Só dá para enviar palavras gentis de uma lista curta, então nomes, idades e números não passam. O jogo online com outras famílias está em testes e fica desligado até um adulto ligá-lo. Os amigos entram com um código de figuras, nunca por busca.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-account.jpg" aria-label="Um adulto entrando com um código enviado por e-mail"><source src="../media/loop-tile-account.mp4" type="video/mp4" /></video><h3>Uma conta de adulto</h3><p>Um adulto cria a conta da família com um código enviado por e-mail, nunca com senha. Uma criança nunca se cadastra nem digita um e-mail.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-fixed-price.jpg" aria-label="Comprando um chapéu pelo preço em moedas mostrado"><source src="../media/loop-tile-fixed-price.mp4" type="video/mp4" /></video><h3>Sem caixas de recompensa</h3><p>Sem recompensas pagas aleatórias. Nunca pague para ganhar.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-no-pressure.jpg" aria-label="Uma preguiça tirando uma soneca na grama na luz dourada do fim de tarde"><source src="../media/loop-tile-no-pressure.mp4" type="video/mp4" /></video><h3>Sem pressão</h3><p>Sem sequências que se quebram, sem ofertas por tempo limitado. Nada é tirado de você, nunca.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-grownup-gate.jpg" aria-label="Tocando em três números para abrir a tela dos adultos"><source src="../media/loop-tile-grownup-gate.mp4" type="video/mp4" /></video><h3>Portão dos adultos</h3><p>Um controle parental fica na frente de qualquer tela de resgate de código ou de dinheiro de verdade.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-map.jpg" aria-label="O mapa da ilha, todo com imagens"><source src="../media/loop-tile-map.mp4" type="video/mp4" /></video><h3>Não precisa ler</h3><p>O jogo é feito de imagens e números. Só as telas dos adultos usam palavras. Feito para crianças a partir de 6 anos.</p></li>
+      </ul>
+      <p class="parents-extra"><a class="btn btn-play" href="coloring.html">Desenhos grátis para imprimir e colorir</a></p>
+    </section>
+
+    <section class="panel panel-maker" id="maker">
+      <h2 class="badge badge-orange">Quem faz</h2>
+      <p class="strap">Uma pessoa só. <em>Confira o trabalho.</em></p>
+      <div class="maker">
+        <img class="maker-photo" src="../media/creator-remi.webp" alt="Remi Couture, desenhado como personagem de desenho animado numa mesa com uma figura de preguiça e uma caneca que diz Slow progress, still progress" width="640" height="640" loading="lazy" />
+        <div class="maker-text">
+          <p>Sloth Jam&trade; é criado e programado por Remi Couture, que trabalha como Strategic Sloth. A pessoa que fez as promessas desta página é a mesma que escreve o código, responde aos seus e-mails e envia o seu código de fundador.</p>
+          <p>That is why the goal is small: there is no team payroll. The risky part is done, since the island, 59 party games and the cozy side already run. And if something slips, you hear it from the person responsible, with the new date and the reason.</p>
+        </div>
+      </div>
+      <h3 class="sub-head">Vinte anos fazendo jogos, muitos para crianças</h3>
+      <ul class="tiles">
+        <li><h3>Club Penguin</h3><p>Onde tudo começou: ilustrador na Disney, no Club Penguin, de 2006 a 2009.</p></li>
+        <li><h3>Apps infantis</h3><p>Mais de 13 apps infantis para iOS e Android na Cupcake Digital, para DreamWorks, BBC Kids e Nickelodeon.</p></li>
+        <li><h3>27 jogos em 4 anos</h3><p>Designer de interface e ilustrador de personagens na Gogii Games.</p></li>
+        <li><h3>Liderando o design</h3><p>Líder de design e diretor na DeNA, Hothead Games, Piranha Games, Frima Studio, AppLovin e Offworld, com trabalhos para clientes como Hasbro, Sony, Riot Games e Universal Studios.</p></li>
+        <li><h3>Ensino</h3><p>Deu aulas de design de interface para jogos na Vancouver Film School.</p></li>
+        <li><h3>Tropic Tumble</h3><p>Nosso primeiro jogo, feito do começo ao fim por Remi: regras, fases, interface, música e código. Disponível no Google Play. <a href="https://remiclassic.github.io/remiresume/tropictumble/">Jogue no seu navegador</a>.</p></li>
+      </ul>
+      <p class="maker-links"><a href="https://www.linkedin.com/in/remicouture/details/recommendations/">Carreira e recomendações no LinkedIn</a> &middot; <a href="https://www.strategicsloth.com/">strategicsloth.com</a></p>
+      <p class="maker-note">Sloth Jam é um projeto independente. Não é afiliado nem endossado pela Disney nem por nenhuma outra empresa citada aqui.</p>
+    </section>
+
+    <section class="panel" id="faq">
+      <h2 class="badge badge-blue">Perguntas</h2>
+      <p class="strap">Respostas <em>rápidas</em>.</p>
+      <div class="faq">
+        <details>
+          <summary>What is Sloth Jam?</summary>
+          <p>Sloth Jam is a free cozy party game for the whole family that you play in a web browser. It has 59 one-minute party games on a sloth island, a kart race with five tracks, a story told in pictures, and slow, cozy things to do like fishing, gardening, cooking and dress-up. It is made by Strategic Sloth LLC.</p>
+        </details>
+        <details>
+          <summary>Sloth Jam é grátis?</summary>
+          <p>Yes. Sloth Jam is free to play in your web browser while it is in early access, which means it is still being built and has rough edges. Founder packs are optional and only give digital, cosmetic rewards. Nothing in the album needs one, and there is no pay to win.</p>
+        </details>
+        <details>
+          <summary>What ages is Sloth Jam for?</summary>
+          <p>Sloth Jam is made for ages 6 and up. No reading is needed: play is pictures and numbers, with one stick and one button. Only the grown-up screens use words, so parents and kids can play the same game.</p>
+        </details>
+        <details>
+          <summary>What do I need to play Sloth Jam?</summary>
+          <p>A computer, phone or tablet with a web browser. There is nothing to download or install. Open https://slothjam.com/play/ and a grown-up signs in with their email before the first game. On a phone or tablet you can add it to your home screen to play full screen, like an app.</p>
+        </details>
+        <details>
+          <summary>Can the whole family play Sloth Jam together?</summary>
+          <p>Yes. In the Family Cup you pass one device around the sofa and play for the cup. Everyone gets their own sloth, and family profiles share one closet of outfits. Online play with other families is in early testing and stays off until a grown-up turns it on behind the grown-ups lock. Friends then join by a picture code, never by searching.</p>
+        </details>
+        <details>
+          <summary>Is Sloth Jam safe for my child?</summary>
+          <p>Yes. Chat is a short list of kind words, so no names, ages or numbers get through. A grown-up makes the family account with a code sent by email, and a child never signs up. There are no loot boxes, no streaks that break, no limited-time offers, and a parent gate guards every money screen.</p>
+        </details>
+        <details>
+          <summary>Is Sloth Jam like Club Penguin?</summary>
+          <p>Sloth Jam is a cozy island game for families, made by Remi Couture, who was an illustrator at Disney on Club Penguin from 2006 to 2009. You can play party games, dress up your sloth, decorate your own house and explore the island. Unlike Club Penguin, online play is off until a grown-up turns it on, and even then chat is only kind words from a short list. Sloth Jam is an independent game and is not affiliated with or endorsed by Disney.</p>
+        </details>
+        <details>
+          <summary>Who makes Sloth Jam?</summary>
+          <p>Sloth Jam is designed and built by Remi Couture, working as Strategic Sloth LLC. Remi has about twenty years of making games, many for children, including children's apps for DreamWorks, BBC Kids and Nickelodeon at Cupcake Digital.</p>
+        </details>
+        <details>
+          <summary>O que um pacote de fundador me dá?</summary>
+          <p>Recompensas digitais e cosméticas, como um distintivo de fundador, roupas, a Casa dos Fundadores na ilha e o seu nome nos créditos. O seu dinheiro paga os testes com famílias, o app para Android e novos templos e missões secundárias para a história.</p>
+        </details>
+        <details>
+          <summary>Como recebo meu código de fundador?</summary>
+          <p>Ele chega por e-mail um ou dois minutos depois da compra. No jogo, abra o menu dos adultos, escolha <b>Redeem a backer code</b> (resgatar um código de apoiador) e cole o código.</p>
+        </details>
+        <details>
+          <summary>Posso pedir reembolso?</summary>
+          <p>Sim. Responda ao e-mail do seu recibo em até 30 dias para receber o reembolso total.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="panel panel-navy final-cta">
+      <p class="strap">Prontos para <em>a primeira festa?</em></p>
+      <p class="final-sub">Grátis no seu navegador. Um minuto por jogo.</p>
+      <div class="closing">
+        <a class="btn btn-play btn-big" href="../play/"><span class="play-icon" aria-hidden="true"></span>Jogar agora<span class="ea-tag">Acesso antecipado</span></a>
+        <a class="btn btn-ks btn-big" href="#founders">Seja um <b>Fundador</b></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="../media/logo.webp" alt="Sloth Jam&trade;" width="760" height="406" loading="lazy" />
+    <p>&copy; 2026 Strategic Sloth LLC. Todos os direitos reservados.<br />Sloth Jam&trade; é uma marca comercial da Strategic Sloth LLC.</p>
+    <p><a href="coloring.html">Desenhos para colorir</a> &middot; <a href="../share.html">Criadores e imprensa</a> &middot; <a href="../invite.html">Invite friends</a> &middot; <a href="../schools.html">Escolas</a> &middot; <a href="privacy.html">Política de privacidade</a> &middot; <a href="#" data-cookie-choices>Opções de cookies</a></p>
+    <p>For parents: <a href="../no-reading-games.html">No-reading games for 6 year olds</a> &middot; <a href="../safe-games-for-kids.html">Safe online games for children</a> &middot; <a href="../family-game-night.html">Family party games</a></p>
+    <p class="lang-foot"><a href="../" data-lang="en" hreflang="en" lang="en">English</a> &middot; <a href="../es/" data-lang="es" hreflang="es" lang="es">Español</a> &middot; <a href="./" data-lang="pt" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português</a> &middot; <a href="../fr/" data-lang="fr" hreflang="fr" lang="fr">Français</a> &middot; <a href="../de/" data-lang="de" hreflang="de" lang="de">Deutsch</a> &middot; <a href="../it/" data-lang="it" hreflang="it" lang="it">Italiano</a> &middot; <a href="../zh/" data-lang="zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a> &middot; <a href="../zh-hant/" data-lang="zh-hant" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a> &middot; <a href="../ja/" data-lang="ja" hreflang="ja" lang="ja">日本語</a> &middot; <a href="../ko/" data-lang="ko" hreflang="ko" lang="ko">한국어</a></p>
+  </footer>
+  <script src="../nav.js?v=60e7fcf" defer></script>
+
+  <script src="../main.js?v=60e7fcf" defer></script>
+</body>
+</html>
