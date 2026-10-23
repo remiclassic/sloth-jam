@@ -1,6 +1,6 @@
 # Sloth Jam
 
-> Sloth Jam is a free cozy party game for the whole family that you play in a web browser, with nothing to download. It has 59 one-minute party games on a sloth island, one stick and one button, and no reading needed. It is made for ages 6 and up, has safe chat (kind words from a short list only), no loot boxes and no pay to win. It is in early access and is made by Remi Couture as Strategic Sloth LLC.
+> Sloth Jam is a free cozy party game for the whole family that you play in a web browser, with nothing to download. It has 64 one-minute party games and growing on a sloth island, one stick and one button, and no reading needed. It is made for ages 6 and up, has safe chat (kind words from a short list only), no loot boxes and no pay to win. It is in early access and is made by Remi Couture as Strategic Sloth LLC.
 
 Key facts:
 
@@ -9,7 +9,7 @@ Key facts:
 - Mobile apps: Android on Google Play https://play.google.com/store/apps/details?id=com.slothjam.app and Amazon Appstore https://www.amazon.com/dp/B0HNDWTBGH
 - Ages: 6 and up. No reading needed: play is pictures and numbers.
 - Play together: Family Cup, pass one device around the sofa. Each family member gets their own sloth. Online play with other families is in early testing and stays off until a grown-up turns it on behind the parent gate; chat stays kind words only and friends join by a picture code, never by searching.
-- What is in it: 59 one-minute party games (matches of three rounds, 49 party twists), Sloth Kart with five tracks, a nine-chapter story told in pictures (The Great Jam), and cozy activities like fishing, gardening, cooking, sailing, building, dress-up and a sticker album.
+- What is in it: 64 one-minute party games (matches of three rounds, 49 party twists), Sloth Kart with five tracks, a nine-chapter story told in pictures (The Great Jam), and cozy activities like fishing, gardening, cooking, sailing, building, dress-up and a sticker album.
 - Safety: a grown-up makes the family account with an emailed code, a child never signs up, a parent gate guards every money screen, no streaks and no limited-time offers.
 - Languages: English, Spanish, Portuguese (Brazil), French, German, Italian, Simplified Chinese, Traditional Chinese, Japanese and Korean.
 - Maker: Remi Couture (Strategic Sloth LLC), about 20 years in games, including illustrator at Disney on Club Penguin from 2006 to 2009. Sloth Jam is independent and not affiliated with or endorsed by Disney.
