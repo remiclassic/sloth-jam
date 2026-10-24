@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sloth Jam news</title>
+    <link>https://slothjam.com/news.html</link>
+    <description>News from Sloth Jam, the free cozy party game for the whole family.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 24 Oct 2026 02:26:22 GMT</lastBuildDate>
+    <atom:link href="https://slothjam.com/news/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://slothjam.com/media/icon.png</url>
+      <title>Sloth Jam news</title>
+      <link>https://slothjam.com/news.html</link>
+    </image>
+    <item>
+      <title>The Cosmic Islands: fly from the Moon to five little planets</title>
+      <link>https://slothjam.com/news/cosmic-islands.html</link>
+      <guid isPermaLink="true">https://slothjam.com/news/cosmic-islands.html</guid>
+      <pubDate>Sat, 24 Oct 2026 02:26:22 GMT</pubDate>
+      <description>A Star Portal on the Moon now opens a map of five little round planets to run all the way around. Here is how to get there, how to open each planet and what to do on them.</description>
+    </item>
+    <item>
+      <title>Meet the Wildlings: 18 little friends to find in Sloth Jam</title>
+      <link>https://slothjam.com/news/wildlings.html</link>
+      <guid isPermaLink="true">https://slothjam.com/news/wildlings.html</guid>
+      <pubDate>Sat, 24 Oct 2026 02:26:21 GMT</pubDate>
+      <description>Wildlings are little creatures you make friends with, never catch. There are 18 now, five of them new on the Cosmic Islands. Here is where each one lives and how to befriend it.</description>
+    </item>
+    <item>
+      <title>Sloth Jam is free, family friendly, and has no loot boxes</title>
+      <link>https://slothjam.com/news/free-family-friendly-no-loot-boxes.html</link>
+      <guid isPermaLink="true">https://slothjam.com/news/free-family-friendly-no-loot-boxes.html</guid>
+      <pubDate>Fri, 23 Oct 2026 20:55:06 GMT</pubDate>
+      <description>Sloth Jam is free to play, made for ages 6 and up, and has no loot boxes and no pay to win. A new page for parents explains how rewards work.</description>
+    </item>
+    <item>
+      <title>Sloth Jam now has 64 one-minute party games</title>
+      <link>https://slothjam.com/news/64-party-games.html</link>
+      <guid isPermaLink="true">https://slothjam.com/news/64-party-games.html</guid>
+      <pubDate>Fri, 23 Oct 2026 20:36:51 GMT</pubDate>
+      <description>Sloth Jam now has 64 party games. Every one lasts one minute and plays with one stick and one button, with no reading needed.</description>
+    </item>
+    <item>
+      <title>Sloth Jam is now on Google Play for Android</title>
+      <link>https://slothjam.com/news/google-play-android.html</link>
+      <guid isPermaLink="true">https://slothjam.com/news/google-play-android.html</guid>
+      <pubDate>Fri, 23 Oct 2026 15:43:17 GMT</pubDate>
+      <description>Sloth Jam is live on Google Play, so Android devices can install the free cozy party game from the store.</description>
+    </item>
+    <item>
+      <title>Sloth Jam is on the Amazon Appstore for Fire tablets</title>
+      <link>https://slothjam.com/news/amazon-appstore-fire-tablets.html</link>
+      <guid isPermaLink="true">https://slothjam.com/news/amazon-appstore-fire-tablets.html</guid>
+      <pubDate>Thu, 22 Oct 2026 13:00:59 GMT</pubDate>
+      <description>Sloth Jam is live on the Amazon Appstore, so families with an Amazon Fire tablet can install the free cozy party game.</description>
+    </item>
+    <item>
+      <title>New on the island: glowing caves, Vikings, a pirate ship and more</title>
+      <link>https://slothjam.com/news/new-on-the-island-october.html</link>
+      <guid isPermaLink="true">https://slothjam.com/news/new-on-the-island-october.html</guid>
+      <pubDate>Sat, 17 Oct 2026 15:52:23 GMT</pubDate>
+      <description>The Sloth Jam island grew a lot this month: caves under the island, a Viking village, a pirate ship, a coaster train, a beach cape, kart races, pets to adopt and animals to play as. Here is where to find each one.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; media-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sloth Jam by Strategic Sloth: Free Cozy Family Party Game in Your Browser</title>
+  <meta name="description" content="Free to play in your browser: 64 one-minute party games and growing on a cozy sloth island. One stick, one button, no reading needed. Ages 6+, no loot boxes, no download." />
+  <link rel="canonical" href="https://slothjam.com/ja/" />
+  <meta name="theme-color" content="#8f7df0" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sloth Jam by Strategic Sloth: free cozy family party game in your browser" />
+  <meta property="og:description" content="64 one-minute party games on a cozy sloth island. Free in your browser, no download, ages 6 and up. Early access." />
+  <meta property="og:url" content="https://slothjam.com/ja/" />
+  <meta property="og:image" content="https://slothjam.com/media/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://slothjam.com/media/og.jpg" />
+  <link rel="icon" href="../media/icon.png" />
+  <link rel="apple-touch-icon" href="../media/icon.png" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=ca66357" />
+  <link rel="stylesheet" href="../styles.css?v=ca66357" />
+  <!-- The hero buttons are painted pictures named only in styles.css: fetched now, with the page. -->
+  <link rel="preload" href="../media/btn-play.webp" as="image" />
+  <link rel="preload" href="../media/btn-founder.webp" as="image" />
+  <link rel="alternate" hreflang="en" href="https://slothjam.com/" />
+  <link rel="alternate" hreflang="es" href="https://slothjam.com/es/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://slothjam.com/pt/" />
+  <link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/" />
+  <link rel="alternate" hreflang="de" href="https://slothjam.com/de/" />
+  <link rel="alternate" hreflang="it" href="https://slothjam.com/it/" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://slothjam.com/zh/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://slothjam.com/zh-hant/" />
+  <link rel="alternate" hreflang="ja" href="https://slothjam.com/ja/" />
+  <link rel="alternate" hreflang="ko" href="https://slothjam.com/ko/" />
+  <link rel="alternate" hreflang="x-default" href="https://slothjam.com/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://slothjam.com/#org",
+        "name": "Strategic Sloth LLC",
+        "alternateName": "Strategic Sloth",
+        "url": "https://www.strategicsloth.com/",
+        "logo": "https://slothjam.com/media/icon.png",
+        "founder": { "@id": "https://www.strategicsloth.com/remi-couture/#person" },
+        "sameAs": ["https://www.wikidata.org/wiki/Q141820975"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.strategicsloth.com/remi-couture/#person",
+        "name": "Rémi Couture",
+        "alternateName": [
+          "Remi Couture",
+          "Remy Couture",
+          "Guillaume Couture",
+          "Guillaume Remi Couture",
+          "Guillaume (Rémi) Couture"
+        ],
+        "url": "https://www.strategicsloth.com/remi-couture/",
+        "sameAs": [
+          "https://www.linkedin.com/in/remicouture/",
+          "https://x.com/remicouture",
+          "https://github.com/remiclassic",
+          "https://remiclassic.github.io/remiresume/",
+          "https://www.artstation.com/remicouture",
+          "https://www.behance.net/RemiCouture",
+          "https://www.mobygames.com/person/867552/remi-couture/",
+          "https://www.instagram.com/thestrategicsloth/",
+          "https://slothjam.com/",
+          "https://www.sliceforge.io/",
+          "https://normanascension.com/"
+        ],
+        "worksFor": { "@id": "https://slothjam.com/#org" }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://slothjam.com/#website",
+        "name": "Sloth Jam",
+        "url": "https://slothjam.com/",
+        "inLanguage": ["en","es","pt-BR","fr","de","it","zh-Hans","zh-Hant","ja","ko"],
+        "publisher": { "@id": "https://slothjam.com/#org" }
+      },
+      {
+        "@type": ["VideoGame","SoftwareApplication"],
+        "@id": "https://slothjam.com/#game",
+        "name": "Sloth Jam",
+        "url": "https://slothjam.com/",
+        "image": "https://slothjam.com/media/og.jpg",
+        "description": "A free cozy party game for the whole family, played in a web browser: 64 one-minute party games on a sloth island, a kart race with five tracks, a story told in pictures and cozy activities like fishing and gardening. One stick, one button, no reading needed. Ages 6 and up, safe chat, no loot boxes, no pay to win. In early access.",
+        "genre": ["Party","Family","Casual","Cozy"],
+        "gamePlatform": ["Web browser","Android","Amazon Fire tablet"],
+        "operatingSystem": ["Any (web browser on computer, phone or tablet)","Android","Amazon Fire tablet"],
+        "applicationCategory": "GameApplication",
+        "playMode": ["SinglePlayer","MultiPlayer"],
+        "inLanguage": ["en","es","pt-BR","fr","de","it","zh-Hans","zh-Hant","ja","ko"],
+        "isAccessibleForFree": true,
+        "isFamilyFriendly": true,
+        "audience": { "@type": "PeopleAudience", "suggestedMinAge": 6 },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://slothjam.com/play/" },
+        "author": { "@id": "https://www.strategicsloth.com/remi-couture/#person" },
+        "publisher": { "@id": "https://slothjam.com/#org" },
+        "potentialAction": { "@type": "PlayAction", "target": "https://slothjam.com/play/" },
+        "keywords": "free browser game, cozy game, family party game, kids game, no reading, no download, sloth",
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q141821011",
+          "https://play.google.com/store/apps/details?id=com.slothjam.app",
+          "https://www.amazon.com/dp/B0HNDWTBGH",
+          "https://www.cbc.ca/listen/live-radio/1-110-daybreak-south/clip/16244668-former-kelowna-game-designer-back-free-game-kids"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://slothjam.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Sloth Jam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sloth Jam is a free cozy party game for the whole family that you play in a web browser. It has 64 one-minute party games on a sloth island, a kart race with five tracks, a story told in pictures, and slow, cozy things to do like fishing, gardening, cooking and dress-up. It is made by Strategic Sloth LLC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Sloth Jam free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Sloth Jam is free to play in your web browser while it is in early access, which means it is still being built and has rough edges. Founder packs are optional and only give digital, cosmetic rewards. Nothing in the album needs one, and there is no pay to win."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What ages is Sloth Jam for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sloth Jam is made for ages 6 and up. No reading is needed: play is pictures and numbers, with one stick and one button. Only the grown-up screens use words, so parents and kids can play the same game."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What do I need to play Sloth Jam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A computer, phone or tablet with a web browser. There is nothing to download or install. Open https://slothjam.com/play/ and a grown-up signs in with their email before the first game. On a phone or tablet you can add it to your home screen to play full screen, like an app."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the whole family play Sloth Jam together?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. In the Family Cup you pass one device around the sofa and play for the cup. Everyone gets their own sloth, and family profiles share one closet of outfits. Online play with other families is in early testing and stays off until a grown-up turns it on behind the grown-ups lock. Friends then join by a picture code, never by searching."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Sloth Jam safe for my child?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Chat is a short list of kind words, so no names, ages or numbers get through. A grown-up makes the family account with a code sent by email, and a child never signs up. There are no loot boxes, no streaks that break, no limited-time offers, and a parent gate guards every money screen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Sloth Jam like Club Penguin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sloth Jam is a cozy island game for families, made by Remi Couture, who was an illustrator at Disney on Club Penguin from 2006 to 2009. You can play party games, dress up your sloth, decorate your own house and explore the island. Unlike Club Penguin, online play is off until a grown-up turns it on, and even then chat is only kind words from a short list. Sloth Jam is an independent game and is not affiliated with or endorsed by Disney."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who makes Sloth Jam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sloth Jam is designed and built by Remi Couture, working as Strategic Sloth LLC. Remi has about twenty years of making games, many for children, including children's apps for DreamWorks and BBC Kids at Cupcake Digital."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does a founder pack get me?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Digital, cosmetic rewards like a founder badge, outfits, the Founder House on the island and your name in the credits. Your money pays for playtesting, the Android app and new temples and side quests for the story."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get my founder code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It arrives by email a minute or two after you buy. In the game, open the grown-up menu, choose Redeem a backer code and paste it in."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I get a refund?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Reply to your receipt email within 30 days for a full refund."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script src="../lang.js?v=ca66357"></script>
+  <script src="../ga.js?v=ca66357" defer></script>
+</head>
+<body>
+  <!-- The island, in layers. data-depth is how near the camera a layer is (0 is the far sky):
+       it sets how far the layer leans from the pointer and how much it grows on scroll.
+       data-rise is how far it climbs as the page scrolls; the far layers sink instead, so
+       the near ones pull ahead without sliding off their own bottom edge. -->
+  <div class="backdrop" aria-hidden="true">
+    <div class="scene scene-wait">
+      <picture><source srcset="../media/layer-sky.avif" type="image/avif" /><img class="layer layer-sky" data-depth="0.05" data-rise="-0.25" src="../media/layer-sky.webp" fetchpriority="high" alt="" /></picture>
+      <picture><source srcset="../media/layer-lake.avif" type="image/avif" /><img class="layer layer-lake" data-depth="0.16" data-rise="-0.2" src="../media/layer-lake.webp" alt="" /></picture>
+      <div class="layer layer-ground" data-depth="0.28" data-rise="-0.05"></div>
+      <picture><source srcset="../media/layer-lighthouse.avif" type="image/avif" /><img class="layer layer-lighthouse" data-depth="0.36" data-rise="0" src="../media/layer-lighthouse.webp" alt="" /></picture>
+      <picture><source srcset="../media/layer-village.avif" type="image/avif" /><img class="layer layer-village" data-depth="0.46" data-rise="0.05" src="../media/layer-village.webp" alt="" /></picture>
+      <picture><source srcset="../media/layer-plaza.avif" type="image/avif" /><img class="layer layer-plaza" data-depth="0.66" data-rise="0.2" src="../media/layer-plaza.webp" fetchpriority="high" alt="" /></picture>
+      <div class="layer layer-grass" data-depth="1" data-rise="0.42"><picture><source srcset="../media/layer-grass.avif" type="image/avif" /><img src="../media/layer-grass.webp" alt="" /></picture></div>
+    </div>
+    <div class="floater float-yellow" data-depth="1.15" data-drift="-0.7" data-rise="0.3"><picture><source srcset="../media/float-yellow.avif" type="image/avif" /><img src="../media/float-yellow.webp" alt="" /></picture></div>
+    <div class="floater float-pink" data-depth="1.3" data-drift="0.8" data-rise="0.35"><picture><source srcset="../media/float-pink.avif" type="image/avif" /><img src="../media/float-pink.webp" alt="" /></picture></div>
+    <div class="floater float-green" data-depth="1.6" data-drift="-1" data-rise="0.6"><picture><source srcset="../media/float-green.avif" type="image/avif" /><img src="../media/float-green.webp" alt="" /></picture></div>
+    <div class="floater float-blue" data-depth="1.8" data-drift="1" data-rise="0.75"><picture><source srcset="../media/float-blue.avif" type="image/avif" /><img src="../media/float-blue.webp" alt="" /></picture></div>
+  </div>
+
+  <header class="nav">
+    <a class="nav-logo" href="#top" aria-label="Sloth Jam、ページの先頭へ"><picture><source srcset="../media/logo-nav.avif" type="image/avif" /><img src="../media/logo-nav.webp" alt="" width="320" height="172" /></picture></a>
+    <nav class="nav-links" id="site-menu" aria-label="メニュー">
+      <a href="#friends">なかま</a>
+      <a href="#games">ゲーム</a>
+      <a href="#kart">カート</a>
+      <a href="#founders">ファウンダー</a>
+      <a href="#peak">雪山</a>
+      <a href="#story">物語</a>
+      <a href="#explore">探検</a>
+      <a href="#sloths">ナマケモノ</a>
+      <a href="#cozy">のんびり</a>
+      <a href="#parents">保護者の方へ</a>
+      <a href="#maker">作った人</a>
+      <a class="nav-page" href="coloring.html">ぬりえ</a>
+      <a class="nav-page" href="../share.html">シェア</a>
+      <a class="nav-page" href="../invite.html">Invite</a>
+    </nav>
+    <div class="nav-cta">
+      <details class="lang-menu">
+        <summary aria-label="言語"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z" /></svg><span class="lang-code">日本語</span></summary>
+        <div class="lang-list">
+          <a href="../" data-lang="en" hreflang="en" lang="en">English</a>
+          <a href="../es/" data-lang="es" hreflang="es" lang="es">Español</a>
+          <a href="../pt/" data-lang="pt" hreflang="pt-BR" lang="pt-BR">Português</a>
+          <a href="../fr/" data-lang="fr" hreflang="fr" lang="fr">Français</a>
+          <a href="../de/" data-lang="de" hreflang="de" lang="de">Deutsch</a>
+          <a href="../it/" data-lang="it" hreflang="it" lang="it">Italiano</a>
+          <a href="../zh/" data-lang="zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+          <a href="../zh-hant/" data-lang="zh-hant" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+          <a href="./" data-lang="ja" hreflang="ja" lang="ja" aria-current="page">日本語</a>
+          <a href="../ko/" data-lang="ko" hreflang="ko" lang="ko">한국어</a>
+        </div>
+      </details>
+      <a class="btn btn-play nav-play" href="../play/" aria-label="今すぐ遊ぶ（アーリーアクセス）"><span class="play-icon" aria-hidden="true"></span>遊ぶ</a>
+      <a class="btn btn-ks nav-ks" href="#founders"><b>ファウンダー</b>になる</a>
+      <button class="nav-burger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg><span class="nav-burger-label">メニュー</span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <!-- The logo builds itself from its letters: SLTH drop in, the sloth swings down a vine,
+           JAM pops up, then the sparkles. Each part is placed in styles.css. -->
+      <div class="hero-logo hl-wait" role="img" aria-label="Sloth Jam&trade;">
+        <div class="hl-part hl-drop hl-s"><div class="hl-intro"><picture><source srcset="../media/logo/s.avif" type="image/avif" /><img src="../media/logo/s.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-drop hl-l"><div class="hl-intro"><picture><source srcset="../media/logo/l.avif" type="image/avif" /><img src="../media/logo/l.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-drop hl-t"><div class="hl-intro"><picture><source srcset="../media/logo/t.avif" type="image/avif" /><img src="../media/logo/t.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-drop hl-h"><div class="hl-intro"><picture><source srcset="../media/logo/h.avif" type="image/avif" /><img src="../media/logo/h.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-sloth"><div class="hl-intro"><div class="hl-vine"></div><picture><source srcset="../media/logo/sloth.avif" type="image/avif" /><img src="../media/logo/sloth.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-pop hl-j"><div class="hl-intro"><picture><source srcset="../media/logo/j.avif" type="image/avif" /><img src="../media/logo/j.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-pop hl-a"><div class="hl-intro"><picture><source srcset="../media/logo/a.avif" type="image/avif" /><img src="../media/logo/a.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-pop hl-m"><div class="hl-intro"><picture><source srcset="../media/logo/m.avif" type="image/avif" /><img src="../media/logo/m.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-burst hl-right"><div class="hl-intro"><picture><source srcset="../media/logo/burst.avif" type="image/avif" /><img src="../media/logo/burst.webp" alt="" /></picture></div></div>
+        <div class="hl-part hl-burst hl-left"><div class="hl-intro"><picture><source srcset="../media/logo/burst-star.avif" type="image/avif" /><img src="../media/logo/burst-star.webp" alt="" /></picture></div></div>
+        <i class="hl-twinkle hl-tw1"></i>
+        <i class="hl-twinkle hl-tw2"></i>
+        <i class="hl-twinkle hl-tw3"></i>
+        <i class="hl-twinkle hl-tw4"></i>
+        <span class="hl-tm" aria-hidden="true">&trade;</span>
+      </div>
+      <div class="trailer">
+        <video controls playsinline preload="none" data-poster="../media/trailer-2026-10-14-poster.jpg">
+          <source src="../media/trailer-2026-10-14.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h1 class="hero-title">
+        <svg class="spark spark-l" viewBox="0 0 40 40" aria-hidden="true"><path d="M26 6 32 16M10 16 22 22M8 32 20 30" /></svg>
+        The free cozy party game<br />the whole family can play.
+        <svg class="spark spark-r" viewBox="0 0 40 40" aria-hidden="true"><path d="M14 6 8 16M30 16 18 22M32 32 20 30" /></svg>
+      </h1>
+      <p class="hero-sub">64 one-minute party games and growing. One stick, one button, no reading. Free in your browser.</p>
+      <div class="hero-cta">
+        <a class="btn btn-play btn-play-pill" href="../play/">今すぐ遊ぶ<span class="ea-tag">アーリーアクセス</span></a>
+        <a class="btn btn-ks btn-founder" href="#founders"><b>ファウンダー</b>になる</a>
+      </div>
+      <p class="press-mention"><small><a href="https://www.cbc.ca/listen/live-radio/1-110-daybreak-south/clip/16244668-former-kelowna-game-designer-back-free-game-kids" target="_blank" rel="noopener">CBC Radio, Daybreak South</a> で紹介されました</small></p>
+      <!-- The Google Play app (apps/android) is live, so its badge links to the listing. The App
+           Store (apps/ios) badge is still a "soon" div: swap it for a link to the listing once it is
+           live. The Amazon Appstore one is live: main.js points it at the visitor's own
+           Amazon store (amazon.ca, .co.uk...), amazon.com otherwise. The Nintendo line
+           is only a wish, so it uses no Nintendo logo or art. -->
+      <div class="store-badges">
+        <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.slothjam.app" target="_blank" rel="noopener" aria-label="Google Play で手に入れよう"><img src="../media/google-play-badge.png" alt="" width="646" height="250" /><span class="ea-tag ea-live">配信中</span></a>
+        <div class="play-badge store-badge soon" role="img" aria-label="App Storeで近日公開"><img src="../media/app-store-badge.svg" alt="" width="120" height="40" /><span class="ea-tag">近日公開</span></div>
+        <a class="play-badge store-badge" data-amazon-app="B0HNDWTBGH" href="https://www.amazon.com/dp/B0HNDWTBGH" target="_blank" rel="noopener" aria-label="Amazonアプリストアで配信中"><img src="../media/amazon-appstore-badge.png" alt="" width="572" height="168" /><span class="ea-tag ea-live">配信中</span></a>
+      </div>
+      <p class="console-tease"><svg viewBox="0 0 48 30" aria-hidden="true"><rect x="2" y="2" width="44" height="26" rx="9" /><path d="M11 11v8M7 15h8" /><circle cx="35" cy="12" r="2.4" /><circle cx="39" cy="18" r="2.4" /></svg>ナイショだけど&hellip;次はNintendo Switch&trade;を夢見ています。</p>
+      <ul class="hero-perks">
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path class="pk-heart" d="M24 41 8.6 26.4C3.8 21.8 4.2 13.8 9.8 10.4c4.4-2.6 9.8-1.2 14.2 4 4.4-5.2 9.8-6.6 14.2-4 5.6 3.4 6 11.4 1.2 16z" /></svg>基本プレイ無料</li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><g class="pk-nodl"><circle cx="24" cy="24" r="19" /><path d="M24 13v15M18 23l6 6 6-6M15 33h18M11 11l26 26" /></g></svg>ダウンロード不要</li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><g class="pk-smile"><circle cx="24" cy="24" r="19" /><path d="M16 27c2 4.4 5 6.4 8 6.4s6-2 8-6.4" /><circle class="pk-eye" cx="18" cy="19" r="2.6" /><circle class="pk-eye" cx="30" cy="19" r="2.6" /></g></svg>6歳以上</li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><g class="pk-gift"><rect x="7" y="17" width="34" height="9" rx="2" /><rect x="10" y="26" width="28" height="16" rx="2" /><path class="pk-ribbon" d="M22 17h4v25h-4zM24 17c-3-7-11-8-11-3 0 3 6 3 11 3zM24 17c3-7 11-8 11-3 0 3-6 3-11 3z" /></g></svg>ガチャなし</li>
+      </ul>
+      <!-- Shown to everyone; main.js swaps in the steps for an iPhone/iPad or an Android phone. -->
+      <div class="tip-card" data-home-tip>
+        <img class="tip-qr" src="../media/qr-slothjam.png" alt="slothjam.comのQRコード" width="1160" height="1160" loading="lazy" />
+        <div class="tip-text">
+          <span class="tip-badge">どこでも遊べる</span>
+          <div data-tip="any">
+            <p class="tip-lead"><span class="tip-qr-line">スキャンしてスマートフォンやタブレットで遊べます。</span><span class="tip-touch-line">アプリのように全画面で遊べます。</span></p>
+            <p class="tip-sub">ゲームを開いて<b>ホーム画面に追加</b>すると、全画面で遊べます。</p>
+          </div>
+          <div data-tip="ios" hidden>
+            <p class="tip-lead">アプリのように全画面で遊べます。</p>
+            <p class="tip-sub"><b>今すぐ遊ぶ</b>をタップし、共有<svg class="tip-share" viewBox="0 0 24 24" aria-label="シェア"><path d="M8.5 9H6.5v12h11V9h-2M12 15V2.5M8.5 6 12 2.5 15.5 6" /></svg>から<b>ホーム画面に追加</b>を選びます。</p>
+          </div>
+          <div data-tip="android" hidden>
+            <p class="tip-lead">アプリのように全画面で遊べます。</p>
+            <p class="tip-sub"><b>今すぐ遊ぶ</b>をタップし、<b>&#8942;</b>から<b>ホーム画面に追加</b>または<b>アプリをインストール</b>を選びます。</p>
+          </div>
+        </div>
+        <img class="tip-sloth" src="../media/sloth-yay.webp" alt="" width="400" height="400" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="panel panel-friends" id="friends">
+      <h2 class="badge badge-pink">島のなかま</h2>
+      <p class="strap">同じ島に、<em>もっとなかまを</em>。</p>
+      <figure class="art">
+        <picture><source data-srcset="../media/art-island-friends.avif" type="image/avif" /><img data-src="../media/art-island-friends.webp" alt="イラスト：サングラスをかけたナマケモノと、そのまわりの島の住人たち。オオハシ、カエル、アライグマ、ゴリラ、イエティ、コウモリ、カワウソ、ネコ、レッサーパンダ" width="1400" height="933" loading="lazy" /></picture>
+        <figcaption>これはスクリーンショットではなくイメージイラストです。ゲームの中の島の住人は、下の写真のようにゲーム独自のおもちゃのような姿で登場します。</figcaption>
+      </figure>
+      <p class="lead">町のはずれには、カワウソからイエティまで、10種類のどうぶつたちが暮らしています。近づくと手をふってくれて、エモートにこたえたりおしゃべりしたり。夜になると、まるくなって眠ります。</p>
+      <div class="split split-3">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-islander-redpanda.jpg" aria-label="レッサーパンダの住人に手をふるナマケモノ"><source src="../media/loop-scene-islander-redpanda.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-islander-raccoon.jpg" aria-label="松の木の下でアライグマの住人に会うナマケモノ"><source src="../media/loop-scene-islander-raccoon.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-islander-bat.jpg" aria-label="コウモリの住人にこんにちはと手をふるナマケモノ"><source src="../media/loop-scene-islander-bat.mp4" type="video/mp4" /></video>
+      </div>
+    </section>
+
+    <section class="panel" id="games">
+      <h2 class="badge badge-yellow">パーティーゲーム</h2>
+      <p class="strap">どのゲームも<em>1分間</em>。</p>
+      <p class="lead">1試合は3ラウンドで、最後のラウンドは得点が2倍。最下位のプレイヤーが決勝のゲームを選べます。さらに「フルーツあらし」や「ゴールド2倍」など49種類のパーティーアレンジが、1ラウンドだけゲームを変化させます。コンピューターのプレイヤーはやさしいきょうだいのように遊びます。テストを重ねて調整し、はじめての人でも4ラウンドに1回くらいは勝てるようにしています。</p>
+
+      <div class="games">
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="フルーツキャッチのプレイ画面"><source src="../media/game-fruitFall.mp4" type="video/mp4" /></video>
+          <h3>フルーツキャッチ</h3>
+          <p>かごを持って、落ちてくるおいしいフルーツをキャッチ。でこぼこで、しかめっつらのフルーツはくさっています。それはよけてね。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="ナマケモノおにごっこのプレイ画面"><source src="../media/game-slothTag.mp4" type="video/mp4" /></video>
+          <h3>ナマケモノおにごっこ</h3>
+          <p>おにになった人は王冠をかぶります。走って、よけて、だんだん小さくなるリングの中にいましょう。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="もぐらポンポンのプレイ画面"><source src="../media/game-popTheMoles.mp4" type="video/mp4" /></video>
+          <h3>もぐらポンポン</h3>
+          <p>穴は9つ、スポンジのハンマーは1本。コンボをつなげて、金色のもぐらをねらい、ハリネズミには気をつけて。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="ランタンパレードのプレイ画面"><source src="../media/game-lanternParade.mp4" type="video/mp4" /></video>
+          <h3>ランタンパレード</h3>
+          <p>このゲームに負けはありません。時間内にみんなで力を合わせてすべてのランタンをともし、星をわけあいましょう。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="ハンモックぴょんのプレイ画面"><source src="../media/game-hammockHop.mp4" type="video/mp4" /></video>
+          <h3>ハンモックぴょん</h3>
+          <p>ゆらゆらゆれるハンモックの輪、下ははるか遠く。最後まで残ったナマケモノの勝ちです。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="クリスタルトロッコのプレイ画面"><source src="../media/game-crystalCart.mp4" type="video/mp4" /></video>
+          <h3>クリスタルトロッコ</h3>
+          <p>トロッコに乗ってクリスタルの洞窟を進みます。カーブでは体をかたむけ、すき間はジャンプ、回転してトリックポイントをゲット。</p>
+        </article>
+      </div>
+      <p class="more">ほかにも「おやつあつめ」「うさぎあつめ」「水切りあそび」「ぼうしとばし」「ココナッツよけ」「ツルひき」「池ホッケー」など、さらに51種類。</p>
+      <h3 class="sub-head">ゲームだなに新登場</h3>
+      <div class="games">
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="池ホッケーのプレイ画面"><source src="../media/loop-pond-hockey.mp4" type="video/mp4" /></video>
+          <h3>池ホッケー</h3>
+          <p>ゆきぼうし山のこおった池で、2チームが対戦。それぞれのゴールにはキーパーがいます。タップでシュート、長押しで強力なスラップショット。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-coconut-dodge.jpg" aria-label="ココナッツよけのプレイ画面"><source src="../media/loop-coconut-dodge.mp4" type="video/mp4" /></video>
+          <h3>ココナッツよけ</h3>
+          <p>砂の道をココナッツがころがってきます。大きいのは横によけて、小さいのはジャンプでとびこえましょう。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-hat-whack.jpg" aria-label="ぼうしとばしのプレイ画面"><source src="../media/loop-hat-whack.mp4" type="video/mp4" /></video>
+          <h3>ぼうしとばし</h3>
+          <p>ほかのナマケモノのぼうしをねらい、自分のぼうしは頭にのせたままキープ。とばされたぼうしは、すぐにもどってきます。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-star-skate.jpg" aria-label="スタースケートのプレイ画面"><source src="../media/loop-star-skate.mp4" type="video/mp4" /></video>
+          <h3>スタースケート</h3>
+          <p>氷の上の星を順番にすべって、形をえがきましょう。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="ゆきがっせんのプレイ画面"><source src="../media/loop-snowball-splat.mp4" type="video/mp4" /></video>
+          <h3>ゆきがっせん</h3>
+          <p>雪のリングのまん中で、雪だるまに雪玉を投げましょう。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" aria-label="ペアさがしのプレイ画面"><source src="../media/loop-pair-up.mp4" type="video/mp4" /></video>
+          <h3>ペアさがし</h3>
+          <p>のんびり遊べるタップパズル。ふせられた12枚のカードから、6つのペアを見つけましょう。</p>
+        </article>
+      </div>
+      <ul class="tiles tiles-3">
+        <li><h3>チーム戦</h3><p>パーティーを2チームに分けて、得点をいっしょに競うラウンドもあります。</p></li>
+        <li><h3>パーティーアレンジ</h3><p>ほとんどのゲームには、1ラウンドだけルールが変わるアレンジがあります。フルーツのあらしや、金色のもぐらがいつもの2倍出てくるアレンジなど。</p></li>
+        <li><h3>近づいて遊ぶ</h3><p>どのゲームも町に看板があるので、好きなゲームだけを遊ぶこともできます。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-kart" id="kart">
+      <h2 class="badge badge-red">ナマケモノカート</h2>
+      <p class="strap">コースは5つ。<em>みんなでレース。</em></p>
+      <p class="lead">全員参加のカートレース。行きたい方向にスティックをたおし、カーブでボタンを長押しするとドリフト。アイテムボックスを通りぬけると、とうがらし、バナナ、こうら、追いかけ玉、スターのどれかがもらえます。ゲート、周回、コイン、ゴールがすべて得点になるので、どのレーサーもポイントを持って帰れます。</p>
+      <div class="games games-kart">
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartPlaza.jpg" aria-label="広場ぐるりコースを走るカートたち"><source src="../media/loop-game-kartPlaza.mp4" type="video/mp4" /></video>
+          <h3>広場ぐるりコース</h3>
+          <p>道が広くてやさしい、町をぐるっと回るコース。3周で、はじめての練習にぴったり。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartCoast.jpg" aria-label="ココナッツ海岸の浜辺を走るカートたち"><source src="../media/loop-game-kartCoast.mp4" type="video/mp4" /></video>
+          <h3>ココナッツ海岸</h3>
+          <p>浜辺ぞいのS字カーブ。道の上にはヤシの木や潮だまりがあります。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartFrost.jpg" aria-label="雪のこおりの山コースを走るカートたち"><source src="../media/loop-game-kartFrost.mp4" type="video/mp4" /></video>
+          <h3>こおりの山</h3>
+          <p>ヘアピンカーブがあって、ずっとつるつるの氷。雪だるまに気をつけて。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartLava.jpg" aria-label="ようがんの上の細い道を走るカートたち"><source src="../media/loop-game-kartLava.mp4" type="video/mp4" /></video>
+          <h3>ようがんロード</h3>
+          <p>ようがんの上の細い道。急なカーブがあって、さくはありません。落ちたカートは道にもどしてもらえます。</p>
+        </article>
+        <article class="game">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-kartRainbow.jpg" aria-label="雲の上のにじの道を走るカートたち"><source src="../media/loop-game-kartRainbow.mp4" type="video/mp4" /></video>
+          <h3>にじの空</h3>
+          <p>雲の上の大きなカーブと、ずっと続くダッシュパネル。ドリフトするならこのコース。</p>
+        </article>
+      </div>
+      <ul class="tiles tiles-3">
+        <li><h3>ドリフトでダッシュ</h3><p>カーブでボタンを長押しすると、火花が青、オレンジ、ピンクと変わります。はなすと一気に前へ。</p></li>
+        <li><h3>うしろの人にもチャンス</h3><p>うしろを走るカートほどいいアイテムが出るので、ひとりだけ取り残されることはありません。</p></li>
+        <li><h3>5つの旗</h3><p>町のゴーカート乗り場のうしろに、コースごとの旗があります。好きなコースだけを走ることもできます。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel" id="founders">
+      <h2 class="badge badge-ks">ファウンダーになる</h2>
+      <p class="strap">島はできあがり、今も広がっています。<em>完成まで、力を貸してください。</em></p>
+      <p class="lead">今日ファウンダーパックを購入すると、そのお金は、実際のご家族とのプレイテスト、Androidアプリ、「大ジャムまつり」の新しい神殿やサイドクエスト、そしてアートとサウンドの仕上げに使われます。特典はすべてデジタルの見た目アイテムで、アルバムにファウンダーパックが必要なものはありません。アーリーアクセスの間、ゲームは基本プレイ無料のままです。</p>
+      <div class="rewards">
+        <article class="reward">
+          <img src="../media/reward-pal.jpg" alt="" width="800" height="531" loading="lazy" />
+          <span class="price" data-price="pal">$5</span>
+          <h3>島なかま</h3>
+          <p>ナマケモノにファウンダーバッジ、島の<a href="#founder-house">ファウンダーハウス</a>、そしてクレジットにお礼のお名前。</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="pal" hidden><span data-price="pal">$5</span>で購入</a>
+        </article>
+        <article class="reward reward-pick">
+          <span class="pick-tag">おすすめ</span>
+          <img src="../media/reward-founder.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="founder">$15</span>
+          <h3>ファウンダー</h3>
+          <p>島なかまの特典すべてに加えて、ファウンダー衣装（ぼうし、トップス、リュック）、そしてAndroidアプリが完成したときの先行アクセス。</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="founder" hidden><span data-price="founder">$15</span>で購入</a>
+        </article>
+        <article class="reward">
+          <img src="../media/reward-family.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="family">$30</span>
+          <h3>ファミリーファウンダー</h3>
+          <p>ファウンダーの特典すべてに加えて、家族のプロフィールごとに1つずつ、4種類のファウンダーカラー。さらに次のパーティーゲームを決める投票権。</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="family" hidden><span data-price="family">$30</span>で購入</a>
+        </article>
+        <article class="reward">
+          <img src="../media/reward-patron.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="patron">$75</span>
+          <h3>島のパトロン</h3>
+          <p>ファミリーファウンダーの特典すべてに加えて、島のベンチにプレートを設置。アイコンは8種類から選べます。</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="patron" hidden><span data-price="patron">$75</span>で購入</a>
+        </article>
+        <article class="reward">
+          <img src="../media/reward-portrait.jpg" alt="" width="800" height="533" loading="lazy" />
+          <span class="price" data-price="portrait">$250</span>
+          <h3>家族の肖像画</h3>
+          <p>ナマケモノ一家の親せきを1匹、あなたといっしょにデザインし、すべてのプレイヤーのアルバムに追加します。島のパトロンの特典もすべてついてきます。限定20名。</p>
+          <a class="btn btn-ks btn-buy" href="#founders" data-buy="portrait" hidden><span data-price="portrait">$250</span>で購入</a>
+        </article>
+      </div>
+      <p class="price-note" data-price-note="usd">価格は米ドルです。お支払い画面では、Stripeがお住まいの国の通貨で金額を表示します。</p>
+      <p class="price-note" data-price-note="local" hidden>価格はお住まいの国の通貨で表示しています。お支払い時にもこの金額になります。</p>
+      <div class="founder-house" id="founder-house">
+        <div class="fh-pics">
+          <img src="../media/founder-house-outside.jpg" alt="ファウンダーハウス：スイレンの池のそばに建つ、まるい3階建てのおうち。葉っぱのひさしに、たねのぼうしのような屋根、てっぺんには芽がひとつ" width="960" height="640" loading="lazy" />
+          <img src="../media/founder-house-inside.jpg" alt="ファウンダーハウスの中：暖炉のある居間、たねの図書室へ続く階段、まるい窓の下の屋根裏部屋" width="960" height="640" loading="lazy" />
+        </div>
+        <div class="fh-text">
+          <span class="fh-tag">すべてのファウンダーパックに</span>
+          <h3>ファウンダーハウス</h3>
+          <p>港のそばに、たねから育った、ファウンダーだけのおうち。3階まで上がってみましょう。パチパチ燃える暖炉のある居間、階段の上にはたねの図書室、そしてまるい窓の下に望遠鏡のある、くつろぎの屋根裏部屋。すべてのファウンダーパックについてきて、ファウンダーコードを使うとすぐにゲームの中でオープンします。</p>
+        </div>
+      </div>
+      <p class="buy-note" data-buy-note hidden>お支払いはStripeが処理します。ファウンダーコードは、購入から1〜2分後にメールで届きます。ゲームで保護者向けメニューを開き、<b>Redeem a backer code</b>（支援者コードを使う）を選んで、コードを貼りつけてください。気が変わった場合は、30日以内に領収書メールに返信していただければ、全額返金いたします。</p>
+      <p class="buy-note" data-buy-soon>ファウンダーパックは、まもなくこちらで発売します。</p>
+      <p class="buy-note">Already playing? <a href="#invite">Invite friends</a>: when they join or buy a pack through your link, your family gets gifts in the game, up to a free founder upgrade.</p>
+    </section>
+
+    <section class="panel" id="invite">
+      <h2 class="badge badge-purple">Invite friends</h2>
+      <p class="strap">Share the island, <em>earn gifts</em>.</p>
+      <p class="lead">Every grown-up account has a family invite link. When friends join or buy a founder pack through it, your family gets gifts in the game, on every device.</p>
+      <ul class="tiles tiles-clips invite-tiles">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-invite-friend-pin.jpg" aria-label="A sloth waving, with a coral heart pin on its chest"><source src="../media/loop-invite-friend-pin.mp4" type="video/mp4" /></video><h3>A friend joins</h3><p>A heart Friend pin for both families, plus coins: 300 for them, 250 for you, for up to 5 friends.</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-invite-ambassador.jpg" aria-label="A sloth in a coral beret and a blue jacket with a sash, waving in the boutique"><source src="../media/loop-invite-ambassador.mp4" type="video/mp4" /></video><h3>1 pack bought</h3><p>The Ambassador outfit: a beret, and a jacket with a sash and a heart rosette.</p></li>
+        <li><img class="clip" src="../media/reward-founder.jpg" alt="A sloth in the founder outfit: a sprout cap, a leaf vest and a seed pack" width="800" height="533" loading="lazy" /><h3>3 packs bought</h3><p>A free upgrade to the next founder pack, added to your account by itself.</p></li>
+        <li><img class="clip" src="../media/founder-house-outside.jpg" alt="The Founder House, a round three-storey cottage by the lily pond" width="960" height="640" loading="lazy" /><h3>10 packs bought</h3><p>Island Patron: the Founder House, every outfit color and the bench plaque.</p></li>
+      </ul>
+      <p class="invite-cta"><a class="btn btn-play btn-big" href="../invite.html">Get your invite link</a></p>
+    </section>
+
+    <section class="panel panel-snow" id="peak">
+      <h2 class="badge badge-ice">ゆきぼうし山</h2>
+      <p class="strap"><em>海の向こうの</em>雪山。</p>
+      <p class="lead">北の浜辺にある望遠鏡をのぞくと、雪山へ行けます。リフトで上まで登ったら、スノーボードやスキー、そりで下りてきましょう。</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-peak.jpg" aria-label="ゆきぼうし山の雪の斜面、リフトのそばにいるナマケモノ"><source src="../media/loop-scene-peak.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-game-powderRun.jpg" aria-label="そりで雪のコースをすべりおりるナマケモノたち"><source src="../media/loop-scene-game-powderRun.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-game-snowballSplat.jpg" aria-label="2つの雪だるまの間で雪玉を投げ合うナマケモノたち"><source src="../media/loop-scene-game-snowballSplat.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-game-starSkate.jpg" aria-label="こおった池で星の形をえがいてすべるナマケモノたち"><source src="../media/loop-scene-game-starSkate.mp4" type="video/mp4" /></video>
+      </div>
+      <p class="more">この山には冬のゲームが7つ。「パウダーラン」「スキースラローム」「スキージャンプ」「ゆきがっせん」「つるつるストーン」「スタースケート」「池ホッケー」。</p>
+    </section>
+
+    <section class="panel panel-vale" id="vale">
+      <h2 class="badge badge-green">クローバーの谷</h2>
+      <p class="strap"><em>望遠鏡の向こうの</em>ポニーの谷。</p>
+      <p class="lead">望遠鏡をクローバーの谷に向けると、川や橋、洞窟のある緑の谷へ行けます。馬つなぎ場でポニーに乗って出発。スティックを少したおすと歩き、いっぱいにたおすとギャロップ。ジャンプボタンで丸太やさくをとびこえます。谷のあちこちに、金のていてつが12個かくれています。</p>
+      <div class="places">
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-vale-ride.jpg" aria-label="馬つなぎ場から牧場へ、ポニーに乗ってトロットするナマケモノ"><source src="../media/loop-vale-ride.mp4" type="video/mp4" /></video>
+          <h3>ポニーに乗ろう</h3>
+          <p>道を歩いたり、トロットしたり、ギャロップしたり。ポニーがけがをすることはありません。木やがけ、深い水の前では、そっと止まります。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-ponyJoust.jpg" aria-label="ポニーに乗って、試合場をむかい合って走るナマケモノたち"><source src="../media/loop-game-ponyJoust.mp4" type="video/mp4" /></video>
+          <h3>ポニーやり試合</h3>
+          <p>試合場をむかい合って走り、ちょうどいいタイミングでやりをかまえましょう。だれも落ちません。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-hoofHurdles.jpg" aria-label="ポニーに乗って、ならんでさくをとびこえるナマケモノたち"><source src="../media/loop-game-hoofHurdles.mp4" type="video/mp4" /></video>
+          <h3>ひづめハードル</h3>
+          <p>障害とびのコースをならんでギャロップ。さくが来たら、ひとつずつジャンプ。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-game-ringTilt.jpg" aria-label="ポニーに乗って、やりでリングをとるナマケモノたち"><source src="../media/loop-game-ringTilt.mp4" type="video/mp4" /></video>
+          <h3>リングとり</h3>
+          <p>自分のレーンの上にあるリングに、やりの先を通しましょう。リングはみんなまったく同じです。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="story">
+      <h2 class="badge badge-purple">大ジャムまつり</h2>
+      <p class="strap"><em>ことばのない</em>物語。</p>
+      <p class="lead">大きな風がおまつりをふきとばしてしまいました。旗はたおれ、噴水はかれて、橋の板もなくなっています。ナマケモノ一家といっしょに町を元どおりにして、町が少しずつ変わっていくのを見守りましょう。</p>
+      <div class="split">
+        <img src="../media/story-storm.jpg" alt="物語の絵カード：あらしの中の灯台" width="960" height="540" loading="lazy" />
+        <img src="../media/story-calm.jpg" alt="物語の絵カード：晴れた空の下の灯台" width="960" height="540" loading="lazy" />
+      </div>
+      <ul class="tiles tiles-3">
+        <li><h3>絵で語る物語</h3><p>絵カードとふきだしだけで、物語のすべてを伝えます。文字を読む必要はありません。</p></li>
+        <li><h3>スコアを競わない</h3><p>スコアを求めるクエストはありません。ラウンドを最後まで遊べば、それで十分です。</p></li>
+        <li><h3>全9章を公開中</h3><p>全9章をゲームで遊べます。グランブルたちに出会い、おもちゃの剣やランタンなどの道具を手に入れて、3つの風のチャイムを島に持ち帰りましょう。物語の本から、好きな場面をもう一度遊ぶこともできます。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-sea" id="explore">
+      <h2 class="badge badge-sea">新しい場所</h2>
+      <p class="strap">島は<em>どんどん広がっています</em>。</p>
+      <p class="lead">自分のペースで探検できる場所。ナマケモノがけがをするようなものは何もありません。</p>
+      <div class="places">
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-coral-cove.jpg" aria-label="サンゴの入り江で泳ぐ"><source src="../media/loop-coral-cove-swim.mp4" type="video/mp4" /></video>
+          <h3>サンゴの入り江</h3>
+          <p>桟橋から海へとびこんで、海の底のサンゴ礁へ。8匹の海のなかまに会って、大きな貝から6つの真珠を見つけ、沈没船の宝箱を開けましょう。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-moon.jpg" aria-label="月面のロケットのそばで、宇宙ヘルメットをかぶったナマケモノ。空には地球"><source src="../media/loop-scene-moon.mp4" type="video/mp4" /></video>
+          <h3>月</h3>
+          <p>浜辺のおもちゃのロケットに乗りこんで、発射！ガラスのヘルメットをかぶってクレーターをぴょんぴょん。空には地球がうかんでいます。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-skate-isle.jpg" aria-label="スケート島でスケートボード"><source src="../media/loop-skate-isle-ride.mp4" type="video/mp4" /></video>
+          <h3>スケート島</h3>
+          <p>島まるごと大きなスケートパーク。スケートボード、キックボード、自転車、ローラースケートから選んで、ハーフパイプやボウルでトリックを決めましょう。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-pinecone-ridge.jpg" aria-label="まつぼっくりの丘を自転車でくだる"><source src="../media/loop-pinecone-ridge-bike.mp4" type="video/mp4" /></video>
+          <h3>まつぼっくりの丘</h3>
+          <p>緑あふれる夏の山に、自転車コースが4つ。のんびりした草原の道からジャンプコースまで。タイムを計りたい人には、どのコースにも時計があります。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-sky-spout.jpg" aria-label="空の島で、葉っぱをひらいて風のふきだしにのぼっていくナマケモノ。まわりには小さな島がういています"><source src="../media/loop-sky-spout.mp4" type="video/mp4" /></video>
+          <h3>空の島</h3>
+          <p>西の芝生にあるスカイリフトに乗ると、雲の上の島へのぼれます。風のふきだしに乗ったり、葉っぱをひらいて10個のリングをくぐったり、金の羽根を10枚さがしたり。はしから落ちても、ふわふわもどってきます。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-workshop.jpg" aria-label="ぜんまい工房で手をふるナマケモノ。かべには歯車の時計、カウンターにはハグルマ博士"><source src="../media/loop-workshop.mp4" type="video/mp4" /></video>
+          <h3>ぜんまい工房</h3>
+          <p>屋根に大きなシルクハット、まわりには飛行船がとぶスチームパンクのお店。島の発明家ハグルマ博士がお店番をしていて、パーティーゲームの中にはこの部屋で遊ぶものもあります。</p>
+        </article>
+      </div>
+      <ul class="tiles">
+        <li><h3>すやすや砂のお城</h3><p>浜辺にある、やさしいダンジョン。たいまつにカギ、木箱、そして起こしてあげたい大きなカメ。</p></li>
+        <li><h3>ほこら</h3><p>町のあちこちにある、4つの小さななぞときの部屋。どれもスティックだけで解けて、失敗することはありません。</p></li>
+        <li><h3>ツルのリング</h3><p>光るリングにむかって、ツルでスイングしてのぼります。ねらいをつける必要はありません。がけの上や木のてっぺんまで行けます。</p></li>
+        <li><h3>ワープストーンとフクロウ</h3><p>8つの立ち石を目ざめさせると、島のあちこちへワープできます。やさしいフクロウについていけば、まだ見つけていない場所へ。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel" id="home">
+      <h2 class="badge badge-orange">おうちとあそび</h2>
+      <p class="strap">おうちにお店、<em>おもちゃもいっぱい</em>。</p>
+      <div class="places">
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-my-house.jpg" aria-label="ベッド、ランプ、本だな、おもちゃ箱のある自分のおうちで手をふるナマケモノ"><source src="../media/loop-scene-my-house.mp4" type="video/mp4" /></video>
+          <h3>マイホーム</h3>
+          <p>芝生の上に自分だけのおうち。26種類の家具を置いたり、かべの色をぬったりできます。レベルとコインで、もっと大きなお部屋にできます。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-stall.jpg" aria-label="自分の屋台でコックの衣装を着たナマケモノと、注文を待つお客さん"><source src="../media/loop-scene-stall.mp4" type="video/mp4" /></video>
+          <h3>自分のお店</h3>
+          <p>作業台で物を作って、自分のお店で売りましょう。値札は自分で決められて、だれも高く売りつけることはできません。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" aria-label="ゴーカートを運転する"><source src="../media/loop-go-kart.mp4" type="video/mp4" /></video>
+          <h3>ゴーカート</h3>
+          <p>乗りこんで、町をぐるっと回る道をドライブ。道の上にうかぶ8つの星をぜんぶ取って、1周しましょう。</p>
+        </article>
+        <article class="place">
+          <video class="clip" muted loop playsinline preload="none" aria-label="町の上にのぼっていく熱気球"><source src="../media/loop-balloon-ride.mp4" type="video/mp4" /></video>
+          <h3>熱気球</h3>
+          <p>島全体を見わたす空へふわり。家族のナマケモノたちもかけよって、いっしょに乗りこみます。</p>
+        </article>
+      </div>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-cooking.jpg" aria-label="パン屋のオーブンの前で焼きたてのパイを食べて、大きくなるナマケモノ"><source src="../media/loop-cozy-cooking.mp4" type="video/mp4" /></video><h3>お料理</h3><p>育てたものでサラダやクッキー、パイ、シチューを作りましょう。どれも少しだけパワーアップ。ジャンプが高くなったり、足が速くなったり、ナマケモノが大きくなったり。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-sailing.jpg" aria-label="桟橋からボートで海へ出る"><source src="../media/loop-cozy-sailing.mp4" type="video/mp4" /></video><h3>ヨット</h3><p>桟橋のボートに帆がつきました。たるをわってたねを集めたり、沈んだ宝箱を引き上げたりしましょう。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-camera.jpg" aria-label="噴水の写真を撮って写真集に追加する"><source src="../media/loop-cozy-camera.mp4" type="video/mp4" /></video><h3>町のカメラ</h3><p>生きもの、親せき、名所を撮って、写真集をうめていきましょう。ページごとにごほうびがあります。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-music-lawn.jpg" aria-label="音楽の広場でコンガを演奏し、音符がとびだす"><source src="../media/loop-cozy-music-lawn.mp4" type="video/mp4" /></video><h3>音楽の広場</h3><p>ベース、コンガ、ウクレレ、トランペットを演奏できます。バンドが4つの小さな曲を教えてくれます。雨をふらせたり、昼を夜に変えたり、花をさかせたり、ウサギを呼んだりする曲です。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-bottle.jpg" aria-label="池のほとりでびんを見つけてかかげる"><source src="../media/loop-cozy-bottle.mp4" type="video/mp4" /></video><h3>びん</h3><p>ホタルやチョウをつかまえたり、池の水をすくったり、おやつをとっておいたりできます。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-heart-pieces.jpg" aria-label="ピンクのハートのかけらをひろってかかげる"><source src="../media/loop-cozy-heart-pieces.mp4" type="video/mp4" /></video><h3>ハートのかけら</h3><p>ピンクのハートのかけら12個が、町のあちこちにかくれていたり、なかまからもらえたりします。4つ集めるとハートになって、ジャンプが高くなるなどの小さな特典があります。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-tall-grass.jpg" aria-label="草むらを走りぬけて、きのみの木へ"><source src="../media/loop-cozy-tall-grass.mp4" type="video/mp4" /></video><h3>草むらときのみ</h3><p>草むらを走りぬけたり、きのみの木をゆすったりすると、コインやたね、チョウなど、ちょっとしたおたのしみが出てきます。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-dj-ana.jpg" aria-label="ダンスクラブでDJ Anaとおどる"><source src="../media/loop-cozy-dj-ana.mp4" type="video/mp4" /></video><h3>DJ Ana</h3><p>島のDJ。昼は野外ステージのそばでのんびりして、夜はダンスクラブでDJをします。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-name-tags.jpg" aria-label="2つの絵から名前を選ぶ"><source src="../media/loop-cozy-name-tags.mp4" type="video/mp4" /></video><h3>名札</h3><p>どのナマケモノにも、2つの絵を組み合わせた名前がつきます。文字の入力はありません。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-cozy-goals.jpg" aria-label="目標ブックで星を集めて、ページをめくる"><source src="../media/loop-cozy-goals.mp4" type="video/mp4" /></video><h3>目標ブック</h3><p>4ページに27のやることがあり、それぞれ星を3つまでもらえます。ページを完成させると、そこでしか手に入らない衣装アイテムがもらえます。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-sky" id="sloths">
+      <h2 class="badge badge-pink">ナマケモノたち</h2>
+      <p class="strap">着せかえて、ごっこあそび。<em>遊んで衣装をゲット。</em></p>
+      <div class="lineup">
+        <img src="../media/sloth-pirate.webp" alt="海賊の衣装を着たナマケモノ" width="560" height="560" loading="lazy" />
+        <img src="../media/sloth-viking.webp" alt="バイキングの衣装を着たナマケモノ" width="560" height="560" loading="lazy" />
+        <img src="../media/sloth-crown.webp" alt="王冠とゴーグルをつけたナマケモノ" width="560" height="560" loading="lazy" />
+        <img src="../media/sloth-tophat.webp" alt="シルクハットをかぶったナマケモノ" width="560" height="560" loading="lazy" />
+      </div>
+      <p class="lead">16種類のテーマ衣装に加えて、ぼうし、トップス、リュック、アクセサリーがそろうクローゼット。家族のプロフィールでクローゼットを共有するので、どの衣装もみんなで使えます。</p>
+      <h3 class="sub-head">着せかえごっこ</h3>
+      <p class="lead">コック、海賊、魔法使いの衣装をまるごと着ると、町のみんなもごっこあそびにつきあってくれます。役は16種類、スコアも負けもありません。</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-stall.jpg" aria-label="屋台でコックの衣装を着たナマケモノとお客さん"><source src="../media/loop-scene-stall.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-role-pirate.jpg" aria-label="港の桟橋で、手こぎボートのそばに立つ海賊の衣装のナマケモノ"><source src="../media/loop-scene-role-pirate.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-role-wizard.jpg" aria-label="噴水のそばにいる魔法使いの衣装のナマケモノ"><source src="../media/loop-scene-role-wizard.mp4" type="video/mp4" /></video>
+      </div>
+      <h3 class="sub-head">ドレスメーカー</h3>
+      <p class="lead">ブティックの中のおさいほうコーナー。形、そで、もよう、2つの色、リボンを選ぶと、ナマケモノの上でドレスができあがっていきます。チェックマークをおすと、そのドレスはあなたのもの。クローゼットにも入ります。</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-dress-maker.jpg" aria-label="ドレスメーカーでピンクのチュチュのドレスを作り、色をオレンジに変える"><source src="../media/loop-dress-maker.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-dress-maker-2.jpg" aria-label="ドレスメーカーでパフスリーブのしまもようのドレスを作り、白に変える"><source src="../media/loop-dress-maker-2.mp4" type="video/mp4" /></video>
+      </div>
+    </section>
+
+    <section class="panel" id="cozy">
+      <h2 class="badge badge-green">のんびりタイム</h2>
+      <p class="strap">ゲームのあいまは、<em>ゆっくりと</em>。</p>
+      <div class="split">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-story-friends.jpg" aria-label="島の広場をおさんぽするナマケモノたち"><source src="../media/loop-scene-story-friends.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-story-garden.jpg" aria-label="ヒマワリや池、小さなおうちのある畑"><source src="../media/loop-scene-story-garden.mp4" type="video/mp4" /></video>
+      </div>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-fish.jpg" aria-label="池で釣り糸をたらして、びしょぬれのくつしたを釣り上げる"><source src="../media/loop-tile-fish.mp4" type="video/mp4" /></video><h3>つり</h3><p>魚や、アルバムにのせるおもしろいハズレを釣りましょう。びしょぬれのくつしたはうれしいおしらせ。2つでハンモックが買えます。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-garden.jpg" aria-label="広場のそばの花だんにたねをまく"><source src="../media/loop-tile-garden.mp4" type="video/mp4" /></video><h3>畑</h3><p>植えて、水をあげて、ゲームをとじる。いない間も育ちつづけます。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-build.jpg" aria-label="作物、池、さく、小さなおうちがそろった完成した土地"><source src="../media/loop-tile-build.mp4" type="video/mp4" /></video><h3>建てる</h3><p>島の上の自分だけの土地。釣ったものや育てたもので作ります。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-album.jpg" aria-label="シールアルバムのページをめくる"><source src="../media/loop-tile-album.mp4" type="video/mp4" /></video><h3>集める</h3><p>12ページのシールアルバムをうめましょう。</p></li>
+      </ul>
+      <h3 class="sub-head">朝からランタンのあかりまで</h3>
+      <div class="split split-3">
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-town-day.jpg" aria-label="昼間の町の広場。噴水と旗かざり"><source src="../media/loop-scene-town-day.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-town-evening.jpg" aria-label="夕暮れのピンクの空の下、ランタンがともる同じ広場"><source src="../media/loop-scene-town-evening.mp4" type="video/mp4" /></video>
+        <video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-scene-town-night.jpg" aria-label="夜、ランタンとイルミネーションに照らされた同じ広場"><source src="../media/loop-scene-town-night.mp4" type="video/mp4" /></video>
+      </div>
+      <h3 class="sub-head">冒険と見つけもの</h3>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-courses.jpg" aria-label="砂のお城の天守コースを走ってジャンプ"><source src="../media/loop-tile-courses.mp4" type="video/mp4" /></video><h3>コース</h3><p>クエストが5つずつある、7つの冒険コース。クリスタルの洞窟から砂のお城の天守まで。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-fireflies.jpg" aria-label="かくれたホタルをつかまえてびんに入れる"><source src="../media/loop-tile-fireflies.mp4" type="video/mp4" /></video><h3>ホタル</h3><p>びんに集めるホタルは40匹。ホタルが増えるほど、遊べるコースも増えていきます。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-town-toys.jpg" aria-label="大きなトランポリンでぴょんぴょん"><source src="../media/loop-tile-town-toys.mp4" type="video/mp4" /></video><h3>町のおもちゃ</h3><p>トランポリン、シーソー、気球、野外ステージのミュージックミキサー。さらに絵さがしやなぞのさんぽ道も。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-tables.jpg" aria-label="テーブルで親せきとカードゲームをする"><source src="../media/loop-tile-tables.mp4" type="video/mp4" /></video><h3>テーブルゲームとゲームセンター</h3><p>親せきと遊べるテーブルゲームが7つと、アーケードゲームが6台。そのうち1台は、80ステージのパズルがある修理台です。</p></li>
+      </ul>
+      <h3 class="sub-head">いっしょに遊ぶ</h3>
+      <ul class="tiles tiles-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-family-cup.jpg" aria-label="だれの番かを知らせるファミリーカップのカード"><source src="../media/loop-tile-family-cup.mp4" type="video/mp4" /></video><h3>ファミリーカップ</h3><p>ソファでひとつの端末を回しながら、カップをめざして遊びましょう。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-ghost.jpg" aria-label="ココナッツよけで、最高のラウンドのゴーストと競争する"><source src="../media/loop-tile-ghost.mp4" type="video/mp4" /></video><h3>ゴーストレース</h3><p>この端末で遊んだ最高のラウンドの記録と競争しましょう。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-closet.jpg" aria-label="家族のナマケモノを切りかえて、衣装を試す"><source src="../media/loop-tile-closet.mp4" type="video/mp4" /></video><h3>ひとつのクローゼット</h3><p>ひとりひとりに自分のナマケモノがいて、衣装はぜんぶみんなで共有できます。</p></li>
+      </ul>
+    </section>
+
+    <section class="panel panel-navy" id="parents">
+      <h2 class="badge badge-blue">保護者の方へ</h2>
+      <p class="strap"><em>安全を第一に</em>設計しています。</p>
+      <ul class="promises promises-clips">
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-safe-chat.jpg" aria-label="やさしいことばを送り、そのあと入力した名前がチャットのチェックで止められる様子"><source src="../media/loop-tile-safe-chat.mp4" type="video/mp4" /></video><h3>安全なチャット</h3><p>送れるのは、短いリストから選ぶやさしいことばだけ。名前や年齢、数字が伝わることはありません。ほかの家族とのオンラインプレイはテスト中で、保護者がオンにするまでオフのままです。なかまとは検索ではなく絵のコードでつながります。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-account.jpg" aria-label="メールで届いたコードでサインインする保護者"><source src="../media/loop-tile-account.mp4" type="video/mp4" /></video><h3>保護者のアカウント</h3><p>家族のアカウントは、メールで届くコードを使って保護者が作ります。パスワードは使いません。子どもが登録したり、メールアドレスを入力したりすることはありません。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-fixed-price.jpg" aria-label="表示されたコインの値段でぼうしを買う"><source src="../media/loop-tile-fixed-price.mp4" type="video/mp4" /></video><h3>ガチャなし</h3><p>ランダムな有料報酬はありません。お金で強くなることもありません。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-no-pressure.jpg" aria-label="夕方の光の中、草の上でお昼寝するナマケモノ"><source src="../media/loop-tile-no-pressure.mp4" type="video/mp4" /></video><h3>せかさない</h3><p>途切れる連続ログインボーナスも、期間限定のセールもありません。手に入れたものがなくなることもありません。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-grownup-gate.jpg" aria-label="3つの数字をタップして保護者向けの画面を開く"><source src="../media/loop-tile-grownup-gate.mp4" type="video/mp4" /></video><h3>保護者ゲート</h3><p>コードの入力画面や、実際のお金を使う画面の前には、保護者ゲートがあります。</p></li>
+        <li><video class="clip" muted loop playsinline preload="none" data-poster="../media/shot-tile-map.jpg" aria-label="絵だけでできた島のマップ"><source src="../media/loop-tile-map.mp4" type="video/mp4" /></video><h3>文字が読めなくても大丈夫</h3><p>遊びは絵と数字だけ。ことばを使うのは保護者向けの画面だけです。対象年齢は6歳以上です。</p></li>
+      </ul>
+      <p class="parents-extra"><a class="btn btn-play" href="coloring.html">無料で印刷できるぬりえ</a></p>
+    </section>
+
+    <section class="panel panel-maker" id="maker">
+      <h2 class="badge badge-orange">作った人</h2>
+      <p class="strap">作っているのはひとり。<em>実績をご覧ください。</em></p>
+      <div class="maker">
+        <img class="maker-photo" src="../media/creator-remi.webp" alt="机に向かうRemi Coutureのイラスト。ナマケモノのフィギュアと、「Slow progress, still progress」と書かれたマグカップ" width="640" height="640" loading="lazy" />
+        <div class="maker-text">
+          <p>Sloth Jam&trade;は、Remi CoutureがStrategic Slothとして企画・開発しています。このページでお約束をしている本人が、コードを書き、みなさんのメールに返信し、ファウンダーコードをお送りしています。</p>
+          <p>だからこそ、目標金額は小さめです。チームの人件費がないからです。いちばん大変な部分はもう終わっています。島も、64種類のパーティーゲームも、のんびりタイムも、すでに動いています。もし予定が遅れるときは、責任者本人から、新しい日程と理由をお伝えします。</p>
+        </div>
+      </div>
+      <h3 class="sub-head">ゲームづくり20年、その多くは子ども向け</h3>
+      <ul class="tiles">
+        <li><h3>Club Penguin</h3><p>はじまりはここ。2006年から2009年まで、ディズニーでClub Penguinのイラストレーターを担当。</p></li>
+        <li><h3>子ども向けアプリ</h3><p>Cupcake Digitalで、DreamWorksとBBC Kids向けにiOS・Android用の子ども向けアプリを13本以上制作。</p></li>
+        <li><h3>4年で27本のゲーム</h3><p>Gogii Gamesでインターフェースデザイナー兼キャラクターイラストレーター。</p></li>
+        <li><h3>デザインをリード</h3><p>DeNA、Hothead Games、Piranha Games、Frima Studio、AppLovin、Offworldでデザインリード・ディレクターを歴任。Hasbro、Sony、Riot Games、Universal Studiosのクライアントワークも担当。</p></li>
+        <li><h3>教育</h3><p>Vancouver Film Schoolでゲームインターフェースデザインを指導。</p></li>
+        <li><h3>Tropic Tumble</h3><p>最初のゲーム。ルール、ステージ、インターフェース、音楽、コードまで、すべてRemiがひとりで制作しました。Google Playで配信中。<a href="https://remiclassic.github.io/remiresume/tropictumble/">ブラウザで遊ぶ</a>。</p></li>
+      </ul>
+      <p class="maker-links"><a href="https://www.linkedin.com/in/remicouture/details/recommendations/">LinkedInで職歴と推薦文を見る</a> &middot; <a href="https://www.strategicsloth.com/">strategicsloth.com</a></p>
+      <p class="maker-note">Sloth Jamは独立したプロジェクトです。ディズニーをはじめ、ここに名前のある企業とは提携しておらず、承認や推奨を受けたものでもありません。</p>
+    </section>
+
+    <section class="panel" id="faq">
+      <h2 class="badge badge-blue">よくある質問</h2>
+      <p class="strap"><em>かんたん</em>Q&amp;A</p>
+      <div class="faq">
+        <details>
+          <summary>What is Sloth Jam?</summary>
+          <p>Sloth Jam is a free cozy party game for the whole family that you play in a web browser. It has 64 one-minute party games on a sloth island, a kart race with five tracks, a story told in pictures, and slow, cozy things to do like fishing, gardening, cooking and dress-up. It is made by Strategic Sloth LLC.</p>
+        </details>
+        <details>
+          <summary>Sloth Jamは無料ですか？</summary>
+          <p>Yes. Sloth Jam is free to play in your web browser while it is in early access, which means it is still being built and has rough edges. Founder packs are optional and only give digital, cosmetic rewards. Nothing in the album needs one, and there is no pay to win.</p>
+        </details>
+        <details>
+          <summary>What ages is Sloth Jam for?</summary>
+          <p>Sloth Jam is made for ages 6 and up. No reading is needed: play is pictures and numbers, with one stick and one button. Only the grown-up screens use words, so parents and kids can play the same game.</p>
+        </details>
+        <details>
+          <summary>What do I need to play Sloth Jam?</summary>
+          <p>A computer, phone or tablet with a web browser. There is nothing to download or install. Open https://slothjam.com/play/ and a grown-up signs in with their email before the first game. On a phone or tablet you can add it to your home screen to play full screen, like an app.</p>
+        </details>
+        <details>
+          <summary>Can the whole family play Sloth Jam together?</summary>
+          <p>Yes. In the Family Cup you pass one device around the sofa and play for the cup. Everyone gets their own sloth, and family profiles share one closet of outfits. Online play with other families is in early testing and stays off until a grown-up turns it on behind the grown-ups lock. Friends then join by a picture code, never by searching.</p>
+        </details>
+        <details>
+          <summary>Is Sloth Jam safe for my child?</summary>
+          <p>Yes. Chat is a short list of kind words, so no names, ages or numbers get through. A grown-up makes the family account with a code sent by email, and a child never signs up. There are no loot boxes, no streaks that break, no limited-time offers, and a parent gate guards every money screen.</p>
+        </details>
+        <details>
+          <summary>Is Sloth Jam like Club Penguin?</summary>
+          <p>Sloth Jam is a cozy island game for families, made by Remi Couture, who was an illustrator at Disney on Club Penguin from 2006 to 2009. You can play party games, dress up your sloth, decorate your own house and explore the island. Unlike Club Penguin, online play is off until a grown-up turns it on, and even then chat is only kind words from a short list. Sloth Jam is an independent game and is not affiliated with or endorsed by Disney.</p>
+        </details>
+        <details>
+          <summary>Who makes Sloth Jam?</summary>
+          <p>Sloth Jam is designed and built by Remi Couture, working as Strategic Sloth LLC. Remi has about twenty years of making games, many for children, including children's apps for DreamWorks and BBC Kids at Cupcake Digital.</p>
+        </details>
+        <details>
+          <summary>ファウンダーパックでは何がもらえますか？</summary>
+          <p>ファウンダーバッジや衣装、島のファウンダーハウス、クレジットへのお名前など、デジタルの見た目の特典です。いただいたお金は、プレイテスト、Androidアプリ、物語の新しい神殿やサイドクエストの制作に使われます。</p>
+        </details>
+        <details>
+          <summary>ファウンダーコードはどうやって受け取りますか？</summary>
+          <p>購入から1〜2分後にメールで届きます。ゲームで保護者向けメニューを開き、<b>Redeem a backer code</b>（支援者コードを使う）を選んで、コードを貼りつけてください。</p>
+        </details>
+        <details>
+          <summary>返金はできますか？</summary>
+          <p>はい。30日以内に領収書メールに返信していただければ、全額返金いたします。</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="panel panel-navy final-cta">
+      <p class="strap"><em>はじめてのパーティー</em>の準備はできましたか？</p>
+      <p class="final-sub">ブラウザで無料。1ゲーム1分。</p>
+      <div class="closing">
+        <a class="btn btn-play btn-big" href="../play/"><span class="play-icon" aria-hidden="true"></span>今すぐ遊ぶ<span class="ea-tag">アーリーアクセス</span></a>
+        <a class="btn btn-ks btn-big" href="#founders"><b>ファウンダー</b>になる</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="../media/logo.webp" alt="Sloth Jam&trade;" width="760" height="406" loading="lazy" />
+    <p>Made by <a href="https://strategicsloth.com/remi-couture/">Rémi Couture</a>, former Club Penguin illustrator and animator</p>
+    <p>&copy; 2026 Strategic Sloth LLC. All rights reserved.<br />Sloth Jam&trade;はStrategic Sloth LLCの商標です。</p>
+    <p><a href="coloring.html">ぬりえ</a> &middot; <a href="../news.html">ニュース</a> &middot; <a href="../share.html">クリエイター・報道関係の方へ</a> &middot; <a href="../invite.html">Invite friends</a> &middot; <a href="../schools.html">学校向け</a> &middot; <a href="privacy.html">プライバシーポリシー</a> &middot; <a href="#" data-cookie-choices>Cookie の設定</a></p>
+    <p>For parents: <a href="../no-reading-games.html">No-reading games for 6 year olds</a> &middot; <a href="../safe-games-for-kids.html">Safe online games for children</a> &middot; <a href="../no-loot-boxes.html">ガチャなし</a> &middot; <a href="../family-game-night.html">Family party games</a></p>
+    <p class="lang-foot"><a href="../" data-lang="en" hreflang="en" lang="en">English</a> &middot; <a href="../es/" data-lang="es" hreflang="es" lang="es">Español</a> &middot; <a href="../pt/" data-lang="pt" hreflang="pt-BR" lang="pt-BR">Português</a> &middot; <a href="../fr/" data-lang="fr" hreflang="fr" lang="fr">Français</a> &middot; <a href="../de/" data-lang="de" hreflang="de" lang="de">Deutsch</a> &middot; <a href="../it/" data-lang="it" hreflang="it" lang="it">Italiano</a> &middot; <a href="../zh/" data-lang="zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a> &middot; <a href="../zh-hant/" data-lang="zh-hant" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a> &middot; <a href="./" data-lang="ja" hreflang="ja" lang="ja" aria-current="page">日本語</a> &middot; <a href="../ko/" data-lang="ko" hreflang="ko" lang="ko">한국어</a></p>
+  </footer>
+  <script src="../nav.js?v=ca66357" defer></script>
+
+  <script src="../main.js?v=ca66357" defer></script>
+</body>
+</html>

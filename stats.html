@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src https://ofkgibuwxrbmmzmbtgmt.supabase.co; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Island Stats | Sloth Jam&trade;</title>
+  <meta name="theme-color" content="#8f7df0" />
+  <link rel="icon" href="media/icon.png" />
+  <link rel="stylesheet" href="fonts/fonts.css?v=ca66357" />
+  <link rel="stylesheet" href="stats.css?v=ca66357" />
+  <script src="stats.js?v=ca66357" defer></script>
+</head>
+<body>
+  <!-- Remi's stats page (apps/server/src/stats.ts). Nothing here is public: the numbers come
+       only with the password. -->
+  <form class="gate" data-gate hidden>
+    <img src="media/icon.png" alt="" width="64" height="64" />
+    <h1>Island stats</h1>
+    <label>Password <input type="password" name="password" autocomplete="current-password" required autofocus /></label>
+    <label class="check"><input type="checkbox" name="remember" /> Remember on this device</label>
+    <button type="submit">Open</button>
+    <p class="error" data-gate-error hidden></p>
+  </form>
+
+  <main class="dash" data-dash hidden>
+    <header class="top">
+      <h1>Island stats</h1>
+      <p class="muted"><span data-updated></span> &middot; <button type="button" class="link" data-signout>Lock</button></p>
+    </header>
+
+    <section class="hero card">
+      <div>
+        <p class="label"><span class="dot" aria-hidden="true"></span> Playing right now</p>
+        <p class="big" data-live>–</p>
+        <p class="muted" data-peak></p>
+      </div>
+      <figure class="curve">
+        <figcaption class="label">Players at once, last 24 hours</figcaption>
+        <div class="chart" data-curve></div>
+      </figure>
+    </section>
+
+    <section class="tiles">
+      <div class="card tile"><p class="label">Visits today</p><p class="num" data-k="plays.today"></p><p class="muted" data-k2="plays"></p></div>
+      <div class="card tile"><p class="label">Play time, 7 days</p><p class="num" data-k="playHours"></p><p class="muted" data-k2="median"></p></div>
+      <div class="card tile"><p class="label">Grown-up accounts</p><p class="num" data-k="accounts.total"></p><p class="muted" data-k2="accounts"></p></div>
+      <div class="card tile"><p class="label">News subscribers</p><p class="num" data-k="news.subscribed"></p><p class="muted" data-k2="news"></p></div>
+      <div class="card tile"><p class="label">Founder orders</p><p class="num" data-k="orders.total"></p><p class="muted" data-k2="orders"></p></div>
+      <div class="card tile"><p class="label">Codes claimed in game</p><p class="num" data-k="claims"></p><p class="muted" data-k2="extra"></p></div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <h2>Last 30 days</h2>
+        <div class="tabs" role="tablist" data-tabs>
+          <button type="button" role="tab" data-series="plays" aria-selected="true">Visits</button>
+          <button type="button" role="tab" data-series="accounts" aria-selected="false">Accounts</button>
+          <button type="button" role="tab" data-series="news" aria-selected="false">News sign-ups</button>
+          <button type="button" role="tab" data-series="orders" aria-selected="false">Orders</button>
+        </div>
+      </div>
+      <div class="chart" data-days></div>
+    </section>
+
+    <section class="split">
+      <div class="card">
+        <h2>Orders by pack</h2>
+        <ul class="tiers" data-tiers></ul>
+        <p class="muted small">Upgrades count under the pack they upgrade to. Exact money is in Stripe.</p>
+      </div>
+      <div class="card">
+        <h2>Latest orders</h2>
+        <table class="recent"><tbody data-recent></tbody></table>
+      </div>
+    </section>
+
+    <section class="card web">
+      <div class="card-head">
+        <h2>Website visitors <span class="muted small">Google Analytics, slothjam.com pages only</span></h2>
+        <p class="muted small" data-ga-now></p>
+      </div>
+      <p class="muted" data-ga-off hidden></p>
+      <div data-ga-on hidden>
+        <div class="tiles mini">
+          <div><p class="label">Visitors today</p><p class="num" data-ga="today"></p><p class="muted small" data-ga2="today"></p></div>
+          <div><p class="label">Visitors, 7 days</p><p class="num" data-ga="week"></p><p class="muted small" data-ga2="week"></p></div>
+          <div><p class="label">Visitors, 30 days</p><p class="num" data-ga="month"></p><p class="muted small" data-ga2="month"></p></div>
+          <div><p class="label">Buy button clicks</p><p class="num" data-ga="buy"></p><p class="muted small" data-ga2="buy"></p></div>
+        </div>
+        <p class="label chart-title">Visitors per day</p>
+        <div class="chart" data-ga-days></div>
+        <div class="lists">
+          <div><h3>Top pages, 7 days</h3><ol data-ga-list="pages"></ol></div>
+          <div><h3>Where they came from</h3><ol data-ga-list="sources"></ol></div>
+          <div><h3>Countries</h3><ol data-ga-list="countries"></ol></div>
+        </div>
+      </div>
+    </section>
+
+    <p class="muted small foot">A visit is one opening of the game, counted by an anonymous ping each minute it is on screen (no account or device is kept). Days are Quebec days. Refreshes every 30 seconds.</p>
+  </main>
+  <div class="tip" data-tip hidden></div>
+</body>
+</html>
