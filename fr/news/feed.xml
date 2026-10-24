@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nouvelles de Sloth Jam</title>
+    <link>https://slothjam.com/fr/news.html</link>
+    <description>Les nouvelles de Sloth Jam, le jeu de fête douillet et gratuit pour toute la famille.</description>
+    <language>fr</language>
+    <lastBuildDate>Fri, 23 Oct 2026 20:55:06 GMT</lastBuildDate>
+    <atom:link href="https://slothjam.com/fr/news/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://slothjam.com/media/icon.png</url>
+      <title>Nouvelles de Sloth Jam</title>
+      <link>https://slothjam.com/fr/news.html</link>
+    </image>
+    <item>
+      <title>Sloth Jam est gratuit, pensé pour les familles, et sans boîtes à butin</title>
+      <link>https://slothjam.com/fr/news/free-family-friendly-no-loot-boxes.html</link>
+      <guid isPermaLink="true">https://slothjam.com/fr/news/free-family-friendly-no-loot-boxes.html</guid>
+      <pubDate>Fri, 23 Oct 2026 20:55:06 GMT</pubDate>
+      <description>Sloth Jam est gratuit, conçu pour les 6 ans et plus, sans boîtes à butin et sans pay to win. Une nouvelle page pour les parents explique comment fonctionnent les récompenses.</description>
+    </item>
+    <item>
+      <title>Sloth Jam compte maintenant 64 jeux de fête d’une minute</title>
+      <link>https://slothjam.com/fr/news/64-party-games.html</link>
+      <guid isPermaLink="true">https://slothjam.com/fr/news/64-party-games.html</guid>
+      <pubDate>Fri, 23 Oct 2026 20:36:51 GMT</pubDate>
+      <description>Sloth Jam compte maintenant 64 jeux de fête. Chacun dure une minute et se joue avec un bâton et un bouton, sans besoin de savoir lire.</description>
+    </item>
+    <item>
+      <title>Sloth Jam est maintenant sur Google Play pour Android</title>
+      <link>https://slothjam.com/fr/news/google-play-android.html</link>
+      <guid isPermaLink="true">https://slothjam.com/fr/news/google-play-android.html</guid>
+      <pubDate>Fri, 23 Oct 2026 15:43:17 GMT</pubDate>
+      <description>Sloth Jam est maintenant offert sur Google Play : les appareils Android peuvent installer ce jeu de fête douillet et gratuit directement à partir de la boutique.</description>
+    </item>
+    <item>
+      <title>Sloth Jam arrive dans l’Appstore d’Amazon pour les tablettes Fire</title>
+      <link>https://slothjam.com/fr/news/amazon-appstore-fire-tablets.html</link>
+      <guid isPermaLink="true">https://slothjam.com/fr/news/amazon-appstore-fire-tablets.html</guid>
+      <pubDate>Thu, 22 Oct 2026 13:00:59 GMT</pubDate>
+      <description>Sloth Jam est maintenant offert dans l’Appstore d’Amazon : les familles qui ont une tablette Fire d’Amazon peuvent installer ce jeu de fête douillet et gratuit.</description>
+    </item>
+  </channel>
+</rss>

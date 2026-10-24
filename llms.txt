@@ -13,6 +13,7 @@ Key facts:
 - Safety: a grown-up makes the family account with an emailed code, a child never signs up, a parent gate guards every money screen, no streaks and no limited-time offers.
 - Languages: English, Spanish, Portuguese (Brazil), French, German, Italian, Simplified Chinese, Traditional Chinese, Japanese and Korean.
 - Maker: Remi Couture (Strategic Sloth LLC), about 20 years in games, including illustrator at Disney on Club Penguin from 2006 to 2009. Sloth Jam is independent and not affiliated with or endorsed by Disney.
+- News: https://slothjam.com/news.html has dated announcements (64 party games, Google Play, Amazon Appstore, no loot boxes) and the press kit. Press contact: hello@slothjam.com
 - Press: As heard on CBC Radio One’s Daybreak South (Kelowna, B.C.). Clip: https://www.cbc.ca/listen/live-radio/1-110-daybreak-south/clip/16244668-former-kelowna-game-designer-back-free-game-kids
 - Wikidata: Game item https://www.wikidata.org/wiki/Q141821011 and studio item https://www.wikidata.org/wiki/Q141820975
 
@@ -21,6 +22,8 @@ Key facts:
 - Sloth Jam home: https://slothjam.com/
 - Play Sloth Jam free: https://slothjam.com/play/
 - Creators and press: https://slothjam.com/share.html
+- News and press kit: https://slothjam.com/news.html (dated posts, newest first, with short and long descriptions, studio details, logos, screenshots and the press contact). RSS feed: https://slothjam.com/news/feed.xml
+- News in French: https://slothjam.com/fr/news.html (RSS: https://slothjam.com/fr/news/feed.xml)
 
 ## For parents and teachers
 

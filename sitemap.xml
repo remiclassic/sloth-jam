@@ -4,7 +4,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://slothjam.com/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://slothjam.com/es/" />
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slothjam.com/pt/" />
@@ -423,13 +423,83 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://slothjam.com/ko/privacy.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://slothjam.com/privacy.html" />
   </url>
-  <url><loc>https://slothjam.com/no-reading-games.html</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://slothjam.com/no-reading-games.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://slothjam.com/safe-games-for-kids.html</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://slothjam.com/family-game-night.html</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://slothjam.com/schools.html</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://slothjam.com/share.html</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://slothjam.com/family-game-night.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://slothjam.com/schools.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://slothjam.com/share.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://slothjam.com/invite.html</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://slothjam.com/play/</loc><lastmod>2026-10-21</lastmod></url>
   <url><loc>https://slothjam.com/no-loot-boxes.html</loc><lastmod>2026-10-23</lastmod></url>
   <url><loc>https://slothjam.com/fr/no-loot-boxes.html</loc><lastmod>2026-10-23</lastmod></url>
+  <url>
+    <loc>https://slothjam.com/news.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/news.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/news.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slothjam.com/news.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/fr/news.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/news.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/news.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slothjam.com/news.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/news/free-family-friendly-no-loot-boxes.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/news/free-family-friendly-no-loot-boxes.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/news/free-family-friendly-no-loot-boxes.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slothjam.com/news/free-family-friendly-no-loot-boxes.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/fr/news/free-family-friendly-no-loot-boxes.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/news/free-family-friendly-no-loot-boxes.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/news/free-family-friendly-no-loot-boxes.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slothjam.com/news/free-family-friendly-no-loot-boxes.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/news/64-party-games.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/news/64-party-games.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/news/64-party-games.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slothjam.com/news/64-party-games.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/fr/news/64-party-games.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/news/64-party-games.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/news/64-party-games.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slothjam.com/news/64-party-games.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/news/google-play-android.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/news/google-play-android.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/news/google-play-android.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slothjam.com/news/google-play-android.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/fr/news/google-play-android.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/news/google-play-android.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/news/google-play-android.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slothjam.com/news/google-play-android.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/news/amazon-appstore-fire-tablets.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/news/amazon-appstore-fire-tablets.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/news/amazon-appstore-fire-tablets.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slothjam.com/news/amazon-appstore-fire-tablets.html" />
+  </url>
+  <url>
+    <loc>https://slothjam.com/fr/news/amazon-appstore-fire-tablets.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slothjam.com/news/amazon-appstore-fire-tablets.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slothjam.com/fr/news/amazon-appstore-fire-tablets.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slothjam.com/news/amazon-appstore-fire-tablets.html" />
+  </url>
 </urlset>
