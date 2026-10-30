@@ -1,0 +1,31 @@
+/* In the News (press.html). Builds on styles.css, share.css and news.css: the cards follow .news-item. */
+.press-index > h2 { margin-top: 34px; }
+.legal .press-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 18px; margin: 14px 0 0; padding: 0; list-style: none; }
+.legal .press-featured { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.legal .press-list li + li { margin-top: 0; }
+.press-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px 20px 18px;
+  border: 3px solid var(--navy);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 4px 0 var(--navy);
+  overflow-wrap: anywhere;
+}
+.press-featured .press-item { background: #fff8dc; }
+.press-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 0.95rem; }
+.press-tag { padding: 0.1em 0.7em; border-radius: 999px; color: var(--navy); font-weight: 800; }
+.press-tag-radio { background: #ffd6ea; }
+.press-tag-article { background: #bfe6ff; }
+.press-tag-video { background: #ffd9b0; }
+.press-tag-social { background: #d9ccff; }
+.press-item .press-outlet { margin-top: 8px; font-weight: 800; }
+.press-item h3 { margin: 2px 0 8px; font: 800 1.2rem/1.25 var(--display); }
+.press-quote { margin: 0 0 10px; padding-left: 12px; border-left: 4px solid var(--yellow); }
+.legal .press-links { display: flex; flex-direction: column; gap: 6px; margin-top: auto; padding-top: 6px; font-weight: 800; }
+.press-links a { padding: 2px 0; }
+/* Said to screen readers only: sighted readers get the browser's own new-tab behavior. */
+.press-new { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.press-contact { margin-top: 30px; padding: 14px 18px; border-radius: 16px; background: #fff1c2; text-align: center; }

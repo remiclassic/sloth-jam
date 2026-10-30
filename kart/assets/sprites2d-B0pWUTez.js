@@ -1,0 +1,28 @@
+import{Ai as e,Bi as t,Gr as n,Ir as r,Kr as i,Lr as a,Mi as o,Rr as s,Si as c,Yr as l,di as u,qr as d}from"./kart-D7VoJoXR.js";var f=64;function p(e,t,n,r,i,a=0){e.beginPath(),e.ellipse(t,n,r,i,a,0,Math.PI*2),e.fill()}var m=`#2a2d27`;function h(e,t){e.lineJoin=`round`,e.strokeStyle=m,e.lineWidth=7,e.stroke(t),e.fillStyle=`#fff`,e.fill(t)}function g(e,t,n){e.lineCap=e.lineJoin=`round`,e.strokeStyle=m,e.lineWidth=n+7,e.stroke(t),e.strokeStyle=`#fff`,e.lineWidth=n,e.stroke(t)}function _(e,t){let n=f/2,r=new Path2D;if(t===`heart`)r.moveTo(n,54),r.bezierCurveTo(2,36,8,8,n,22),r.bezierCurveTo(56,8,62,36,n,54),r.closePath(),h(e,r);else if(t===`note`)r.ellipse(23,46,11,8.5,-.4,0,Math.PI*2),r.rect(29,10,5,36),r.moveTo(34,10),r.quadraticCurveTo(54,14,50,32),r.quadraticCurveTo(46,23,34,22),r.closePath(),h(e,r);else if(t===`tick`)r.moveTo(14,34),r.lineTo(26,47),r.lineTo(50,17),g(e,r,9);else if(t===`zed`)r.moveTo(17,16),r.lineTo(47,16),r.lineTo(17,48),r.lineTo(47,48),g(e,r,7);else if(t===`bang`)r.moveTo(n,11),r.lineTo(n,35),r.moveTo(n,52),r.lineTo(n,52.5),g(e,r,10);else if(t===`burst`){for(let e of[-.75,0,.75])r.moveTo(n+Math.sin(e)*16,54-Math.cos(e)*16),r.lineTo(n+Math.sin(e)*38,54-Math.cos(e)*38);g(e,r,5)}else return!1;return!0}function v(t){let n=document.createElement(`canvas`);n.width=n.height=f;let r=n.getContext(`2d`),i=f/2;if(r.fillStyle=`#fff`,!_(r,t)){if(t===`puff`){let e=[[23,36,15],[41,37,14],[i,26,17]];r.fillStyle=`#dfe6ee`;for(let[t,n,i]of e)p(r,t,n+3,i,i);r.fillStyle=`#fff`;for(let[t,n,i]of e)p(r,t,n,i,i)}else if(t===`sparkle`){r.beginPath();for(let e=0;e<8;e++){let t=e*Math.PI/4,n=e%2==0?30:5;r.lineTo(i+Math.cos(t)*n,i+Math.sin(t)*n)}r.closePath(),r.fill()}else if(t===`petal`)p(r,i,i,20,11,.6),r.fillStyle=`#f3d3df`,p(r,29,33,12,5,.6);else if(t===`splash`)r.strokeStyle=`#fff`,r.lineWidth=5,r.beginPath(),r.ellipse(i,i,26,10,0,0,Math.PI*2),r.stroke();else if(t===`flake`)p(r,i,i,22,22);else if(t===`leaf`)r.beginPath(),r.moveTo(8,40),r.quadraticCurveTo(26,6,56,24),r.quadraticCurveTo(38,58,8,40),r.fill(),r.strokeStyle=`#c9c9c9`,r.lineWidth=3,r.beginPath(),r.moveTo(10,39),r.lineTo(52,26),r.stroke();else if(t===`birdUp`||t===`birdDown`){let e=t===`birdUp`?16:44,n=t===`birdUp`?14:22;r.strokeStyle=`#fff`,r.lineWidth=7,r.lineCap=r.lineJoin=`round`,r.beginPath(),r.moveTo(6,e),r.quadraticCurveTo(20,n,i,34),r.quadraticCurveTo(44,n,58,e),r.stroke()}else{let e=t===`wingsOpen`?1:.35;for(let t of[-1,1])p(r,i+t*13*e,27,13*e,14,t*.3),p(r,i+t*10*e,43,9*e,9,t*-.3);r.fillStyle=`#4a4038`,r.fillRect(30,18,4,30)}}let a=new d(n);return a.colorSpace=e,a.flipY=!1,a}var y=`
+${a}
+uniform float uScale;
+attribute float aSize;
+attribute float aAlpha;
+attribute vec3 aColor;
+varying vec3 vColor;
+varying float vAlpha;
+void main() {
+  vec4 w = modelMatrix * vec4( position, 1.0 );
+  ${r}
+  vec4 mv = viewMatrix * w;
+  gl_Position = projectionMatrix * mv;
+  gl_PointSize = aSize * uScale / -mv.z;
+  vColor = aColor;
+  vAlpha = aAlpha;
+}
+`,b=`
+uniform sampler2D uMap;
+varying vec3 vColor;
+varying float vAlpha;
+void main() {
+  vec4 t = texture2D( uMap, gl_PointCoord );
+  gl_FragColor = vec4( t.rgb * vColor, t.a * vAlpha );
+  if ( gl_FragColor.a < 0.02 ) discard;
+  #include <colorspace_fragment>
+}
+`,x=new l,S=new t,C=8,w=class{points;max;state;pos;sizes;alphas;colors;geometry=new i;material;texture;next=0;clock=0;shown=0;constructor(e,t){this.max=t,this.state=new Float32Array(t*C),this.pos=new Float32Array(t*3),this.sizes=new Float32Array(t),this.alphas=new Float32Array(t),this.colors=new Float32Array(t*3),this.geometry.setAttribute(`position`,new n(this.pos,3)),this.geometry.setAttribute(`aSize`,new n(this.sizes,1)),this.geometry.setAttribute(`aAlpha`,new n(this.alphas,1)),this.geometry.setAttribute(`aColor`,new n(this.colors,3)),this.texture=v(e);let r={uMap:{value:this.texture},uScale:{value:400}};s(r),this.material=new o({uniforms:r,vertexShader:y,fragmentShader:b,transparent:!0,depthWrite:!1}),this.points=new c(this.geometry,this.material),this.points.frustumCulled=!1,this.points.renderOrder=3,this.geometry.setDrawRange(0,0),this.points.onBeforeRender=(e,t,n)=>{let i=n.fov??50;r.uScale.value=e.getDrawingBufferSize(S).y/(2*Math.tan(u.degToRad(i)/2))}}emit(e,t,n,r,i,a,o,s,c,l=0,u=0){let d=this.next;return this.next=(this.next+1)%this.max,this.pos.set([e,t,n],d*3),this.state.set([r,i,a,o,o,s,l,u],d*C),x.setHex(c),this.colors.set([x.r,x.g,x.b],d*3),d}set(e,t,n,r,i,a,o){this.pos.set([t,n,r],e*3),this.state[e*C+3]=0,this.sizes[e]=i,this.alphas[e]=o,x.setHex(a),this.colors.set([x.r,x.g,x.b],e*3),o>0&&e>=this.shown&&this.show(e+1),this.send()}slide(e,t){for(let n=0;n<this.max;n++)this.state[n*C+3]<=0||(this.pos[n*3]-=e,this.pos[n*3+2]-=t)}show(e){this.shown=e,this.geometry.setDrawRange(0,e)}send(){for(let e of[`position`,`aSize`,`aAlpha`,`aColor`])this.geometry.getAttribute(e).needsUpdate=!0}update(e){this.clock+=e;let t=this.state,n=this.shown,r=-1;for(let n=0;n<this.max;n++){let i=n*C;if(t[i+3]<=0){this.alphas[n]>0&&(r=n);continue}if(t[i+3]-=e,t[i+3]<=0){this.alphas[n]=0,this.sizes[n]=0;continue}let a=1-t[i+3]/t[i+4],o=t[i+7]*Math.sin(this.clock*2.3+n*1.7);this.pos[n*3]+=(t[i]+o)*e,this.pos[n*3+1]+=t[i+1]*e,this.pos[n*3+2]+=(t[i+2]+o*.6)*e,this.sizes[n]=t[i+5]+t[i+6]*a,this.alphas[n]=Math.min(1,a*8)*Math.min(1,(1-a)*2.5),r=n}r+1!==n&&this.show(r+1),(r>=0||n>0)&&this.send()}dispose(){this.geometry.dispose(),this.material.dispose(),this.texture.dispose()}};export{w as t};

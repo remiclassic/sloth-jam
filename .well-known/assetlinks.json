@@ -1,0 +1,23 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.slothjam.app",
+      "sha256_cert_fingerprints": [
+        "EF:F4:F3:53:24:8D:95:52:43:7F:76:8E:B0:B3:61:44:42:A5:09:FA:B9:57:69:E3:DA:1E:95:79:0E:AC:6B:EC",
+        "67:CE:86:B6:5D:FE:29:36:BB:BC:94:B5:60:24:EA:7A:F6:17:9A:D1:A7:E0:EC:F5:91:CF:87:88:AB:34:82:68"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.slothjam.kart",
+      "sha256_cert_fingerprints": [
+        "EF:F4:F3:53:24:8D:95:52:43:7F:76:8E:B0:B3:61:44:42:A5:09:FA:B9:57:69:E3:DA:1E:95:79:0E:AC:6B:EC"
+      ]
+    }
+  }
+]

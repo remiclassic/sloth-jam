@@ -1,0 +1,1 @@
+import{_r as e}from"./kart-D7VoJoXR.js";var t=.25,n=.6,r=new WeakMap;function i(i,a,o,s){let c=r.get(i);c!==void 0&&a-c<t*o||(r.set(i,a),e.other(s,{gain:n}))}export{i as t};

@@ -1,0 +1,73 @@
+/* The VTubers and streamers page (vtubers.html), on top of styles.css, share.css (jump links,
+   rules, notes) and schools.css (the form). */
+.vt-hero { background: linear-gradient(180deg, #ffe0f0, #fff1f8 55%, var(--cream)); }
+.vt-hero-sloth { width: 150px; height: auto; margin: 0 auto 6px; }
+.vt-hero h1.strap { max-width: 16em; margin: 0 auto; text-wrap: balance; }
+.vt-hero .strap em { color: #ff4fa3; }
+
+.vtubers-page .panel a:not(.btn) { color: #1f6fd1; }
+.vtubers-page .rules li::before { color: #2fb457; }
+#yours .sub-head { margin-top: 32px; }
+
+/* The creators Sloth Jam works with now: a picture, a few words and their own links. */
+.vt-roster { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 18px; margin-top: 22px; text-align: left; }
+.vt-roster li { display: flex; gap: 16px; align-items: center; padding: 16px; border: 3px solid var(--navy); border-radius: 22px; background: #fff; box-shadow: 0 5px 0 var(--navy); }
+.vt-roster picture { flex: none; }
+.vt-roster img { display: block; width: 120px; height: 120px; border: 3px solid var(--navy); border-radius: 50%; object-fit: cover; }
+.vt-roster h3 { font: 800 1.4rem/1.1 var(--display); }
+.vt-roster .vt-by { margin-top: 2px; font-weight: 800; opacity: 0.75; }
+.vt-roster p + p { margin-top: 6px; }
+.vt-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.vtubers-page .panel .vt-links a { padding: 4px 12px; border: 3px solid var(--navy); border-radius: 999px; background: var(--yellow); color: var(--navy); font-weight: 800; text-decoration: none; }
+.vtubers-page .panel .vt-links a:hover { background: #fff; }
+
+/* See a collab: a before and after pair, then shots from the game. */
+.vt-ba { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 18px; margin-top: 26px; }
+.vt-ba figure, .vt-shots li { margin: 0; overflow: hidden; border: 3px solid var(--navy); border-radius: 22px; background: #fff; box-shadow: 0 5px 0 var(--navy); }
+.vt-ba img, .vt-shots img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.vt-ba figcaption, .vt-shots p { padding: 10px 14px 12px; font-weight: 700; }
+.vt-shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 16px; margin-top: 18px; }
+
+/* How it works: four numbered cards. */
+.vt-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 18px; text-align: left; }
+.vt-steps li { display: flex; gap: 14px; align-items: flex-start; padding: 18px; border: 3px solid var(--navy); border-radius: 22px; background: #fff; box-shadow: 0 5px 0 var(--navy); }
+.vt-step-num { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border: 3px solid var(--navy); border-radius: 50%; background: var(--yellow); font: 800 1.4rem/1 var(--display); }
+.vt-steps p { margin-top: 6px; font-weight: 700; }
+
+/* The form's extra pieces beside the schools form. */
+.vt-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 3px solid #2b2350;
+  border-radius: 14px;
+  background: #fff;
+  color: inherit;
+  font: 700 1.05rem/1.4 var(--body);
+  resize: vertical;
+}
+.vt-form textarea:focus-visible, .vt-checks input:focus-visible { outline: 4px solid var(--blue); outline-offset: 2px; }
+.vt-hint { font-weight: 600; font-size: 0.95rem; opacity: 0.8; }
+.vt-platforms { min-width: 0; margin: 0; padding: 0; border: 0; }
+.vt-platforms legend { padding: 0; font-weight: 800; }
+.vt-checks { display: flex; flex-wrap: wrap; gap: 10px 12px; margin: 8px 0 12px; }
+.vt-checks label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 3px solid #2b2350;
+  border-radius: 999px;
+  background: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+.vt-checks input { width: 22px; height: 22px; margin: 0; accent-color: var(--navy); }
+.vt-checks label:has(input:checked) { background: var(--yellow); }
+.vt-platforms[aria-invalid="true"] .vt-checks label { border-color: #b0362c; }
+.vt-privacy { font-size: 0.95rem; opacity: 0.85; }
+
+@media (max-width: 600px) {
+  .vt-hero-sloth { width: 110px; }
+  .vt-roster li { flex-direction: column; text-align: center; }
+  .vt-links { justify-content: center; }
+}

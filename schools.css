@@ -1,0 +1,119 @@
+/* The schools page (schools.html, fr/schools.html, es/schools.html), on top of styles.css. Panels
+   with a badge on top, as on the home page, and the optional updates form. */
+.schools-page main { padding-top: 64px; }
+.schools-page .panel { width: min(1000px, calc(100% - 24px)); padding-top: 0; }
+/* Translated section names run long, so a badge may wrap instead of running off a phone. It sits
+   in the flow, hanging over the panel's top edge as on the home page, so a badge two or three
+   lines tall pushes the text down rather than covering it. */
+.schools-page .badge {
+  position: static;
+  display: block;
+  width: fit-content;
+  max-width: calc(100% - 16px);
+  margin: -0.8em auto 22px;
+  transform: rotate(-1.5deg);
+  white-space: normal;
+  text-align: center;
+  font-size: clamp(1.25rem, 4vw, 2.1rem);
+}
+.schools-page .panel a:not(.btn) { color: #1f6fd1; }
+
+.schools-hero { background: linear-gradient(180deg, #fff1c2, #fff8ea 55%); }
+.schools-title { max-width: 17em; margin: 0 auto; font: 800 clamp(1.9rem, 5vw, 3.2rem)/1.08 var(--display); text-wrap: balance; }
+.schools-sub { max-width: 36em; margin: 16px auto 0; font-size: 1.15rem; }
+.schools-cta { margin-top: 26px; }
+.schools-cta .btn { padding: 0.5em 1.8em; font-size: clamp(1.5rem, 4.4vw, 2rem); }
+.schools-cta .play-icon { margin-right: 0.2em; }
+.schools-cta-note { margin-top: 14px; color: #36508c; font-size: 1rem; }
+.schools-shot { max-width: 680px; margin: 28px auto 0; }
+.schools-shot img { width: 100%; border: var(--line); border-radius: 22px; box-shadow: 0 6px 0 var(--navy); }
+
+/* The reasons and the two ways to play: white cards with a drawn icon. */
+.schools-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; text-align: left; }
+.schools-cards li { padding: 18px 20px 20px; border: 3px solid var(--navy); border-radius: 22px; background: #fff; box-shadow: 0 5px 0 var(--navy); }
+.schools-cards h3 { display: flex; align-items: center; gap: 12px; font: 800 1.3rem/1.2 var(--display); }
+.schools-cards p { margin-top: 10px; color: #36508c; }
+.schools-icon {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  border: 3px solid var(--navy);
+  border-radius: 14px;
+  background: var(--yellow);
+  fill: none;
+  stroke: var(--navy);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.schools-cards li:nth-child(5n + 2) .schools-icon { background: #8ad8ff; }
+.schools-cards li:nth-child(5n + 3) .schools-icon { background: #ff8cc4; }
+.schools-cards li:nth-child(5n + 4) .schools-icon { background: #8be28f; }
+.schools-cards li:nth-child(5n + 5) .schools-icon { background: #c3a6ff; }
+/* Four reasons two by two, and the last one, which has no more to say, as a strip under them. */
+.schools-why { grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
+.schools-why .schools-strip { grid-column: 1 / -1; }
+.schools-why .schools-strip h3 { justify-content: center; }
+.schools-stores { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin-top: 6px; }
+.schools-stores .play-badge { margin: 0; }
+.schools-stores .play-badge img { height: 48px; margin: 8px 0 0; }
+
+.schools-lead { max-width: 36em; margin: 0 auto; font-size: 1.2rem; }
+.schools-lead + p { margin-top: 14px; }
+.schools-small { margin-top: 12px; font-size: 0.95rem; opacity: 0.85; }
+
+/* The optional updates form. */
+.schools-optional { max-width: 38em; margin: 0 auto; }
+.schools-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 18px;
+  max-width: 44em;
+  margin: 22px auto 0;
+  padding: 22px;
+  border-radius: 22px;
+  background: #f4f1ff;
+  text-align: left;
+}
+.schools-form[hidden] { display: none; }
+.schools-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.schools-field label { font-weight: 800; }
+.schools-wide { grid-column: 1 / -1; }
+.schools-field input, .schools-field select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 3px solid #2b2350;
+  border-radius: 14px;
+  background: #fff;
+  color: inherit;
+  font: 700 1.05rem/1.3 var(--body);
+}
+.schools-field select { appearance: none; padding-right: 2.4em; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316233f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center / 18px; }
+.schools-field input:focus-visible, .schools-field select:focus-visible, .schools-consent input:focus-visible { outline: 4px solid var(--blue); outline-offset: 2px; }
+.schools-form [aria-invalid="true"] { border-color: #b0362c; background-color: #fff4f2; }
+.schools-error { color: #b0362c; font-size: 0.92rem; }
+.schools-error:empty { display: none; }
+.schools-consent { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; align-items: start; font-weight: 700; }
+.schools-consent input { width: 26px; height: 26px; margin: 2px 0 0; accent-color: var(--navy); }
+.schools-consent .schools-error { grid-column: 2; }
+.schools-send { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.schools-send .btn { border-color: var(--navy); cursor: pointer; }
+.schools-send .btn:disabled { cursor: progress; opacity: 0.7; }
+.schools-say { font-weight: 800; }
+.schools-say.wrong { color: #b0362c; }
+/* A box only bots fill in. */
+.schools-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.schools-done { max-width: 30em; margin: 22px auto 0; }
+.schools-done[hidden] { display: none; }
+.schools-done img { width: 150px; margin: 0 auto 10px; }
+.schools-done p { font: 800 1.3rem/1.3 var(--display); }
+
+.schools-page .faq { margin-top: 0; }
+.schools-address { margin-top: 14px; font-style: normal; }
+
+@media (max-width: 600px) {
+  .schools-form { grid-template-columns: 1fr; padding: 16px; }
+  .schools-cards li { padding: 16px; }
+  .schools-stores .play-badge img { height: 40px; }
+}

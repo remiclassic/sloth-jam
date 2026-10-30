@@ -1,0 +1,19 @@
+{
+  "name": "Sloth Kart",
+  "short_name": "Sloth Kart",
+  "description": "Kart racing for kids and families: five tracks, three cups and eleven animal racers.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "landscape",
+  "background_color": "#9FD8FF",
+  "theme_color": "#9FD8FF",
+  "categories": ["games", "kids", "entertainment"],
+  "icons": [
+    { "src": "ui/kart/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "ui/kart/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "ui/kart/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

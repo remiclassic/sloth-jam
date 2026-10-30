@@ -1,0 +1,46 @@
+/* News and press (news.html, news/*.html and the French copies in fr/). Builds on styles.css and
+   share.css: the posts use the guide layout, the press kit reuses the creators page's cards. */
+.news-page .panel + .panel { margin-top: 0; }
+
+/* The list of posts, newest first. */
+.news-feed { margin-top: 14px; text-align: center; font-size: 0.95rem; }
+.news-list { margin: 26px 0 0; padding: 0; list-style: none; }
+.news-item {
+  padding: 16px 20px 18px;
+  border: 3px solid var(--navy);
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 4px 0 var(--navy);
+}
+.news-item + .news-item { margin-top: 18px; }
+.news-date { font-size: 0.95rem; opacity: 0.75; }
+.news-item h2 { margin: 2px 0 8px; font: 800 1.45rem/1.25 var(--display); }
+.news-item h2 a { color: var(--navy); text-decoration: none; }
+.news-item h2 a:hover { text-decoration: underline; }
+.news-more { margin-top: 10px; }
+
+/* One post. */
+.news-title { margin: 0 0 6px; text-align: center; font: 800 clamp(1.6rem, 4.5vw, 2.4rem)/1.15 var(--display); }
+.news-post figure { margin-bottom: 18px; }
+.news-back { margin-top: 26px; text-align: center; }
+
+/* The press kit: on the blue panel, links outside the cards are navy so they stay readable. */
+.press-kit .caption-text { user-select: text; -webkit-user-select: text; }
+.press-kit > .note a, .news-coverage a { color: var(--navy); }
+.news-coverage { max-width: 46em; margin: 14px auto 0; }
+
+/* Game-update posts: numbered steps, a row of pictures with captions, and a where-to-find table. */
+.news-post ol { margin: 10px 0 0; padding-left: 1.4em; list-style: decimal; }
+.news-post ol ul { margin-top: 6px; }
+.news-post h3 { margin-top: 28px; }
+.news-post figcaption { margin-top: 6px; text-align: center; font-size: 0.9rem; line-height: 1.35; }
+.news-post .news-pics { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 14px; margin: 14px 0 0; padding: 0; list-style: none; }
+.news-post .news-pics li + li { margin-top: 0; }
+.news-pics figure { margin: 0; }
+.news-post figure.news-narrow { max-width: 420px; margin-inline: auto; }
+.news-pics figure img { border-radius: 14px; }
+.news-table-wrap { margin-top: 12px; overflow-x: auto; }
+.news-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.news-table th, .news-table td { padding: 7px 10px; border-bottom: 2px solid #e6e9f5; text-align: left; vertical-align: top; }
+.news-table thead th { border-bottom-color: var(--navy); }
+.news-table-head th { padding-top: 18px; color: #1f6fd1; }
